@@ -1,0 +1,74 @@
+{
+    "auto-aliasing": {
+        "resources": {
+            "archive_file": {
+                "current": "archive:index/file:File",
+                "fields": {
+                    "excludes": {
+                        "maxItemsOne": false
+                    },
+                    "source": {
+                        "maxItemsOne": false
+                    }
+                }
+            }
+        },
+        "datasources": {
+            "archive_file": {
+                "current": "archive:index/getFile:getFile",
+                "fields": {
+                    "excludes": {
+                        "maxItemsOne": false
+                    },
+                    "source": {
+                        "maxItemsOne": false
+                    }
+                }
+            }
+        }
+    },
+    "renames": {
+        "resources": {
+            "archive:index/file:File": "archive_file"
+        },
+        "functions": {
+            "archive:index/getFile:getFile": "archive_file"
+        },
+        "renamedProperties": {
+            "archive:index/file:File": {
+                "excludeSymlinkDirectories": "exclude_symlink_directories",
+                "outputBase64sha256": "output_base64sha256",
+                "outputBase64sha512": "output_base64sha512",
+                "outputFileMode": "output_file_mode",
+                "outputMd5": "output_md5",
+                "outputPath": "output_path",
+                "outputSha": "output_sha",
+                "outputSha256": "output_sha256",
+                "outputSha512": "output_sha512",
+                "outputSize": "output_size",
+                "sourceContent": "source_content",
+                "sourceContentFilename": "source_content_filename",
+                "sourceDir": "source_dir",
+                "sourceFile": "source_file",
+                "sources": "source"
+            },
+            "archive:index/getFile:getFile": {
+                "excludeSymlinkDirectories": "exclude_symlink_directories",
+                "outputBase64sha256": "output_base64sha256",
+                "outputBase64sha512": "output_base64sha512",
+                "outputFileMode": "output_file_mode",
+                "outputMd5": "output_md5",
+                "outputPath": "output_path",
+                "outputSha": "output_sha",
+                "outputSha256": "output_sha256",
+                "outputSha512": "output_sha512",
+                "outputSize": "output_size",
+                "sourceContent": "source_content",
+                "sourceContentFilename": "source_content_filename",
+                "sourceDir": "source_dir",
+                "sourceFile": "source_file",
+                "sources": "source"
+            }
+        }
+    }
+}
