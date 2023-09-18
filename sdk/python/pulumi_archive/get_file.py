@@ -290,24 +290,24 @@ def get_file(exclude_symlink_directories: Optional[bool] = None,
     __ret__ = pulumi.runtime.invoke('archive:index/getFile:getFile', __args__, opts=opts, typ=GetFileResult).value
 
     return AwaitableGetFileResult(
-        exclude_symlink_directories=__ret__.exclude_symlink_directories,
-        excludes=__ret__.excludes,
-        id=__ret__.id,
-        output_base64sha256=__ret__.output_base64sha256,
-        output_base64sha512=__ret__.output_base64sha512,
-        output_file_mode=__ret__.output_file_mode,
-        output_md5=__ret__.output_md5,
-        output_path=__ret__.output_path,
-        output_sha=__ret__.output_sha,
-        output_sha256=__ret__.output_sha256,
-        output_sha512=__ret__.output_sha512,
-        output_size=__ret__.output_size,
-        source_content=__ret__.source_content,
-        source_content_filename=__ret__.source_content_filename,
-        source_dir=__ret__.source_dir,
-        source_file=__ret__.source_file,
-        sources=__ret__.sources,
-        type=__ret__.type)
+        exclude_symlink_directories=pulumi.get(__ret__, 'exclude_symlink_directories'),
+        excludes=pulumi.get(__ret__, 'excludes'),
+        id=pulumi.get(__ret__, 'id'),
+        output_base64sha256=pulumi.get(__ret__, 'output_base64sha256'),
+        output_base64sha512=pulumi.get(__ret__, 'output_base64sha512'),
+        output_file_mode=pulumi.get(__ret__, 'output_file_mode'),
+        output_md5=pulumi.get(__ret__, 'output_md5'),
+        output_path=pulumi.get(__ret__, 'output_path'),
+        output_sha=pulumi.get(__ret__, 'output_sha'),
+        output_sha256=pulumi.get(__ret__, 'output_sha256'),
+        output_sha512=pulumi.get(__ret__, 'output_sha512'),
+        output_size=pulumi.get(__ret__, 'output_size'),
+        source_content=pulumi.get(__ret__, 'source_content'),
+        source_content_filename=pulumi.get(__ret__, 'source_content_filename'),
+        source_dir=pulumi.get(__ret__, 'source_dir'),
+        source_file=pulumi.get(__ret__, 'source_file'),
+        sources=pulumi.get(__ret__, 'sources'),
+        type=pulumi.get(__ret__, 'type'))
 
 
 @_utilities.lift_output_func(get_file)
