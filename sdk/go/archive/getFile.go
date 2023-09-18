@@ -7,10 +7,13 @@ import (
 	"context"
 	"reflect"
 
+	"github.com/pulumi/pulumi-archive/sdk/go/archive/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 func LookupFile(ctx *pulumi.Context, args *LookupFileArgs, opts ...pulumi.InvokeOption) (*LookupFileResult, error) {
+	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv LookupFileResult
 	err := ctx.Invoke("archive:index/getFile:getFile", args, &rv, opts...)
 	if err != nil {
@@ -137,6 +140,12 @@ func (o LookupFileResultOutput) ToLookupFileResultOutput() LookupFileResultOutpu
 
 func (o LookupFileResultOutput) ToLookupFileResultOutputWithContext(ctx context.Context) LookupFileResultOutput {
 	return o
+}
+
+func (o LookupFileResultOutput) ToOutput(ctx context.Context) pulumix.Output[LookupFileResult] {
+	return pulumix.Output[LookupFileResult]{
+		OutputState: o.OutputState,
+	}
 }
 
 // Boolean flag indicating whether symbolically linked directories should be excluded during the creation of the archive. Defaults to false.
