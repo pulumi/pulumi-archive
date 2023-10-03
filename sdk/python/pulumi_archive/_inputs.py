@@ -6,7 +6,7 @@ import copy
 import warnings
 import pulumi
 import pulumi.runtime
-from typing import Any, Mapping, Optional, Sequence, Union, overload
+from typing import Any, Callable, Mapping, Optional, Sequence, Union, overload
 from . import _utilities
 
 __all__ = [
@@ -23,8 +23,19 @@ class FileSourceArgs:
         :param pulumi.Input[str] content: Add this content to the archive with `filename` as the filename.
         :param pulumi.Input[str] filename: Set this as the filename when declaring a `source`.
         """
-        pulumi.set(__self__, "content", content)
-        pulumi.set(__self__, "filename", filename)
+        FileSourceArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            content=content,
+            filename=filename,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             content: pulumi.Input[str],
+             filename: pulumi.Input[str],
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("content", content)
+        _setter("filename", filename)
 
     @property
     @pulumi.getter
@@ -60,8 +71,19 @@ class GetFileSourceArgs:
         :param str content: Add this content to the archive with `filename` as the filename.
         :param str filename: Set this as the filename when declaring a `source`.
         """
-        pulumi.set(__self__, "content", content)
-        pulumi.set(__self__, "filename", filename)
+        GetFileSourceArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            content=content,
+            filename=filename,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             content: str,
+             filename: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("content", content)
+        _setter("filename", filename)
 
     @property
     @pulumi.getter
