@@ -31,9 +31,15 @@ class FileSourceArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             content: pulumi.Input[str],
-             filename: pulumi.Input[str],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             content: Optional[pulumi.Input[str]] = None,
+             filename: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
+             **kwargs):
+        if content is None:
+            raise TypeError("Missing 'content' argument")
+        if filename is None:
+            raise TypeError("Missing 'filename' argument")
+
         _setter("content", content)
         _setter("filename", filename)
 
@@ -79,9 +85,15 @@ class GetFileSourceArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             content: str,
-             filename: str,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             content: Optional[str] = None,
+             filename: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
+             **kwargs):
+        if content is None:
+            raise TypeError("Missing 'content' argument")
+        if filename is None:
+            raise TypeError("Missing 'filename' argument")
+
         _setter("content", content)
         _setter("filename", filename)
 
