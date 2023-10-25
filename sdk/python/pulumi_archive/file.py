@@ -55,8 +55,8 @@ class FileArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             output_path: pulumi.Input[str],
-             type: pulumi.Input[str],
+             output_path: Optional[pulumi.Input[str]] = None,
+             type: Optional[pulumi.Input[str]] = None,
              exclude_symlink_directories: Optional[pulumi.Input[bool]] = None,
              excludes: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
              output_file_mode: Optional[pulumi.Input[str]] = None,
@@ -65,7 +65,27 @@ class FileArgs:
              source_dir: Optional[pulumi.Input[str]] = None,
              source_file: Optional[pulumi.Input[str]] = None,
              sources: Optional[pulumi.Input[Sequence[pulumi.Input['FileSourceArgs']]]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions] = None,
+             **kwargs):
+        if output_path is None and 'outputPath' in kwargs:
+            output_path = kwargs['outputPath']
+        if output_path is None:
+            raise TypeError("Missing 'output_path' argument")
+        if type is None:
+            raise TypeError("Missing 'type' argument")
+        if exclude_symlink_directories is None and 'excludeSymlinkDirectories' in kwargs:
+            exclude_symlink_directories = kwargs['excludeSymlinkDirectories']
+        if output_file_mode is None and 'outputFileMode' in kwargs:
+            output_file_mode = kwargs['outputFileMode']
+        if source_content is None and 'sourceContent' in kwargs:
+            source_content = kwargs['sourceContent']
+        if source_content_filename is None and 'sourceContentFilename' in kwargs:
+            source_content_filename = kwargs['sourceContentFilename']
+        if source_dir is None and 'sourceDir' in kwargs:
+            source_dir = kwargs['sourceDir']
+        if source_file is None and 'sourceFile' in kwargs:
+            source_file = kwargs['sourceFile']
+
         _setter("output_path", output_path)
         _setter("type", type)
         if exclude_symlink_directories is not None:
@@ -286,7 +306,37 @@ class _FileState:
              source_file: Optional[pulumi.Input[str]] = None,
              sources: Optional[pulumi.Input[Sequence[pulumi.Input['FileSourceArgs']]]] = None,
              type: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions] = None,
+             **kwargs):
+        if exclude_symlink_directories is None and 'excludeSymlinkDirectories' in kwargs:
+            exclude_symlink_directories = kwargs['excludeSymlinkDirectories']
+        if output_base64sha256 is None and 'outputBase64sha256' in kwargs:
+            output_base64sha256 = kwargs['outputBase64sha256']
+        if output_base64sha512 is None and 'outputBase64sha512' in kwargs:
+            output_base64sha512 = kwargs['outputBase64sha512']
+        if output_file_mode is None and 'outputFileMode' in kwargs:
+            output_file_mode = kwargs['outputFileMode']
+        if output_md5 is None and 'outputMd5' in kwargs:
+            output_md5 = kwargs['outputMd5']
+        if output_path is None and 'outputPath' in kwargs:
+            output_path = kwargs['outputPath']
+        if output_sha is None and 'outputSha' in kwargs:
+            output_sha = kwargs['outputSha']
+        if output_sha256 is None and 'outputSha256' in kwargs:
+            output_sha256 = kwargs['outputSha256']
+        if output_sha512 is None and 'outputSha512' in kwargs:
+            output_sha512 = kwargs['outputSha512']
+        if output_size is None and 'outputSize' in kwargs:
+            output_size = kwargs['outputSize']
+        if source_content is None and 'sourceContent' in kwargs:
+            source_content = kwargs['sourceContent']
+        if source_content_filename is None and 'sourceContentFilename' in kwargs:
+            source_content_filename = kwargs['sourceContentFilename']
+        if source_dir is None and 'sourceDir' in kwargs:
+            source_dir = kwargs['sourceDir']
+        if source_file is None and 'sourceFile' in kwargs:
+            source_file = kwargs['sourceFile']
+
         if exclude_symlink_directories is not None:
             _setter("exclude_symlink_directories", exclude_symlink_directories)
         if excludes is not None:
