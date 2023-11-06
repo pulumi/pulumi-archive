@@ -6,7 +6,7 @@ import copy
 import warnings
 import pulumi
 import pulumi.runtime
-from typing import Any, Mapping, Optional, Sequence, Union, overload
+from typing import Any, Callable, Mapping, Optional, Sequence, Union, overload
 from . import _utilities
 from . import outputs
 from ._inputs import *
@@ -39,24 +39,71 @@ class FileArgs:
         :param pulumi.Input[str] source_file: Package this file into the archive. One and only one of `source`, `source_content_filename` (with `source_content`), `source_file`, or `source_dir` must be specified.
         :param pulumi.Input[Sequence[pulumi.Input['FileSourceArgs']]] sources: Specifies attributes of a single source file to include into the archive. One and only one of `source`, `source_content_filename` (with `source_content`), `source_file`, or `source_dir` must be specified.
         """
-        pulumi.set(__self__, "output_path", output_path)
-        pulumi.set(__self__, "type", type)
+        FileArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            output_path=output_path,
+            type=type,
+            exclude_symlink_directories=exclude_symlink_directories,
+            excludes=excludes,
+            output_file_mode=output_file_mode,
+            source_content=source_content,
+            source_content_filename=source_content_filename,
+            source_dir=source_dir,
+            source_file=source_file,
+            sources=sources,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             output_path: Optional[pulumi.Input[str]] = None,
+             type: Optional[pulumi.Input[str]] = None,
+             exclude_symlink_directories: Optional[pulumi.Input[bool]] = None,
+             excludes: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
+             output_file_mode: Optional[pulumi.Input[str]] = None,
+             source_content: Optional[pulumi.Input[str]] = None,
+             source_content_filename: Optional[pulumi.Input[str]] = None,
+             source_dir: Optional[pulumi.Input[str]] = None,
+             source_file: Optional[pulumi.Input[str]] = None,
+             sources: Optional[pulumi.Input[Sequence[pulumi.Input['FileSourceArgs']]]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if output_path is None and 'outputPath' in kwargs:
+            output_path = kwargs['outputPath']
+        if output_path is None:
+            raise TypeError("Missing 'output_path' argument")
+        if type is None:
+            raise TypeError("Missing 'type' argument")
+        if exclude_symlink_directories is None and 'excludeSymlinkDirectories' in kwargs:
+            exclude_symlink_directories = kwargs['excludeSymlinkDirectories']
+        if output_file_mode is None and 'outputFileMode' in kwargs:
+            output_file_mode = kwargs['outputFileMode']
+        if source_content is None and 'sourceContent' in kwargs:
+            source_content = kwargs['sourceContent']
+        if source_content_filename is None and 'sourceContentFilename' in kwargs:
+            source_content_filename = kwargs['sourceContentFilename']
+        if source_dir is None and 'sourceDir' in kwargs:
+            source_dir = kwargs['sourceDir']
+        if source_file is None and 'sourceFile' in kwargs:
+            source_file = kwargs['sourceFile']
+
+        _setter("output_path", output_path)
+        _setter("type", type)
         if exclude_symlink_directories is not None:
-            pulumi.set(__self__, "exclude_symlink_directories", exclude_symlink_directories)
+            _setter("exclude_symlink_directories", exclude_symlink_directories)
         if excludes is not None:
-            pulumi.set(__self__, "excludes", excludes)
+            _setter("excludes", excludes)
         if output_file_mode is not None:
-            pulumi.set(__self__, "output_file_mode", output_file_mode)
+            _setter("output_file_mode", output_file_mode)
         if source_content is not None:
-            pulumi.set(__self__, "source_content", source_content)
+            _setter("source_content", source_content)
         if source_content_filename is not None:
-            pulumi.set(__self__, "source_content_filename", source_content_filename)
+            _setter("source_content_filename", source_content_filename)
         if source_dir is not None:
-            pulumi.set(__self__, "source_dir", source_dir)
+            _setter("source_dir", source_dir)
         if source_file is not None:
-            pulumi.set(__self__, "source_file", source_file)
+            _setter("source_file", source_file)
         if sources is not None:
-            pulumi.set(__self__, "sources", sources)
+            _setter("sources", sources)
 
     @property
     @pulumi.getter(name="outputPath")
@@ -219,40 +266,111 @@ class _FileState:
         :param pulumi.Input[Sequence[pulumi.Input['FileSourceArgs']]] sources: Specifies attributes of a single source file to include into the archive. One and only one of `source`, `source_content_filename` (with `source_content`), `source_file`, or `source_dir` must be specified.
         :param pulumi.Input[str] type: The type of archive to generate. NOTE: `zip` is supported.
         """
+        _FileState._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            exclude_symlink_directories=exclude_symlink_directories,
+            excludes=excludes,
+            output_base64sha256=output_base64sha256,
+            output_base64sha512=output_base64sha512,
+            output_file_mode=output_file_mode,
+            output_md5=output_md5,
+            output_path=output_path,
+            output_sha=output_sha,
+            output_sha256=output_sha256,
+            output_sha512=output_sha512,
+            output_size=output_size,
+            source_content=source_content,
+            source_content_filename=source_content_filename,
+            source_dir=source_dir,
+            source_file=source_file,
+            sources=sources,
+            type=type,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             exclude_symlink_directories: Optional[pulumi.Input[bool]] = None,
+             excludes: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
+             output_base64sha256: Optional[pulumi.Input[str]] = None,
+             output_base64sha512: Optional[pulumi.Input[str]] = None,
+             output_file_mode: Optional[pulumi.Input[str]] = None,
+             output_md5: Optional[pulumi.Input[str]] = None,
+             output_path: Optional[pulumi.Input[str]] = None,
+             output_sha: Optional[pulumi.Input[str]] = None,
+             output_sha256: Optional[pulumi.Input[str]] = None,
+             output_sha512: Optional[pulumi.Input[str]] = None,
+             output_size: Optional[pulumi.Input[int]] = None,
+             source_content: Optional[pulumi.Input[str]] = None,
+             source_content_filename: Optional[pulumi.Input[str]] = None,
+             source_dir: Optional[pulumi.Input[str]] = None,
+             source_file: Optional[pulumi.Input[str]] = None,
+             sources: Optional[pulumi.Input[Sequence[pulumi.Input['FileSourceArgs']]]] = None,
+             type: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if exclude_symlink_directories is None and 'excludeSymlinkDirectories' in kwargs:
+            exclude_symlink_directories = kwargs['excludeSymlinkDirectories']
+        if output_base64sha256 is None and 'outputBase64sha256' in kwargs:
+            output_base64sha256 = kwargs['outputBase64sha256']
+        if output_base64sha512 is None and 'outputBase64sha512' in kwargs:
+            output_base64sha512 = kwargs['outputBase64sha512']
+        if output_file_mode is None and 'outputFileMode' in kwargs:
+            output_file_mode = kwargs['outputFileMode']
+        if output_md5 is None and 'outputMd5' in kwargs:
+            output_md5 = kwargs['outputMd5']
+        if output_path is None and 'outputPath' in kwargs:
+            output_path = kwargs['outputPath']
+        if output_sha is None and 'outputSha' in kwargs:
+            output_sha = kwargs['outputSha']
+        if output_sha256 is None and 'outputSha256' in kwargs:
+            output_sha256 = kwargs['outputSha256']
+        if output_sha512 is None and 'outputSha512' in kwargs:
+            output_sha512 = kwargs['outputSha512']
+        if output_size is None and 'outputSize' in kwargs:
+            output_size = kwargs['outputSize']
+        if source_content is None and 'sourceContent' in kwargs:
+            source_content = kwargs['sourceContent']
+        if source_content_filename is None and 'sourceContentFilename' in kwargs:
+            source_content_filename = kwargs['sourceContentFilename']
+        if source_dir is None and 'sourceDir' in kwargs:
+            source_dir = kwargs['sourceDir']
+        if source_file is None and 'sourceFile' in kwargs:
+            source_file = kwargs['sourceFile']
+
         if exclude_symlink_directories is not None:
-            pulumi.set(__self__, "exclude_symlink_directories", exclude_symlink_directories)
+            _setter("exclude_symlink_directories", exclude_symlink_directories)
         if excludes is not None:
-            pulumi.set(__self__, "excludes", excludes)
+            _setter("excludes", excludes)
         if output_base64sha256 is not None:
-            pulumi.set(__self__, "output_base64sha256", output_base64sha256)
+            _setter("output_base64sha256", output_base64sha256)
         if output_base64sha512 is not None:
-            pulumi.set(__self__, "output_base64sha512", output_base64sha512)
+            _setter("output_base64sha512", output_base64sha512)
         if output_file_mode is not None:
-            pulumi.set(__self__, "output_file_mode", output_file_mode)
+            _setter("output_file_mode", output_file_mode)
         if output_md5 is not None:
-            pulumi.set(__self__, "output_md5", output_md5)
+            _setter("output_md5", output_md5)
         if output_path is not None:
-            pulumi.set(__self__, "output_path", output_path)
+            _setter("output_path", output_path)
         if output_sha is not None:
-            pulumi.set(__self__, "output_sha", output_sha)
+            _setter("output_sha", output_sha)
         if output_sha256 is not None:
-            pulumi.set(__self__, "output_sha256", output_sha256)
+            _setter("output_sha256", output_sha256)
         if output_sha512 is not None:
-            pulumi.set(__self__, "output_sha512", output_sha512)
+            _setter("output_sha512", output_sha512)
         if output_size is not None:
-            pulumi.set(__self__, "output_size", output_size)
+            _setter("output_size", output_size)
         if source_content is not None:
-            pulumi.set(__self__, "source_content", source_content)
+            _setter("source_content", source_content)
         if source_content_filename is not None:
-            pulumi.set(__self__, "source_content_filename", source_content_filename)
+            _setter("source_content_filename", source_content_filename)
         if source_dir is not None:
-            pulumi.set(__self__, "source_dir", source_dir)
+            _setter("source_dir", source_dir)
         if source_file is not None:
-            pulumi.set(__self__, "source_file", source_file)
+            _setter("source_file", source_file)
         if sources is not None:
-            pulumi.set(__self__, "sources", sources)
+            _setter("sources", sources)
         if type is not None:
-            pulumi.set(__self__, "type", type)
+            _setter("type", type)
 
     @property
     @pulumi.getter(name="excludeSymlinkDirectories")
@@ -510,6 +628,10 @@ class File(pulumi.CustomResource):
         if resource_args is not None:
             __self__._internal_init(resource_name, opts, **resource_args.__dict__)
         else:
+            kwargs = kwargs or {}
+            def _setter(key, value):
+                kwargs[key] = value
+            FileArgs._configure(_setter, **kwargs)
             __self__._internal_init(resource_name, *args, **kwargs)
 
     def _internal_init(__self__,
