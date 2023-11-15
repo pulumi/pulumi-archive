@@ -10,7 +10,6 @@ import (
 	"errors"
 	"github.com/pulumi/pulumi-archive/sdk/go/archive/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // **NOTE**: This resource is deprecated, use data source instead.
@@ -236,12 +235,6 @@ func (i *File) ToFileOutputWithContext(ctx context.Context) FileOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(FileOutput)
 }
 
-func (i *File) ToOutput(ctx context.Context) pulumix.Output[*File] {
-	return pulumix.Output[*File]{
-		OutputState: i.ToFileOutputWithContext(ctx).OutputState,
-	}
-}
-
 // FileArrayInput is an input type that accepts FileArray and FileArrayOutput values.
 // You can construct a concrete instance of `FileArrayInput` via:
 //
@@ -265,12 +258,6 @@ func (i FileArray) ToFileArrayOutput() FileArrayOutput {
 
 func (i FileArray) ToFileArrayOutputWithContext(ctx context.Context) FileArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(FileArrayOutput)
-}
-
-func (i FileArray) ToOutput(ctx context.Context) pulumix.Output[[]*File] {
-	return pulumix.Output[[]*File]{
-		OutputState: i.ToFileArrayOutputWithContext(ctx).OutputState,
-	}
 }
 
 // FileMapInput is an input type that accepts FileMap and FileMapOutput values.
@@ -298,12 +285,6 @@ func (i FileMap) ToFileMapOutputWithContext(ctx context.Context) FileMapOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(FileMapOutput)
 }
 
-func (i FileMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*File] {
-	return pulumix.Output[map[string]*File]{
-		OutputState: i.ToFileMapOutputWithContext(ctx).OutputState,
-	}
-}
-
 type FileOutput struct{ *pulumi.OutputState }
 
 func (FileOutput) ElementType() reflect.Type {
@@ -316,12 +297,6 @@ func (o FileOutput) ToFileOutput() FileOutput {
 
 func (o FileOutput) ToFileOutputWithContext(ctx context.Context) FileOutput {
 	return o
-}
-
-func (o FileOutput) ToOutput(ctx context.Context) pulumix.Output[*File] {
-	return pulumix.Output[*File]{
-		OutputState: o.OutputState,
-	}
 }
 
 // Boolean flag indicating whether symbolically linked directories should be excluded during the creation of the archive. Defaults to false.
@@ -423,12 +398,6 @@ func (o FileArrayOutput) ToFileArrayOutputWithContext(ctx context.Context) FileA
 	return o
 }
 
-func (o FileArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*File] {
-	return pulumix.Output[[]*File]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o FileArrayOutput) Index(i pulumi.IntInput) FileOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) *File {
 		return vs[0].([]*File)[vs[1].(int)]
@@ -447,12 +416,6 @@ func (o FileMapOutput) ToFileMapOutput() FileMapOutput {
 
 func (o FileMapOutput) ToFileMapOutputWithContext(ctx context.Context) FileMapOutput {
 	return o
-}
-
-func (o FileMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*File] {
-	return pulumix.Output[map[string]*File]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o FileMapOutput) MapIndex(k pulumi.StringInput) FileOutput {
