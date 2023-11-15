@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-archive/sdk/go/archive/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 var _ = internal.GetEnvOrDefault
@@ -51,12 +50,6 @@ func (i FileSourceArgs) ToFileSourceOutputWithContext(ctx context.Context) FileS
 	return pulumi.ToOutputWithContext(ctx, i).(FileSourceOutput)
 }
 
-func (i FileSourceArgs) ToOutput(ctx context.Context) pulumix.Output[FileSource] {
-	return pulumix.Output[FileSource]{
-		OutputState: i.ToFileSourceOutputWithContext(ctx).OutputState,
-	}
-}
-
 // FileSourceArrayInput is an input type that accepts FileSourceArray and FileSourceArrayOutput values.
 // You can construct a concrete instance of `FileSourceArrayInput` via:
 //
@@ -82,12 +75,6 @@ func (i FileSourceArray) ToFileSourceArrayOutputWithContext(ctx context.Context)
 	return pulumi.ToOutputWithContext(ctx, i).(FileSourceArrayOutput)
 }
 
-func (i FileSourceArray) ToOutput(ctx context.Context) pulumix.Output[[]FileSource] {
-	return pulumix.Output[[]FileSource]{
-		OutputState: i.ToFileSourceArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type FileSourceOutput struct{ *pulumi.OutputState }
 
 func (FileSourceOutput) ElementType() reflect.Type {
@@ -100,12 +87,6 @@ func (o FileSourceOutput) ToFileSourceOutput() FileSourceOutput {
 
 func (o FileSourceOutput) ToFileSourceOutputWithContext(ctx context.Context) FileSourceOutput {
 	return o
-}
-
-func (o FileSourceOutput) ToOutput(ctx context.Context) pulumix.Output[FileSource] {
-	return pulumix.Output[FileSource]{
-		OutputState: o.OutputState,
-	}
 }
 
 // Add this content to the archive with `filename` as the filename.
@@ -130,12 +111,6 @@ func (o FileSourceArrayOutput) ToFileSourceArrayOutput() FileSourceArrayOutput {
 
 func (o FileSourceArrayOutput) ToFileSourceArrayOutputWithContext(ctx context.Context) FileSourceArrayOutput {
 	return o
-}
-
-func (o FileSourceArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]FileSource] {
-	return pulumix.Output[[]FileSource]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o FileSourceArrayOutput) Index(i pulumi.IntInput) FileSourceOutput {
@@ -181,12 +156,6 @@ func (i GetFileSourceArgs) ToGetFileSourceOutputWithContext(ctx context.Context)
 	return pulumi.ToOutputWithContext(ctx, i).(GetFileSourceOutput)
 }
 
-func (i GetFileSourceArgs) ToOutput(ctx context.Context) pulumix.Output[GetFileSource] {
-	return pulumix.Output[GetFileSource]{
-		OutputState: i.ToGetFileSourceOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetFileSourceArrayInput is an input type that accepts GetFileSourceArray and GetFileSourceArrayOutput values.
 // You can construct a concrete instance of `GetFileSourceArrayInput` via:
 //
@@ -212,12 +181,6 @@ func (i GetFileSourceArray) ToGetFileSourceArrayOutputWithContext(ctx context.Co
 	return pulumi.ToOutputWithContext(ctx, i).(GetFileSourceArrayOutput)
 }
 
-func (i GetFileSourceArray) ToOutput(ctx context.Context) pulumix.Output[[]GetFileSource] {
-	return pulumix.Output[[]GetFileSource]{
-		OutputState: i.ToGetFileSourceArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetFileSourceOutput struct{ *pulumi.OutputState }
 
 func (GetFileSourceOutput) ElementType() reflect.Type {
@@ -230,12 +193,6 @@ func (o GetFileSourceOutput) ToGetFileSourceOutput() GetFileSourceOutput {
 
 func (o GetFileSourceOutput) ToGetFileSourceOutputWithContext(ctx context.Context) GetFileSourceOutput {
 	return o
-}
-
-func (o GetFileSourceOutput) ToOutput(ctx context.Context) pulumix.Output[GetFileSource] {
-	return pulumix.Output[GetFileSource]{
-		OutputState: o.OutputState,
-	}
 }
 
 // Add this content to the archive with `filename` as the filename.
@@ -260,12 +217,6 @@ func (o GetFileSourceArrayOutput) ToGetFileSourceArrayOutput() GetFileSourceArra
 
 func (o GetFileSourceArrayOutput) ToGetFileSourceArrayOutputWithContext(ctx context.Context) GetFileSourceArrayOutput {
 	return o
-}
-
-func (o GetFileSourceArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetFileSource] {
-	return pulumix.Output[[]GetFileSource]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetFileSourceArrayOutput) Index(i pulumi.IntInput) GetFileSourceOutput {
