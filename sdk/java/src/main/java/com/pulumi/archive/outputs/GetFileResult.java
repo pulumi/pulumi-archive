@@ -381,26 +381,26 @@ public final class GetFileResult {
             return this;
         }
         public GetFileResult build() {
-            final var o = new GetFileResult();
-            o.excludeSymlinkDirectories = excludeSymlinkDirectories;
-            o.excludes = excludes;
-            o.id = id;
-            o.outputBase64sha256 = outputBase64sha256;
-            o.outputBase64sha512 = outputBase64sha512;
-            o.outputFileMode = outputFileMode;
-            o.outputMd5 = outputMd5;
-            o.outputPath = outputPath;
-            o.outputSha = outputSha;
-            o.outputSha256 = outputSha256;
-            o.outputSha512 = outputSha512;
-            o.outputSize = outputSize;
-            o.sourceContent = sourceContent;
-            o.sourceContentFilename = sourceContentFilename;
-            o.sourceDir = sourceDir;
-            o.sourceFile = sourceFile;
-            o.sources = sources;
-            o.type = type;
-            return o;
+            final var _resultValue = new GetFileResult();
+            _resultValue.excludeSymlinkDirectories = excludeSymlinkDirectories;
+            _resultValue.excludes = excludes;
+            _resultValue.id = id;
+            _resultValue.outputBase64sha256 = outputBase64sha256;
+            _resultValue.outputBase64sha512 = outputBase64sha512;
+            _resultValue.outputFileMode = outputFileMode;
+            _resultValue.outputMd5 = outputMd5;
+            _resultValue.outputPath = outputPath;
+            _resultValue.outputSha = outputSha;
+            _resultValue.outputSha256 = outputSha256;
+            _resultValue.outputSha512 = outputSha512;
+            _resultValue.outputSize = outputSize;
+            _resultValue.sourceContent = sourceContent;
+            _resultValue.sourceContentFilename = sourceContentFilename;
+            _resultValue.sourceDir = sourceDir;
+            _resultValue.sourceFile = sourceFile;
+            _resultValue.sources = sources;
+            _resultValue.type = type;
+            return _resultValue;
         }
     }
 }
