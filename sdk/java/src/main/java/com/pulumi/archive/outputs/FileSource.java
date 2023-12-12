@@ -65,10 +65,10 @@ public final class FileSource {
             return this;
         }
         public FileSource build() {
-            final var o = new FileSource();
-            o.content = content;
-            o.filename = filename;
-            return o;
+            final var _resultValue = new FileSource();
+            _resultValue.content = content;
+            _resultValue.filename = filename;
+            return _resultValue;
         }
     }
 }
