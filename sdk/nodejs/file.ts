@@ -38,7 +38,7 @@ export class File extends pulumi.CustomResource {
     }
 
     /**
-     * Boolean flag indicating whether symbolically linked directories should be excluded during the creation of the archive. Defaults to false.
+     * Boolean flag indicating whether symbolically linked directories should be excluded during the creation of the archive. Defaults to `false`.
      */
     public readonly excludeSymlinkDirectories!: pulumi.Output<boolean | undefined>;
     /**
@@ -172,7 +172,7 @@ export class File extends pulumi.CustomResource {
  */
 export interface FileState {
     /**
-     * Boolean flag indicating whether symbolically linked directories should be excluded during the creation of the archive. Defaults to false.
+     * Boolean flag indicating whether symbolically linked directories should be excluded during the creation of the archive. Defaults to `false`.
      */
     excludeSymlinkDirectories?: pulumi.Input<boolean>;
     /**
@@ -246,7 +246,7 @@ export interface FileState {
  */
 export interface FileArgs {
     /**
-     * Boolean flag indicating whether symbolically linked directories should be excluded during the creation of the archive. Defaults to false.
+     * Boolean flag indicating whether symbolically linked directories should be excluded during the creation of the archive. Defaults to `false`.
      */
     excludeSymlinkDirectories?: pulumi.Input<boolean>;
     /**

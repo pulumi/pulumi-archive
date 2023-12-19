@@ -16,7 +16,7 @@ import javax.annotation.Nullable;
 @CustomType
 public final class GetFileResult {
     /**
-     * @return Boolean flag indicating whether symbolically linked directories should be excluded during the creation of the archive. Defaults to false.
+     * @return Boolean flag indicating whether symbolically linked directories should be excluded during the creation of the archive. Defaults to `false`.
      * 
      */
     private @Nullable Boolean excludeSymlinkDirectories;
@@ -108,7 +108,7 @@ public final class GetFileResult {
 
     private GetFileResult() {}
     /**
-     * @return Boolean flag indicating whether symbolically linked directories should be excluded during the creation of the archive. Defaults to false.
+     * @return Boolean flag indicating whether symbolically linked directories should be excluded during the creation of the archive. Defaults to `false`.
      * 
      */
     public Optional<Boolean> excludeSymlinkDirectories() {

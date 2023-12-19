@@ -11,9 +11,169 @@ namespace Pulumi.Archive
 {
     public static class GetFile
     {
+        /// <summary>
+        /// Generates an archive from content, a file, or directory of files.
+        /// 
+        /// {{% examples %}}
+        /// ## Example Usage
+        /// {{% example %}}
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Archive = Pulumi.Archive;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var init = Archive.GetFile.Invoke(new()
+        ///     {
+        ///         OutputPath = $"{path.Module}/files/init.zip",
+        ///         SourceFile = $"{path.Module}/init.tpl",
+        ///         Type = "zip",
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Archive = Pulumi.Archive;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var dotfiles = Archive.GetFile.Invoke(new()
+        ///     {
+        ///         Type = "zip",
+        ///         OutputPath = $"{path.Module}/files/dotfiles.zip",
+        ///         Excludes = new[]
+        ///         {
+        ///             $"{path.Module}/unwanted.zip",
+        ///         },
+        ///         Sources = new[]
+        ///         {
+        ///             new Archive.Inputs.GetFileSourceInputArgs
+        ///             {
+        ///                 Content = data.Template_file.Vimrc.Rendered,
+        ///                 Filename = ".vimrc",
+        ///             },
+        ///             new Archive.Inputs.GetFileSourceInputArgs
+        ///             {
+        ///                 Content = data.Template_file.Ssh_config.Rendered,
+        ///                 Filename = ".ssh/config",
+        ///             },
+        ///         },
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Archive = Pulumi.Archive;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var lambdaMyFunction = Archive.GetFile.Invoke(new()
+        ///     {
+        ///         OutputFileMode = "0666",
+        ///         OutputPath = $"{path.Module}/files/lambda-my-function.js.zip",
+        ///         SourceFile = $"{path.Module}/../lambda/my-function/index.js",
+        ///         Type = "zip",
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// {{% /example %}}
+        /// {{% /examples %}}
+        /// </summary>
         public static Task<GetFileResult> InvokeAsync(GetFileArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetFileResult>("archive:index/getFile:getFile", args ?? new GetFileArgs(), options.WithDefaults());
 
+        /// <summary>
+        /// Generates an archive from content, a file, or directory of files.
+        /// 
+        /// {{% examples %}}
+        /// ## Example Usage
+        /// {{% example %}}
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Archive = Pulumi.Archive;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var init = Archive.GetFile.Invoke(new()
+        ///     {
+        ///         OutputPath = $"{path.Module}/files/init.zip",
+        ///         SourceFile = $"{path.Module}/init.tpl",
+        ///         Type = "zip",
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Archive = Pulumi.Archive;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var dotfiles = Archive.GetFile.Invoke(new()
+        ///     {
+        ///         Type = "zip",
+        ///         OutputPath = $"{path.Module}/files/dotfiles.zip",
+        ///         Excludes = new[]
+        ///         {
+        ///             $"{path.Module}/unwanted.zip",
+        ///         },
+        ///         Sources = new[]
+        ///         {
+        ///             new Archive.Inputs.GetFileSourceInputArgs
+        ///             {
+        ///                 Content = data.Template_file.Vimrc.Rendered,
+        ///                 Filename = ".vimrc",
+        ///             },
+        ///             new Archive.Inputs.GetFileSourceInputArgs
+        ///             {
+        ///                 Content = data.Template_file.Ssh_config.Rendered,
+        ///                 Filename = ".ssh/config",
+        ///             },
+        ///         },
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Archive = Pulumi.Archive;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var lambdaMyFunction = Archive.GetFile.Invoke(new()
+        ///     {
+        ///         OutputFileMode = "0666",
+        ///         OutputPath = $"{path.Module}/files/lambda-my-function.js.zip",
+        ///         SourceFile = $"{path.Module}/../lambda/my-function/index.js",
+        ///         Type = "zip",
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// {{% /example %}}
+        /// {{% /examples %}}
+        /// </summary>
         public static Output<GetFileResult> Invoke(GetFileInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetFileResult>("archive:index/getFile:getFile", args ?? new GetFileInvokeArgs(), options.WithDefaults());
     }
@@ -22,7 +182,7 @@ namespace Pulumi.Archive
     public sealed class GetFileArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
-        /// Boolean flag indicating whether symbolically linked directories should be excluded during the creation of the archive. Defaults to false.
+        /// Boolean flag indicating whether symbolically linked directories should be excluded during the creation of the archive. Defaults to `false`.
         /// </summary>
         [Input("excludeSymlinkDirectories")]
         public bool? ExcludeSymlinkDirectories { get; set; }
@@ -102,7 +262,7 @@ namespace Pulumi.Archive
     public sealed class GetFileInvokeArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
-        /// Boolean flag indicating whether symbolically linked directories should be excluded during the creation of the archive. Defaults to false.
+        /// Boolean flag indicating whether symbolically linked directories should be excluded during the creation of the archive. Defaults to `false`.
         /// </summary>
         [Input("excludeSymlinkDirectories")]
         public Input<bool>? ExcludeSymlinkDirectories { get; set; }
@@ -184,7 +344,7 @@ namespace Pulumi.Archive
     public sealed class GetFileResult
     {
         /// <summary>
-        /// Boolean flag indicating whether symbolically linked directories should be excluded during the creation of the archive. Defaults to false.
+        /// Boolean flag indicating whether symbolically linked directories should be excluded during the creation of the archive. Defaults to `false`.
         /// </summary>
         public readonly bool? ExcludeSymlinkDirectories;
         /// <summary>

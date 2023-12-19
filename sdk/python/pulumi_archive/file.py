@@ -30,7 +30,7 @@ class FileArgs:
         The set of arguments for constructing a File resource.
         :param pulumi.Input[str] output_path: The output of the archive file.
         :param pulumi.Input[str] type: The type of archive to generate. NOTE: `zip` is supported.
-        :param pulumi.Input[bool] exclude_symlink_directories: Boolean flag indicating whether symbolically linked directories should be excluded during the creation of the archive. Defaults to false.
+        :param pulumi.Input[bool] exclude_symlink_directories: Boolean flag indicating whether symbolically linked directories should be excluded during the creation of the archive. Defaults to `false`.
         :param pulumi.Input[Sequence[pulumi.Input[str]]] excludes: Specify files to ignore when reading the `source_dir`.
         :param pulumi.Input[str] output_file_mode: String that specifies the octal file mode for all archived files. For example: `"0666"`. Setting this will ensure that cross platform usage of this module will not vary the modes of archived files (and ultimately checksums) resulting in more deterministic behavior.
         :param pulumi.Input[str] source_content: Add only this content to the archive with `source_content_filename` as the filename. One and only one of `source`, `source_content_filename` (with `source_content`), `source_file`, or `source_dir` must be specified.
@@ -86,7 +86,7 @@ class FileArgs:
     @pulumi.getter(name="excludeSymlinkDirectories")
     def exclude_symlink_directories(self) -> Optional[pulumi.Input[bool]]:
         """
-        Boolean flag indicating whether symbolically linked directories should be excluded during the creation of the archive. Defaults to false.
+        Boolean flag indicating whether symbolically linked directories should be excluded during the creation of the archive. Defaults to `false`.
         """
         return pulumi.get(self, "exclude_symlink_directories")
 
@@ -201,7 +201,7 @@ class _FileState:
                  type: Optional[pulumi.Input[str]] = None):
         """
         Input properties used for looking up and filtering File resources.
-        :param pulumi.Input[bool] exclude_symlink_directories: Boolean flag indicating whether symbolically linked directories should be excluded during the creation of the archive. Defaults to false.
+        :param pulumi.Input[bool] exclude_symlink_directories: Boolean flag indicating whether symbolically linked directories should be excluded during the creation of the archive. Defaults to `false`.
         :param pulumi.Input[Sequence[pulumi.Input[str]]] excludes: Specify files to ignore when reading the `source_dir`.
         :param pulumi.Input[str] output_base64sha256: Base64 Encoded SHA256 checksum of output file
         :param pulumi.Input[str] output_base64sha512: Base64 Encoded SHA512 checksum of output file
@@ -258,7 +258,7 @@ class _FileState:
     @pulumi.getter(name="excludeSymlinkDirectories")
     def exclude_symlink_directories(self) -> Optional[pulumi.Input[bool]]:
         """
-        Boolean flag indicating whether symbolically linked directories should be excluded during the creation of the archive. Defaults to false.
+        Boolean flag indicating whether symbolically linked directories should be excluded during the creation of the archive. Defaults to `false`.
         """
         return pulumi.get(self, "exclude_symlink_directories")
 
@@ -480,7 +480,7 @@ class File(pulumi.CustomResource):
 
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[bool] exclude_symlink_directories: Boolean flag indicating whether symbolically linked directories should be excluded during the creation of the archive. Defaults to false.
+        :param pulumi.Input[bool] exclude_symlink_directories: Boolean flag indicating whether symbolically linked directories should be excluded during the creation of the archive. Defaults to `false`.
         :param pulumi.Input[Sequence[pulumi.Input[str]]] excludes: Specify files to ignore when reading the `source_dir`.
         :param pulumi.Input[str] output_file_mode: String that specifies the octal file mode for all archived files. For example: `"0666"`. Setting this will ensure that cross platform usage of this module will not vary the modes of archived files (and ultimately checksums) resulting in more deterministic behavior.
         :param pulumi.Input[str] output_path: The output of the archive file.
@@ -589,7 +589,7 @@ class File(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[bool] exclude_symlink_directories: Boolean flag indicating whether symbolically linked directories should be excluded during the creation of the archive. Defaults to false.
+        :param pulumi.Input[bool] exclude_symlink_directories: Boolean flag indicating whether symbolically linked directories should be excluded during the creation of the archive. Defaults to `false`.
         :param pulumi.Input[Sequence[pulumi.Input[str]]] excludes: Specify files to ignore when reading the `source_dir`.
         :param pulumi.Input[str] output_base64sha256: Base64 Encoded SHA256 checksum of output file
         :param pulumi.Input[str] output_base64sha512: Base64 Encoded SHA512 checksum of output file
@@ -634,7 +634,7 @@ class File(pulumi.CustomResource):
     @pulumi.getter(name="excludeSymlinkDirectories")
     def exclude_symlink_directories(self) -> pulumi.Output[Optional[bool]]:
         """
-        Boolean flag indicating whether symbolically linked directories should be excluded during the creation of the archive. Defaults to false.
+        Boolean flag indicating whether symbolically linked directories should be excluded during the creation of the archive. Defaults to `false`.
         """
         return pulumi.get(self, "exclude_symlink_directories")
 

@@ -16,7 +16,7 @@ import (
 type File struct {
 	pulumi.CustomResourceState
 
-	// Boolean flag indicating whether symbolically linked directories should be excluded during the creation of the archive. Defaults to false.
+	// Boolean flag indicating whether symbolically linked directories should be excluded during the creation of the archive. Defaults to `false`.
 	ExcludeSymlinkDirectories pulumi.BoolPtrOutput `pulumi:"excludeSymlinkDirectories"`
 	// Specify files to ignore when reading the `sourceDir`.
 	Excludes pulumi.StringArrayOutput `pulumi:"excludes"`
@@ -88,7 +88,7 @@ func GetFile(ctx *pulumi.Context,
 
 // Input properties used for looking up and filtering File resources.
 type fileState struct {
-	// Boolean flag indicating whether symbolically linked directories should be excluded during the creation of the archive. Defaults to false.
+	// Boolean flag indicating whether symbolically linked directories should be excluded during the creation of the archive. Defaults to `false`.
 	ExcludeSymlinkDirectories *bool `pulumi:"excludeSymlinkDirectories"`
 	// Specify files to ignore when reading the `sourceDir`.
 	Excludes []string `pulumi:"excludes"`
@@ -125,7 +125,7 @@ type fileState struct {
 }
 
 type FileState struct {
-	// Boolean flag indicating whether symbolically linked directories should be excluded during the creation of the archive. Defaults to false.
+	// Boolean flag indicating whether symbolically linked directories should be excluded during the creation of the archive. Defaults to `false`.
 	ExcludeSymlinkDirectories pulumi.BoolPtrInput
 	// Specify files to ignore when reading the `sourceDir`.
 	Excludes pulumi.StringArrayInput
@@ -166,7 +166,7 @@ func (FileState) ElementType() reflect.Type {
 }
 
 type fileArgs struct {
-	// Boolean flag indicating whether symbolically linked directories should be excluded during the creation of the archive. Defaults to false.
+	// Boolean flag indicating whether symbolically linked directories should be excluded during the creation of the archive. Defaults to `false`.
 	ExcludeSymlinkDirectories *bool `pulumi:"excludeSymlinkDirectories"`
 	// Specify files to ignore when reading the `sourceDir`.
 	Excludes []string `pulumi:"excludes"`
@@ -190,7 +190,7 @@ type fileArgs struct {
 
 // The set of arguments for constructing a File resource.
 type FileArgs struct {
-	// Boolean flag indicating whether symbolically linked directories should be excluded during the creation of the archive. Defaults to false.
+	// Boolean flag indicating whether symbolically linked directories should be excluded during the creation of the archive. Defaults to `false`.
 	ExcludeSymlinkDirectories pulumi.BoolPtrInput
 	// Specify files to ignore when reading the `sourceDir`.
 	Excludes pulumi.StringArrayInput
@@ -299,7 +299,7 @@ func (o FileOutput) ToFileOutputWithContext(ctx context.Context) FileOutput {
 	return o
 }
 
-// Boolean flag indicating whether symbolically linked directories should be excluded during the creation of the archive. Defaults to false.
+// Boolean flag indicating whether symbolically linked directories should be excluded during the creation of the archive. Defaults to `false`.
 func (o FileOutput) ExcludeSymlinkDirectories() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v *File) pulumi.BoolPtrOutput { return v.ExcludeSymlinkDirectories }).(pulumi.BoolPtrOutput)
 }

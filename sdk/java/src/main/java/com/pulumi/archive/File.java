@@ -25,14 +25,14 @@ import javax.annotation.Nullable;
 @ResourceType(type="archive:index/file:File")
 public class File extends com.pulumi.resources.CustomResource {
     /**
-     * Boolean flag indicating whether symbolically linked directories should be excluded during the creation of the archive. Defaults to false.
+     * Boolean flag indicating whether symbolically linked directories should be excluded during the creation of the archive. Defaults to `false`.
      * 
      */
     @Export(name="excludeSymlinkDirectories", refs={Boolean.class}, tree="[0]")
     private Output</* @Nullable */ Boolean> excludeSymlinkDirectories;
 
     /**
-     * @return Boolean flag indicating whether symbolically linked directories should be excluded during the creation of the archive. Defaults to false.
+     * @return Boolean flag indicating whether symbolically linked directories should be excluded during the creation of the archive. Defaults to `false`.
      * 
      */
     public Output<Optional<Boolean>> excludeSymlinkDirectories() {
