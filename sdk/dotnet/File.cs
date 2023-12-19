@@ -16,7 +16,7 @@ namespace Pulumi.Archive
     public partial class File : global::Pulumi.CustomResource
     {
         /// <summary>
-        /// Boolean flag indicating whether symbolically linked directories should be excluded during the creation of the archive. Defaults to false.
+        /// Boolean flag indicating whether symbolically linked directories should be excluded during the creation of the archive. Defaults to `false`.
         /// </summary>
         [Output("excludeSymlinkDirectories")]
         public Output<bool?> ExcludeSymlinkDirectories { get; private set; } = null!;
@@ -164,7 +164,7 @@ namespace Pulumi.Archive
     public sealed class FileArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// Boolean flag indicating whether symbolically linked directories should be excluded during the creation of the archive. Defaults to false.
+        /// Boolean flag indicating whether symbolically linked directories should be excluded during the creation of the archive. Defaults to `false`.
         /// </summary>
         [Input("excludeSymlinkDirectories")]
         public Input<bool>? ExcludeSymlinkDirectories { get; set; }
@@ -244,7 +244,7 @@ namespace Pulumi.Archive
     public sealed class FileState : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// Boolean flag indicating whether symbolically linked directories should be excluded during the creation of the archive. Defaults to false.
+        /// Boolean flag indicating whether symbolically linked directories should be excluded during the creation of the archive. Defaults to `false`.
         /// </summary>
         [Input("excludeSymlinkDirectories")]
         public Input<bool>? ExcludeSymlinkDirectories { get; set; }

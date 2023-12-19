@@ -83,7 +83,7 @@ class GetFileResult:
     @pulumi.getter(name="excludeSymlinkDirectories")
     def exclude_symlink_directories(self) -> Optional[bool]:
         """
-        Boolean flag indicating whether symbolically linked directories should be excluded during the creation of the archive. Defaults to false.
+        Boolean flag indicating whether symbolically linked directories should be excluded during the creation of the archive. Defaults to `false`.
         """
         return pulumi.get(self, "exclude_symlink_directories")
 
@@ -262,9 +262,50 @@ def get_file(exclude_symlink_directories: Optional[bool] = None,
              type: Optional[str] = None,
              opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetFileResult:
     """
-    Use this data source to access information about an existing resource.
+    Generates an archive from content, a file, or directory of files.
 
-    :param bool exclude_symlink_directories: Boolean flag indicating whether symbolically linked directories should be excluded during the creation of the archive. Defaults to false.
+    ## Example Usage
+
+    ```python
+    import pulumi
+    import pulumi_archive as archive
+
+    init = archive.get_file(output_path=f"{path['module']}/files/init.zip",
+        source_file=f"{path['module']}/init.tpl",
+        type="zip")
+    ```
+
+    ```python
+    import pulumi
+    import pulumi_archive as archive
+
+    dotfiles = archive.get_file(type="zip",
+        output_path=f"{path['module']}/files/dotfiles.zip",
+        excludes=[f"{path['module']}/unwanted.zip"],
+        sources=[
+            archive.GetFileSourceArgs(
+                content=data["template_file"]["vimrc"]["rendered"],
+                filename=".vimrc",
+            ),
+            archive.GetFileSourceArgs(
+                content=data["template_file"]["ssh_config"]["rendered"],
+                filename=".ssh/config",
+            ),
+        ])
+    ```
+
+    ```python
+    import pulumi
+    import pulumi_archive as archive
+
+    lambda_my_function = archive.get_file(output_file_mode="0666",
+        output_path=f"{path['module']}/files/lambda-my-function.js.zip",
+        source_file=f"{path['module']}/../lambda/my-function/index.js",
+        type="zip")
+    ```
+
+
+    :param bool exclude_symlink_directories: Boolean flag indicating whether symbolically linked directories should be excluded during the creation of the archive. Defaults to `false`.
     :param Sequence[str] excludes: Specify files to ignore when reading the `source_dir`.
     :param str output_file_mode: String that specifies the octal file mode for all archived files. For example: `"0666"`. Setting this will ensure that cross platform usage of this module will not vary the modes of archived files (and ultimately checksums) resulting in more deterministic behavior.
     :param str output_path: The output of the archive file.
@@ -323,9 +364,50 @@ def get_file_output(exclude_symlink_directories: Optional[pulumi.Input[Optional[
                     type: Optional[pulumi.Input[str]] = None,
                     opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetFileResult]:
     """
-    Use this data source to access information about an existing resource.
+    Generates an archive from content, a file, or directory of files.
 
-    :param bool exclude_symlink_directories: Boolean flag indicating whether symbolically linked directories should be excluded during the creation of the archive. Defaults to false.
+    ## Example Usage
+
+    ```python
+    import pulumi
+    import pulumi_archive as archive
+
+    init = archive.get_file(output_path=f"{path['module']}/files/init.zip",
+        source_file=f"{path['module']}/init.tpl",
+        type="zip")
+    ```
+
+    ```python
+    import pulumi
+    import pulumi_archive as archive
+
+    dotfiles = archive.get_file(type="zip",
+        output_path=f"{path['module']}/files/dotfiles.zip",
+        excludes=[f"{path['module']}/unwanted.zip"],
+        sources=[
+            archive.GetFileSourceArgs(
+                content=data["template_file"]["vimrc"]["rendered"],
+                filename=".vimrc",
+            ),
+            archive.GetFileSourceArgs(
+                content=data["template_file"]["ssh_config"]["rendered"],
+                filename=".ssh/config",
+            ),
+        ])
+    ```
+
+    ```python
+    import pulumi
+    import pulumi_archive as archive
+
+    lambda_my_function = archive.get_file(output_file_mode="0666",
+        output_path=f"{path['module']}/files/lambda-my-function.js.zip",
+        source_file=f"{path['module']}/../lambda/my-function/index.js",
+        type="zip")
+    ```
+
+
+    :param bool exclude_symlink_directories: Boolean flag indicating whether symbolically linked directories should be excluded during the creation of the archive. Defaults to `false`.
     :param Sequence[str] excludes: Specify files to ignore when reading the `source_dir`.
     :param str output_file_mode: String that specifies the octal file mode for all archived files. For example: `"0666"`. Setting this will ensure that cross platform usage of this module will not vary the modes of archived files (and ultimately checksums) resulting in more deterministic behavior.
     :param str output_path: The output of the archive file.

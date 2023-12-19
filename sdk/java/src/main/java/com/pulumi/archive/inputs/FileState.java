@@ -20,14 +20,14 @@ public final class FileState extends com.pulumi.resources.ResourceArgs {
     public static final FileState Empty = new FileState();
 
     /**
-     * Boolean flag indicating whether symbolically linked directories should be excluded during the creation of the archive. Defaults to false.
+     * Boolean flag indicating whether symbolically linked directories should be excluded during the creation of the archive. Defaults to `false`.
      * 
      */
     @Import(name="excludeSymlinkDirectories")
     private @Nullable Output<Boolean> excludeSymlinkDirectories;
 
     /**
-     * @return Boolean flag indicating whether symbolically linked directories should be excluded during the creation of the archive. Defaults to false.
+     * @return Boolean flag indicating whether symbolically linked directories should be excluded during the creation of the archive. Defaults to `false`.
      * 
      */
     public Optional<Output<Boolean>> excludeSymlinkDirectories() {
@@ -315,7 +315,7 @@ public final class FileState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param excludeSymlinkDirectories Boolean flag indicating whether symbolically linked directories should be excluded during the creation of the archive. Defaults to false.
+         * @param excludeSymlinkDirectories Boolean flag indicating whether symbolically linked directories should be excluded during the creation of the archive. Defaults to `false`.
          * 
          * @return builder
          * 
@@ -326,7 +326,7 @@ public final class FileState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param excludeSymlinkDirectories Boolean flag indicating whether symbolically linked directories should be excluded during the creation of the archive. Defaults to false.
+         * @param excludeSymlinkDirectories Boolean flag indicating whether symbolically linked directories should be excluded during the creation of the archive. Defaults to `false`.
          * 
          * @return builder
          * 

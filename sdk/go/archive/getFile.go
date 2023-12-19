@@ -11,6 +11,106 @@ import (
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
+// Generates an archive from content, a file, or directory of files.
+//
+// ## Example Usage
+//
+// ```go
+// package main
+//
+// import (
+//
+//	"fmt"
+//
+//	"github.com/pulumi/pulumi-archive/sdk/go/archive"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+// )
+//
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := archive.LookupFile(ctx, &archive.LookupFileArgs{
+//				OutputPath: fmt.Sprintf("%v/files/init.zip", path.Module),
+//				SourceFile: pulumi.StringRef(fmt.Sprintf("%v/init.tpl", path.Module)),
+//				Type:       "zip",
+//			}, nil)
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
+// ```
+//
+// ```go
+// package main
+//
+// import (
+//
+//	"fmt"
+//
+//	"github.com/pulumi/pulumi-archive/sdk/go/archive"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+// )
+//
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := archive.LookupFile(ctx, &archive.LookupFileArgs{
+//				Type:       "zip",
+//				OutputPath: fmt.Sprintf("%v/files/dotfiles.zip", path.Module),
+//				Excludes: []string{
+//					fmt.Sprintf("%v/unwanted.zip", path.Module),
+//				},
+//				Sources: []archive.GetFileSource{
+//					{
+//						Content:  data.Template_file.Vimrc.Rendered,
+//						Filename: ".vimrc",
+//					},
+//					{
+//						Content:  data.Template_file.Ssh_config.Rendered,
+//						Filename: ".ssh/config",
+//					},
+//				},
+//			}, nil)
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
+// ```
+//
+// ```go
+// package main
+//
+// import (
+//
+//	"fmt"
+//
+//	"github.com/pulumi/pulumi-archive/sdk/go/archive"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+// )
+//
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := archive.LookupFile(ctx, &archive.LookupFileArgs{
+//				OutputFileMode: pulumi.StringRef("0666"),
+//				OutputPath:     fmt.Sprintf("%v/files/lambda-my-function.js.zip", path.Module),
+//				SourceFile:     pulumi.StringRef(fmt.Sprintf("%v/../lambda/my-function/index.js", path.Module)),
+//				Type:           "zip",
+//			}, nil)
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
+// ```
 func LookupFile(ctx *pulumi.Context, args *LookupFileArgs, opts ...pulumi.InvokeOption) (*LookupFileResult, error) {
 	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv LookupFileResult
@@ -23,7 +123,7 @@ func LookupFile(ctx *pulumi.Context, args *LookupFileArgs, opts ...pulumi.Invoke
 
 // A collection of arguments for invoking getFile.
 type LookupFileArgs struct {
-	// Boolean flag indicating whether symbolically linked directories should be excluded during the creation of the archive. Defaults to false.
+	// Boolean flag indicating whether symbolically linked directories should be excluded during the creation of the archive. Defaults to `false`.
 	ExcludeSymlinkDirectories *bool `pulumi:"excludeSymlinkDirectories"`
 	// Specify files to ignore when reading the `sourceDir`.
 	Excludes []string `pulumi:"excludes"`
@@ -47,7 +147,7 @@ type LookupFileArgs struct {
 
 // A collection of values returned by getFile.
 type LookupFileResult struct {
-	// Boolean flag indicating whether symbolically linked directories should be excluded during the creation of the archive. Defaults to false.
+	// Boolean flag indicating whether symbolically linked directories should be excluded during the creation of the archive. Defaults to `false`.
 	ExcludeSymlinkDirectories *bool `pulumi:"excludeSymlinkDirectories"`
 	// Specify files to ignore when reading the `sourceDir`.
 	Excludes []string `pulumi:"excludes"`
@@ -100,7 +200,7 @@ func LookupFileOutput(ctx *pulumi.Context, args LookupFileOutputArgs, opts ...pu
 
 // A collection of arguments for invoking getFile.
 type LookupFileOutputArgs struct {
-	// Boolean flag indicating whether symbolically linked directories should be excluded during the creation of the archive. Defaults to false.
+	// Boolean flag indicating whether symbolically linked directories should be excluded during the creation of the archive. Defaults to `false`.
 	ExcludeSymlinkDirectories pulumi.BoolPtrInput `pulumi:"excludeSymlinkDirectories"`
 	// Specify files to ignore when reading the `sourceDir`.
 	Excludes pulumi.StringArrayInput `pulumi:"excludes"`
@@ -141,7 +241,7 @@ func (o LookupFileResultOutput) ToLookupFileResultOutputWithContext(ctx context.
 	return o
 }
 
-// Boolean flag indicating whether symbolically linked directories should be excluded during the creation of the archive. Defaults to false.
+// Boolean flag indicating whether symbolically linked directories should be excluded during the creation of the archive. Defaults to `false`.
 func (o LookupFileResultOutput) ExcludeSymlinkDirectories() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v LookupFileResult) *bool { return v.ExcludeSymlinkDirectories }).(pulumi.BoolPtrOutput)
 }

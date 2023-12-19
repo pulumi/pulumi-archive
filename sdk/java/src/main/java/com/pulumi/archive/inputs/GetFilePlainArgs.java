@@ -18,14 +18,14 @@ public final class GetFilePlainArgs extends com.pulumi.resources.InvokeArgs {
     public static final GetFilePlainArgs Empty = new GetFilePlainArgs();
 
     /**
-     * Boolean flag indicating whether symbolically linked directories should be excluded during the creation of the archive. Defaults to false.
+     * Boolean flag indicating whether symbolically linked directories should be excluded during the creation of the archive. Defaults to `false`.
      * 
      */
     @Import(name="excludeSymlinkDirectories")
     private @Nullable Boolean excludeSymlinkDirectories;
 
     /**
-     * @return Boolean flag indicating whether symbolically linked directories should be excluded during the creation of the archive. Defaults to false.
+     * @return Boolean flag indicating whether symbolically linked directories should be excluded during the creation of the archive. Defaults to `false`.
      * 
      */
     public Optional<Boolean> excludeSymlinkDirectories() {
@@ -201,7 +201,7 @@ public final class GetFilePlainArgs extends com.pulumi.resources.InvokeArgs {
         }
 
         /**
-         * @param excludeSymlinkDirectories Boolean flag indicating whether symbolically linked directories should be excluded during the creation of the archive. Defaults to false.
+         * @param excludeSymlinkDirectories Boolean flag indicating whether symbolically linked directories should be excluded during the creation of the archive. Defaults to `false`.
          * 
          * @return builder
          * 
