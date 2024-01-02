@@ -4,6 +4,7 @@
 package com.pulumi.archive.inputs;
 
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.Objects;
 
@@ -90,8 +91,12 @@ public final class GetFileSource extends com.pulumi.resources.InvokeArgs {
         }
 
         public GetFileSource build() {
-            $.content = Objects.requireNonNull($.content, "expected parameter 'content' to be non-null");
-            $.filename = Objects.requireNonNull($.filename, "expected parameter 'filename' to be non-null");
+            if ($.content == null) {
+                throw new MissingRequiredPropertyException("GetFileSource", "content");
+            }
+            if ($.filename == null) {
+                throw new MissingRequiredPropertyException("GetFileSource", "filename");
+            }
             return $;
         }
     }

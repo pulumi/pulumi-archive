@@ -6,6 +6,7 @@ package com.pulumi.archive.inputs;
 import com.pulumi.archive.inputs.GetFileSourceArgs;
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.Boolean;
 import java.lang.String;
 import java.util.List;
@@ -432,8 +433,12 @@ public final class GetFileArgs extends com.pulumi.resources.InvokeArgs {
         }
 
         public GetFileArgs build() {
-            $.outputPath = Objects.requireNonNull($.outputPath, "expected parameter 'outputPath' to be non-null");
-            $.type = Objects.requireNonNull($.type, "expected parameter 'type' to be non-null");
+            if ($.outputPath == null) {
+                throw new MissingRequiredPropertyException("GetFileArgs", "outputPath");
+            }
+            if ($.type == null) {
+                throw new MissingRequiredPropertyException("GetFileArgs", "type");
+            }
             return $;
         }
     }

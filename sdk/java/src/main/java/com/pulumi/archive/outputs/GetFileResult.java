@@ -5,6 +5,7 @@ package com.pulumi.archive.outputs;
 
 import com.pulumi.archive.outputs.GetFileSource;
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.Boolean;
 import java.lang.Integer;
 import java.lang.String;
@@ -286,11 +287,13 @@ public final class GetFileResult {
 
         @CustomType.Setter
         public Builder excludeSymlinkDirectories(@Nullable Boolean excludeSymlinkDirectories) {
+
             this.excludeSymlinkDirectories = excludeSymlinkDirectories;
             return this;
         }
         @CustomType.Setter
         public Builder excludes(@Nullable List<String> excludes) {
+
             this.excludes = excludes;
             return this;
         }
@@ -299,76 +302,109 @@ public final class GetFileResult {
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetFileResult", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder outputBase64sha256(String outputBase64sha256) {
-            this.outputBase64sha256 = Objects.requireNonNull(outputBase64sha256);
+            if (outputBase64sha256 == null) {
+              throw new MissingRequiredPropertyException("GetFileResult", "outputBase64sha256");
+            }
+            this.outputBase64sha256 = outputBase64sha256;
             return this;
         }
         @CustomType.Setter
         public Builder outputBase64sha512(String outputBase64sha512) {
-            this.outputBase64sha512 = Objects.requireNonNull(outputBase64sha512);
+            if (outputBase64sha512 == null) {
+              throw new MissingRequiredPropertyException("GetFileResult", "outputBase64sha512");
+            }
+            this.outputBase64sha512 = outputBase64sha512;
             return this;
         }
         @CustomType.Setter
         public Builder outputFileMode(@Nullable String outputFileMode) {
+
             this.outputFileMode = outputFileMode;
             return this;
         }
         @CustomType.Setter
         public Builder outputMd5(String outputMd5) {
-            this.outputMd5 = Objects.requireNonNull(outputMd5);
+            if (outputMd5 == null) {
+              throw new MissingRequiredPropertyException("GetFileResult", "outputMd5");
+            }
+            this.outputMd5 = outputMd5;
             return this;
         }
         @CustomType.Setter
         public Builder outputPath(String outputPath) {
-            this.outputPath = Objects.requireNonNull(outputPath);
+            if (outputPath == null) {
+              throw new MissingRequiredPropertyException("GetFileResult", "outputPath");
+            }
+            this.outputPath = outputPath;
             return this;
         }
         @CustomType.Setter
         public Builder outputSha(String outputSha) {
-            this.outputSha = Objects.requireNonNull(outputSha);
+            if (outputSha == null) {
+              throw new MissingRequiredPropertyException("GetFileResult", "outputSha");
+            }
+            this.outputSha = outputSha;
             return this;
         }
         @CustomType.Setter
         public Builder outputSha256(String outputSha256) {
-            this.outputSha256 = Objects.requireNonNull(outputSha256);
+            if (outputSha256 == null) {
+              throw new MissingRequiredPropertyException("GetFileResult", "outputSha256");
+            }
+            this.outputSha256 = outputSha256;
             return this;
         }
         @CustomType.Setter
         public Builder outputSha512(String outputSha512) {
-            this.outputSha512 = Objects.requireNonNull(outputSha512);
+            if (outputSha512 == null) {
+              throw new MissingRequiredPropertyException("GetFileResult", "outputSha512");
+            }
+            this.outputSha512 = outputSha512;
             return this;
         }
         @CustomType.Setter
         public Builder outputSize(Integer outputSize) {
-            this.outputSize = Objects.requireNonNull(outputSize);
+            if (outputSize == null) {
+              throw new MissingRequiredPropertyException("GetFileResult", "outputSize");
+            }
+            this.outputSize = outputSize;
             return this;
         }
         @CustomType.Setter
         public Builder sourceContent(@Nullable String sourceContent) {
+
             this.sourceContent = sourceContent;
             return this;
         }
         @CustomType.Setter
         public Builder sourceContentFilename(@Nullable String sourceContentFilename) {
+
             this.sourceContentFilename = sourceContentFilename;
             return this;
         }
         @CustomType.Setter
         public Builder sourceDir(@Nullable String sourceDir) {
+
             this.sourceDir = sourceDir;
             return this;
         }
         @CustomType.Setter
         public Builder sourceFile(@Nullable String sourceFile) {
+
             this.sourceFile = sourceFile;
             return this;
         }
         @CustomType.Setter
         public Builder sources(@Nullable List<GetFileSource> sources) {
+
             this.sources = sources;
             return this;
         }
@@ -377,7 +413,10 @@ public final class GetFileResult {
         }
         @CustomType.Setter
         public Builder type(String type) {
-            this.type = Objects.requireNonNull(type);
+            if (type == null) {
+              throw new MissingRequiredPropertyException("GetFileResult", "type");
+            }
+            this.type = type;
             return this;
         }
         public GetFileResult build() {
