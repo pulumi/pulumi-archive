@@ -27,6 +27,7 @@
             }
         }
     },
+    "auto-settings": {},
     "renames": {
         "resources": {
             "archive:index/file:File": "archive_file"
