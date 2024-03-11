@@ -266,6 +266,7 @@ def get_file(exclude_symlink_directories: Optional[bool] = None,
 
     ## Example Usage
 
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_archive as archive
@@ -274,7 +275,9 @@ def get_file(exclude_symlink_directories: Optional[bool] = None,
         source_file=f"{path['module']}/init.tpl",
         type="zip")
     ```
+    <!--End PulumiCodeChooser -->
 
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_archive as archive
@@ -293,7 +296,9 @@ def get_file(exclude_symlink_directories: Optional[bool] = None,
             ),
         ])
     ```
+    <!--End PulumiCodeChooser -->
 
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_archive as archive
@@ -303,6 +308,7 @@ def get_file(exclude_symlink_directories: Optional[bool] = None,
         source_file=f"{path['module']}/../lambda/my-function/index.js",
         type="zip")
     ```
+    <!--End PulumiCodeChooser -->
 
 
     :param bool exclude_symlink_directories: Boolean flag indicating whether symbolically linked directories should be excluded during the creation of the archive. Defaults to `false`.
@@ -368,6 +374,7 @@ def get_file_output(exclude_symlink_directories: Optional[pulumi.Input[Optional[
 
     ## Example Usage
 
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_archive as archive
@@ -376,7 +383,9 @@ def get_file_output(exclude_symlink_directories: Optional[pulumi.Input[Optional[
         source_file=f"{path['module']}/init.tpl",
         type="zip")
     ```
+    <!--End PulumiCodeChooser -->
 
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_archive as archive
@@ -395,7 +404,9 @@ def get_file_output(exclude_symlink_directories: Optional[pulumi.Input[Optional[
             ),
         ])
     ```
+    <!--End PulumiCodeChooser -->
 
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_archive as archive
@@ -405,6 +416,7 @@ def get_file_output(exclude_symlink_directories: Optional[pulumi.Input[Optional[
         source_file=f"{path['module']}/../lambda/my-function/index.js",
         type="zip")
     ```
+    <!--End PulumiCodeChooser -->
 
 
     :param bool exclude_symlink_directories: Boolean flag indicating whether symbolically linked directories should be excluded during the creation of the archive. Defaults to `false`.
