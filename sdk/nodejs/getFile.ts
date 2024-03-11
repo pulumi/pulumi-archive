@@ -11,6 +11,7 @@ import * as utilities from "./utilities";
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as archive from "@pulumi/archive";
@@ -21,7 +22,9 @@ import * as utilities from "./utilities";
  *     type: "zip",
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as archive from "@pulumi/archive";
@@ -42,7 +45,9 @@ import * as utilities from "./utilities";
  *     ],
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as archive from "@pulumi/archive";
@@ -54,6 +59,7 @@ import * as utilities from "./utilities";
  *     type: "zip",
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  */
 export function getFile(args: GetFileArgs, opts?: pulumi.InvokeOptions): Promise<GetFileResult> {
 
@@ -200,6 +206,7 @@ export interface GetFileResult {
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as archive from "@pulumi/archive";
@@ -210,7 +217,9 @@ export interface GetFileResult {
  *     type: "zip",
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as archive from "@pulumi/archive";
@@ -231,7 +240,9 @@ export interface GetFileResult {
  *     ],
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as archive from "@pulumi/archive";
@@ -243,6 +254,7 @@ export interface GetFileResult {
  *     type: "zip",
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  */
 export function getFileOutput(args: GetFileOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetFileResult> {
     return pulumi.output(args).apply((a: any) => getFile(a, opts))
