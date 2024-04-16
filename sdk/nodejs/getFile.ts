@@ -8,58 +8,6 @@ import * as utilities from "./utilities";
 
 /**
  * Generates an archive from content, a file, or directory of files.
- *
- * ## Example Usage
- *
- * <!--Start PulumiCodeChooser -->
- * ```typescript
- * import * as pulumi from "@pulumi/pulumi";
- * import * as archive from "@pulumi/archive";
- *
- * const init = archive.getFile({
- *     outputPath: `${path.module}/files/init.zip`,
- *     sourceFile: `${path.module}/init.tpl`,
- *     type: "zip",
- * });
- * ```
- * <!--End PulumiCodeChooser -->
- *
- * <!--Start PulumiCodeChooser -->
- * ```typescript
- * import * as pulumi from "@pulumi/pulumi";
- * import * as archive from "@pulumi/archive";
- *
- * const dotfiles = archive.getFile({
- *     type: "zip",
- *     outputPath: `${path.module}/files/dotfiles.zip`,
- *     excludes: [`${path.module}/unwanted.zip`],
- *     sources: [
- *         {
- *             content: data.template_file.vimrc.rendered,
- *             filename: ".vimrc",
- *         },
- *         {
- *             content: data.template_file.ssh_config.rendered,
- *             filename: ".ssh/config",
- *         },
- *     ],
- * });
- * ```
- * <!--End PulumiCodeChooser -->
- *
- * <!--Start PulumiCodeChooser -->
- * ```typescript
- * import * as pulumi from "@pulumi/pulumi";
- * import * as archive from "@pulumi/archive";
- *
- * const lambdaMyFunction = archive.getFile({
- *     outputFileMode: "0666",
- *     outputPath: `${path.module}/files/lambda-my-function.js.zip`,
- *     sourceFile: `${path.module}/../lambda/my-function/index.js`,
- *     type: "zip",
- * });
- * ```
- * <!--End PulumiCodeChooser -->
  */
 export function getFile(args: GetFileArgs, opts?: pulumi.InvokeOptions): Promise<GetFileResult> {
 
@@ -203,58 +151,6 @@ export interface GetFileResult {
 }
 /**
  * Generates an archive from content, a file, or directory of files.
- *
- * ## Example Usage
- *
- * <!--Start PulumiCodeChooser -->
- * ```typescript
- * import * as pulumi from "@pulumi/pulumi";
- * import * as archive from "@pulumi/archive";
- *
- * const init = archive.getFile({
- *     outputPath: `${path.module}/files/init.zip`,
- *     sourceFile: `${path.module}/init.tpl`,
- *     type: "zip",
- * });
- * ```
- * <!--End PulumiCodeChooser -->
- *
- * <!--Start PulumiCodeChooser -->
- * ```typescript
- * import * as pulumi from "@pulumi/pulumi";
- * import * as archive from "@pulumi/archive";
- *
- * const dotfiles = archive.getFile({
- *     type: "zip",
- *     outputPath: `${path.module}/files/dotfiles.zip`,
- *     excludes: [`${path.module}/unwanted.zip`],
- *     sources: [
- *         {
- *             content: data.template_file.vimrc.rendered,
- *             filename: ".vimrc",
- *         },
- *         {
- *             content: data.template_file.ssh_config.rendered,
- *             filename: ".ssh/config",
- *         },
- *     ],
- * });
- * ```
- * <!--End PulumiCodeChooser -->
- *
- * <!--Start PulumiCodeChooser -->
- * ```typescript
- * import * as pulumi from "@pulumi/pulumi";
- * import * as archive from "@pulumi/archive";
- *
- * const lambdaMyFunction = archive.getFile({
- *     outputFileMode: "0666",
- *     outputPath: `${path.module}/files/lambda-my-function.js.zip`,
- *     sourceFile: `${path.module}/../lambda/my-function/index.js`,
- *     type: "zip",
- * });
- * ```
- * <!--End PulumiCodeChooser -->
  */
 export function getFileOutput(args: GetFileOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetFileResult> {
     return pulumi.output(args).apply((a: any) => getFile(a, opts))
