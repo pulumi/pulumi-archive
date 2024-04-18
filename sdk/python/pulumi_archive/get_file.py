@@ -264,52 +264,6 @@ def get_file(exclude_symlink_directories: Optional[bool] = None,
     """
     Generates an archive from content, a file, or directory of files.
 
-    ## Example Usage
-
-    <!--Start PulumiCodeChooser -->
-    ```python
-    import pulumi
-    import pulumi_archive as archive
-
-    init = archive.get_file(output_path=f"{path['module']}/files/init.zip",
-        source_file=f"{path['module']}/init.tpl",
-        type="zip")
-    ```
-    <!--End PulumiCodeChooser -->
-
-    <!--Start PulumiCodeChooser -->
-    ```python
-    import pulumi
-    import pulumi_archive as archive
-
-    dotfiles = archive.get_file(type="zip",
-        output_path=f"{path['module']}/files/dotfiles.zip",
-        excludes=[f"{path['module']}/unwanted.zip"],
-        sources=[
-            archive.GetFileSourceArgs(
-                content=data["template_file"]["vimrc"]["rendered"],
-                filename=".vimrc",
-            ),
-            archive.GetFileSourceArgs(
-                content=data["template_file"]["ssh_config"]["rendered"],
-                filename=".ssh/config",
-            ),
-        ])
-    ```
-    <!--End PulumiCodeChooser -->
-
-    <!--Start PulumiCodeChooser -->
-    ```python
-    import pulumi
-    import pulumi_archive as archive
-
-    lambda_my_function = archive.get_file(output_file_mode="0666",
-        output_path=f"{path['module']}/files/lambda-my-function.js.zip",
-        source_file=f"{path['module']}/../lambda/my-function/index.js",
-        type="zip")
-    ```
-    <!--End PulumiCodeChooser -->
-
 
     :param bool exclude_symlink_directories: Boolean flag indicating whether symbolically linked directories should be excluded during the creation of the archive. Defaults to `false`.
     :param Sequence[str] excludes: Specify files to ignore when reading the `source_dir`.
@@ -371,52 +325,6 @@ def get_file_output(exclude_symlink_directories: Optional[pulumi.Input[Optional[
                     opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetFileResult]:
     """
     Generates an archive from content, a file, or directory of files.
-
-    ## Example Usage
-
-    <!--Start PulumiCodeChooser -->
-    ```python
-    import pulumi
-    import pulumi_archive as archive
-
-    init = archive.get_file(output_path=f"{path['module']}/files/init.zip",
-        source_file=f"{path['module']}/init.tpl",
-        type="zip")
-    ```
-    <!--End PulumiCodeChooser -->
-
-    <!--Start PulumiCodeChooser -->
-    ```python
-    import pulumi
-    import pulumi_archive as archive
-
-    dotfiles = archive.get_file(type="zip",
-        output_path=f"{path['module']}/files/dotfiles.zip",
-        excludes=[f"{path['module']}/unwanted.zip"],
-        sources=[
-            archive.GetFileSourceArgs(
-                content=data["template_file"]["vimrc"]["rendered"],
-                filename=".vimrc",
-            ),
-            archive.GetFileSourceArgs(
-                content=data["template_file"]["ssh_config"]["rendered"],
-                filename=".ssh/config",
-            ),
-        ])
-    ```
-    <!--End PulumiCodeChooser -->
-
-    <!--Start PulumiCodeChooser -->
-    ```python
-    import pulumi
-    import pulumi_archive as archive
-
-    lambda_my_function = archive.get_file(output_file_mode="0666",
-        output_path=f"{path['module']}/files/lambda-my-function.js.zip",
-        source_file=f"{path['module']}/../lambda/my-function/index.js",
-        type="zip")
-    ```
-    <!--End PulumiCodeChooser -->
 
 
     :param bool exclude_symlink_directories: Boolean flag indicating whether symbolically linked directories should be excluded during the creation of the archive. Defaults to `false`.
