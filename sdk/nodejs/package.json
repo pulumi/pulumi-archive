@@ -1,6 +1,6 @@
 {
     "name": "@pulumi/archive",
-    "version": "${VERSION}",
+    "version": "0.0.0-alpha.0+dev",
     "description": "A Pulumi package for creating and managing Archive cloud resources.",
     "keywords": [
         "pulumi",
@@ -21,6 +21,7 @@
     },
     "pulumi": {
         "resource": true,
-        "name": "archive"
+        "name": "archive",
+        "version": "0.0.0-alpha.0+dev"
     }
 }
