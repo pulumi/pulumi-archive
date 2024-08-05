@@ -18,7 +18,7 @@ type File struct {
 
 	// Boolean flag indicating whether symbolically linked directories should be excluded during the creation of the archive. Defaults to `false`.
 	ExcludeSymlinkDirectories pulumi.BoolPtrOutput `pulumi:"excludeSymlinkDirectories"`
-	// Specify files to ignore when reading the `sourceDir`.
+	// Specify files/directories to ignore when reading the `sourceDir`. Supports glob file matching patterns including doublestar/globstar (`**`) patterns.
 	Excludes pulumi.StringArrayOutput `pulumi:"excludes"`
 	// Base64 Encoded SHA256 checksum of output file
 	OutputBase64sha256 pulumi.StringOutput `pulumi:"outputBase64sha256"`
@@ -90,7 +90,7 @@ func GetFile(ctx *pulumi.Context,
 type fileState struct {
 	// Boolean flag indicating whether symbolically linked directories should be excluded during the creation of the archive. Defaults to `false`.
 	ExcludeSymlinkDirectories *bool `pulumi:"excludeSymlinkDirectories"`
-	// Specify files to ignore when reading the `sourceDir`.
+	// Specify files/directories to ignore when reading the `sourceDir`. Supports glob file matching patterns including doublestar/globstar (`**`) patterns.
 	Excludes []string `pulumi:"excludes"`
 	// Base64 Encoded SHA256 checksum of output file
 	OutputBase64sha256 *string `pulumi:"outputBase64sha256"`
@@ -127,7 +127,7 @@ type fileState struct {
 type FileState struct {
 	// Boolean flag indicating whether symbolically linked directories should be excluded during the creation of the archive. Defaults to `false`.
 	ExcludeSymlinkDirectories pulumi.BoolPtrInput
-	// Specify files to ignore when reading the `sourceDir`.
+	// Specify files/directories to ignore when reading the `sourceDir`. Supports glob file matching patterns including doublestar/globstar (`**`) patterns.
 	Excludes pulumi.StringArrayInput
 	// Base64 Encoded SHA256 checksum of output file
 	OutputBase64sha256 pulumi.StringPtrInput
@@ -168,7 +168,7 @@ func (FileState) ElementType() reflect.Type {
 type fileArgs struct {
 	// Boolean flag indicating whether symbolically linked directories should be excluded during the creation of the archive. Defaults to `false`.
 	ExcludeSymlinkDirectories *bool `pulumi:"excludeSymlinkDirectories"`
-	// Specify files to ignore when reading the `sourceDir`.
+	// Specify files/directories to ignore when reading the `sourceDir`. Supports glob file matching patterns including doublestar/globstar (`**`) patterns.
 	Excludes []string `pulumi:"excludes"`
 	// String that specifies the octal file mode for all archived files. For example: `"0666"`. Setting this will ensure that cross platform usage of this module will not vary the modes of archived files (and ultimately checksums) resulting in more deterministic behavior.
 	OutputFileMode *string `pulumi:"outputFileMode"`
@@ -192,7 +192,7 @@ type fileArgs struct {
 type FileArgs struct {
 	// Boolean flag indicating whether symbolically linked directories should be excluded during the creation of the archive. Defaults to `false`.
 	ExcludeSymlinkDirectories pulumi.BoolPtrInput
-	// Specify files to ignore when reading the `sourceDir`.
+	// Specify files/directories to ignore when reading the `sourceDir`. Supports glob file matching patterns including doublestar/globstar (`**`) patterns.
 	Excludes pulumi.StringArrayInput
 	// String that specifies the octal file mode for all archived files. For example: `"0666"`. Setting this will ensure that cross platform usage of this module will not vary the modes of archived files (and ultimately checksums) resulting in more deterministic behavior.
 	OutputFileMode pulumi.StringPtrInput
@@ -304,7 +304,7 @@ func (o FileOutput) ExcludeSymlinkDirectories() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v *File) pulumi.BoolPtrOutput { return v.ExcludeSymlinkDirectories }).(pulumi.BoolPtrOutput)
 }
 
-// Specify files to ignore when reading the `sourceDir`.
+// Specify files/directories to ignore when reading the `sourceDir`. Supports glob file matching patterns including doublestar/globstar (`**`) patterns.
 func (o FileOutput) Excludes() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v *File) pulumi.StringArrayOutput { return v.Excludes }).(pulumi.StringArrayOutput)
 }

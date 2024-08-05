@@ -26,7 +26,7 @@ func LookupFile(ctx *pulumi.Context, args *LookupFileArgs, opts ...pulumi.Invoke
 type LookupFileArgs struct {
 	// Boolean flag indicating whether symbolically linked directories should be excluded during the creation of the archive. Defaults to `false`.
 	ExcludeSymlinkDirectories *bool `pulumi:"excludeSymlinkDirectories"`
-	// Specify files to ignore when reading the `sourceDir`.
+	// Specify files/directories to ignore when reading the `sourceDir`. Supports glob file matching patterns including doublestar/globstar (`**`) patterns.
 	Excludes []string `pulumi:"excludes"`
 	// String that specifies the octal file mode for all archived files. For example: `"0666"`. Setting this will ensure that cross platform usage of this module will not vary the modes of archived files (and ultimately checksums) resulting in more deterministic behavior.
 	OutputFileMode *string `pulumi:"outputFileMode"`
@@ -50,7 +50,7 @@ type LookupFileArgs struct {
 type LookupFileResult struct {
 	// Boolean flag indicating whether symbolically linked directories should be excluded during the creation of the archive. Defaults to `false`.
 	ExcludeSymlinkDirectories *bool `pulumi:"excludeSymlinkDirectories"`
-	// Specify files to ignore when reading the `sourceDir`.
+	// Specify files/directories to ignore when reading the `sourceDir`. Supports glob file matching patterns including doublestar/globstar (`**`) patterns.
 	Excludes []string `pulumi:"excludes"`
 	// The sha1 checksum hash of the output.
 	Id string `pulumi:"id"`
@@ -103,7 +103,7 @@ func LookupFileOutput(ctx *pulumi.Context, args LookupFileOutputArgs, opts ...pu
 type LookupFileOutputArgs struct {
 	// Boolean flag indicating whether symbolically linked directories should be excluded during the creation of the archive. Defaults to `false`.
 	ExcludeSymlinkDirectories pulumi.BoolPtrInput `pulumi:"excludeSymlinkDirectories"`
-	// Specify files to ignore when reading the `sourceDir`.
+	// Specify files/directories to ignore when reading the `sourceDir`. Supports glob file matching patterns including doublestar/globstar (`**`) patterns.
 	Excludes pulumi.StringArrayInput `pulumi:"excludes"`
 	// String that specifies the octal file mode for all archived files. For example: `"0666"`. Setting this will ensure that cross platform usage of this module will not vary the modes of archived files (and ultimately checksums) resulting in more deterministic behavior.
 	OutputFileMode pulumi.StringPtrInput `pulumi:"outputFileMode"`
@@ -147,7 +147,7 @@ func (o LookupFileResultOutput) ExcludeSymlinkDirectories() pulumi.BoolPtrOutput
 	return o.ApplyT(func(v LookupFileResult) *bool { return v.ExcludeSymlinkDirectories }).(pulumi.BoolPtrOutput)
 }
 
-// Specify files to ignore when reading the `sourceDir`.
+// Specify files/directories to ignore when reading the `sourceDir`. Supports glob file matching patterns including doublestar/globstar (`**`) patterns.
 func (o LookupFileResultOutput) Excludes() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v LookupFileResult) []string { return v.Excludes }).(pulumi.StringArrayOutput)
 }

@@ -106,7 +106,7 @@
                     "items": {
                         "type": "string"
                     },
-                    "description": "Specify files to ignore when reading the `source_dir`.\n"
+                    "description": "Specify files/directories to ignore when reading the `source_dir`. Supports glob file matching patterns including doublestar/globstar (`**`) patterns.\n"
                 },
                 "outputBase64sha256": {
                     "type": "string",
@@ -193,7 +193,7 @@
                     "items": {
                         "type": "string"
                     },
-                    "description": "Specify files to ignore when reading the `source_dir`.\n"
+                    "description": "Specify files/directories to ignore when reading the `source_dir`. Supports glob file matching patterns including doublestar/globstar (`**`) patterns.\n"
                 },
                 "outputFileMode": {
                     "type": "string",
@@ -247,7 +247,7 @@
                         "items": {
                             "type": "string"
                         },
-                        "description": "Specify files to ignore when reading the `source_dir`.\n"
+                        "description": "Specify files/directories to ignore when reading the `source_dir`. Supports glob file matching patterns including doublestar/globstar (`**`) patterns.\n"
                     },
                     "outputBase64sha256": {
                         "type": "string",
@@ -332,7 +332,7 @@
                         "items": {
                             "type": "string"
                         },
-                        "description": "Specify files to ignore when reading the `source_dir`.\n"
+                        "description": "Specify files/directories to ignore when reading the `source_dir`. Supports glob file matching patterns including doublestar/globstar (`**`) patterns.\n"
                     },
                     "outputFileMode": {
                         "type": "string",
@@ -384,7 +384,7 @@
                         "type": "boolean"
                     },
                     "excludes": {
-                        "description": "Specify files to ignore when reading the `source_dir`.\n",
+                        "description": "Specify files/directories to ignore when reading the `source_dir`. Supports glob file matching patterns including doublestar/globstar (`**`) patterns.\n",
                         "items": {
                             "type": "string"
                         },

@@ -35,7 +35,7 @@ export interface GetFileArgs {
      */
     excludeSymlinkDirectories?: boolean;
     /**
-     * Specify files to ignore when reading the `sourceDir`.
+     * Specify files/directories to ignore when reading the `sourceDir`. Supports glob file matching patterns including doublestar/globstar (`**`) patterns.
      */
     excludes?: string[];
     /**
@@ -81,7 +81,7 @@ export interface GetFileResult {
      */
     readonly excludeSymlinkDirectories?: boolean;
     /**
-     * Specify files to ignore when reading the `sourceDir`.
+     * Specify files/directories to ignore when reading the `sourceDir`. Supports glob file matching patterns including doublestar/globstar (`**`) patterns.
      */
     readonly excludes?: string[];
     /**
@@ -165,7 +165,7 @@ export interface GetFileOutputArgs {
      */
     excludeSymlinkDirectories?: pulumi.Input<boolean>;
     /**
-     * Specify files to ignore when reading the `sourceDir`.
+     * Specify files/directories to ignore when reading the `sourceDir`. Supports glob file matching patterns including doublestar/globstar (`**`) patterns.
      */
     excludes?: pulumi.Input<pulumi.Input<string>[]>;
     /**

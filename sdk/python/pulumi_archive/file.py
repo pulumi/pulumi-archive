@@ -31,7 +31,7 @@ class FileArgs:
         :param pulumi.Input[str] output_path: The output of the archive file.
         :param pulumi.Input[str] type: The type of archive to generate. NOTE: `zip` is supported.
         :param pulumi.Input[bool] exclude_symlink_directories: Boolean flag indicating whether symbolically linked directories should be excluded during the creation of the archive. Defaults to `false`.
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] excludes: Specify files to ignore when reading the `source_dir`.
+        :param pulumi.Input[Sequence[pulumi.Input[str]]] excludes: Specify files/directories to ignore when reading the `source_dir`. Supports glob file matching patterns including doublestar/globstar (`**`) patterns.
         :param pulumi.Input[str] output_file_mode: String that specifies the octal file mode for all archived files. For example: `"0666"`. Setting this will ensure that cross platform usage of this module will not vary the modes of archived files (and ultimately checksums) resulting in more deterministic behavior.
         :param pulumi.Input[str] source_content: Add only this content to the archive with `source_content_filename` as the filename. One and only one of `source`, `source_content_filename` (with `source_content`), `source_file`, or `source_dir` must be specified.
         :param pulumi.Input[str] source_content_filename: Set this as the filename when using `source_content`. One and only one of `source`, `source_content_filename` (with `source_content`), `source_file`, or `source_dir` must be specified.
@@ -98,7 +98,7 @@ class FileArgs:
     @pulumi.getter
     def excludes(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]:
         """
-        Specify files to ignore when reading the `source_dir`.
+        Specify files/directories to ignore when reading the `source_dir`. Supports glob file matching patterns including doublestar/globstar (`**`) patterns.
         """
         return pulumi.get(self, "excludes")
 
@@ -202,7 +202,7 @@ class _FileState:
         """
         Input properties used for looking up and filtering File resources.
         :param pulumi.Input[bool] exclude_symlink_directories: Boolean flag indicating whether symbolically linked directories should be excluded during the creation of the archive. Defaults to `false`.
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] excludes: Specify files to ignore when reading the `source_dir`.
+        :param pulumi.Input[Sequence[pulumi.Input[str]]] excludes: Specify files/directories to ignore when reading the `source_dir`. Supports glob file matching patterns including doublestar/globstar (`**`) patterns.
         :param pulumi.Input[str] output_base64sha256: Base64 Encoded SHA256 checksum of output file
         :param pulumi.Input[str] output_base64sha512: Base64 Encoded SHA512 checksum of output file
         :param pulumi.Input[str] output_file_mode: String that specifies the octal file mode for all archived files. For example: `"0666"`. Setting this will ensure that cross platform usage of this module will not vary the modes of archived files (and ultimately checksums) resulting in more deterministic behavior.
@@ -270,7 +270,7 @@ class _FileState:
     @pulumi.getter
     def excludes(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]:
         """
-        Specify files to ignore when reading the `source_dir`.
+        Specify files/directories to ignore when reading the `source_dir`. Supports glob file matching patterns including doublestar/globstar (`**`) patterns.
         """
         return pulumi.get(self, "excludes")
 
@@ -481,7 +481,7 @@ class File(pulumi.CustomResource):
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[bool] exclude_symlink_directories: Boolean flag indicating whether symbolically linked directories should be excluded during the creation of the archive. Defaults to `false`.
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] excludes: Specify files to ignore when reading the `source_dir`.
+        :param pulumi.Input[Sequence[pulumi.Input[str]]] excludes: Specify files/directories to ignore when reading the `source_dir`. Supports glob file matching patterns including doublestar/globstar (`**`) patterns.
         :param pulumi.Input[str] output_file_mode: String that specifies the octal file mode for all archived files. For example: `"0666"`. Setting this will ensure that cross platform usage of this module will not vary the modes of archived files (and ultimately checksums) resulting in more deterministic behavior.
         :param pulumi.Input[str] output_path: The output of the archive file.
         :param pulumi.Input[str] source_content: Add only this content to the archive with `source_content_filename` as the filename. One and only one of `source`, `source_content_filename` (with `source_content`), `source_file`, or `source_dir` must be specified.
@@ -590,7 +590,7 @@ class File(pulumi.CustomResource):
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[bool] exclude_symlink_directories: Boolean flag indicating whether symbolically linked directories should be excluded during the creation of the archive. Defaults to `false`.
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] excludes: Specify files to ignore when reading the `source_dir`.
+        :param pulumi.Input[Sequence[pulumi.Input[str]]] excludes: Specify files/directories to ignore when reading the `source_dir`. Supports glob file matching patterns including doublestar/globstar (`**`) patterns.
         :param pulumi.Input[str] output_base64sha256: Base64 Encoded SHA256 checksum of output file
         :param pulumi.Input[str] output_base64sha512: Base64 Encoded SHA512 checksum of output file
         :param pulumi.Input[str] output_file_mode: String that specifies the octal file mode for all archived files. For example: `"0666"`. Setting this will ensure that cross platform usage of this module will not vary the modes of archived files (and ultimately checksums) resulting in more deterministic behavior.
@@ -642,7 +642,7 @@ class File(pulumi.CustomResource):
     @pulumi.getter
     def excludes(self) -> pulumi.Output[Optional[Sequence[str]]]:
         """
-        Specify files to ignore when reading the `source_dir`.
+        Specify files/directories to ignore when reading the `source_dir`. Supports glob file matching patterns including doublestar/globstar (`**`) patterns.
         """
         return pulumi.get(self, "excludes")
 

@@ -39,14 +39,14 @@ public class File extends com.pulumi.resources.CustomResource {
         return Codegen.optional(this.excludeSymlinkDirectories);
     }
     /**
-     * Specify files to ignore when reading the `source_dir`.
+     * Specify files/directories to ignore when reading the `source_dir`. Supports glob file matching patterns including doublestar/globstar (`**`) patterns.
      * 
      */
     @Export(name="excludes", refs={List.class,String.class}, tree="[0,1]")
     private Output</* @Nullable */ List<String>> excludes;
 
     /**
-     * @return Specify files to ignore when reading the `source_dir`.
+     * @return Specify files/directories to ignore when reading the `source_dir`. Supports glob file matching patterns including doublestar/globstar (`**`) patterns.
      * 
      */
     public Output<Optional<List<String>>> excludes() {
@@ -285,11 +285,18 @@ public class File extends com.pulumi.resources.CustomResource {
      * @param options A bag of options that control this resource's behavior.
      */
     public File(String name, FileArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
-        super("archive:index/file:File", name, args == null ? FileArgs.Empty : args, makeResourceOptions(options, Codegen.empty()));
+        super("archive:index/file:File", name, makeArgs(args, options), makeResourceOptions(options, Codegen.empty()));
     }
 
     private File(String name, Output<String> id, @Nullable FileState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
         super("archive:index/file:File", name, state, makeResourceOptions(options, id));
+    }
+
+    private static FileArgs makeArgs(FileArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+        if (options != null && options.getUrn().isPresent()) {
+            return null;
+        }
+        return args == null ? FileArgs.Empty : args;
     }
 
     private static com.pulumi.resources.CustomResourceOptions makeResourceOptions(@Nullable com.pulumi.resources.CustomResourceOptions options, @Nullable Output<String> id) {

@@ -22,7 +22,7 @@ public final class GetFileResult {
      */
     private @Nullable Boolean excludeSymlinkDirectories;
     /**
-     * @return Specify files to ignore when reading the `source_dir`.
+     * @return Specify files/directories to ignore when reading the `source_dir`. Supports glob file matching patterns including doublestar/globstar (`**`) patterns.
      * 
      */
     private @Nullable List<String> excludes;
@@ -116,7 +116,7 @@ public final class GetFileResult {
         return Optional.ofNullable(this.excludeSymlinkDirectories);
     }
     /**
-     * @return Specify files to ignore when reading the `source_dir`.
+     * @return Specify files/directories to ignore when reading the `source_dir`. Supports glob file matching patterns including doublestar/globstar (`**`) patterns.
      * 
      */
     public List<String> excludes() {
