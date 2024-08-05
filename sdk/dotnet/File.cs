@@ -22,7 +22,7 @@ namespace Pulumi.Archive
         public Output<bool?> ExcludeSymlinkDirectories { get; private set; } = null!;
 
         /// <summary>
-        /// Specify files to ignore when reading the `source_dir`.
+        /// Specify files/directories to ignore when reading the `source_dir`. Supports glob file matching patterns including doublestar/globstar (`**`) patterns.
         /// </summary>
         [Output("excludes")]
         public Output<ImmutableArray<string>> Excludes { get; private set; } = null!;
@@ -173,7 +173,7 @@ namespace Pulumi.Archive
         private InputList<string>? _excludes;
 
         /// <summary>
-        /// Specify files to ignore when reading the `source_dir`.
+        /// Specify files/directories to ignore when reading the `source_dir`. Supports glob file matching patterns including doublestar/globstar (`**`) patterns.
         /// </summary>
         public InputList<string> Excludes
         {
@@ -253,7 +253,7 @@ namespace Pulumi.Archive
         private InputList<string>? _excludes;
 
         /// <summary>
-        /// Specify files to ignore when reading the `source_dir`.
+        /// Specify files/directories to ignore when reading the `source_dir`. Supports glob file matching patterns including doublestar/globstar (`**`) patterns.
         /// </summary>
         public InputList<string> Excludes
         {

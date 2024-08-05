@@ -91,7 +91,7 @@ class GetFileResult:
     @pulumi.getter
     def excludes(self) -> Optional[Sequence[str]]:
         """
-        Specify files to ignore when reading the `source_dir`.
+        Specify files/directories to ignore when reading the `source_dir`. Supports glob file matching patterns including doublestar/globstar (`**`) patterns.
         """
         return pulumi.get(self, "excludes")
 
@@ -266,7 +266,7 @@ def get_file(exclude_symlink_directories: Optional[bool] = None,
 
 
     :param bool exclude_symlink_directories: Boolean flag indicating whether symbolically linked directories should be excluded during the creation of the archive. Defaults to `false`.
-    :param Sequence[str] excludes: Specify files to ignore when reading the `source_dir`.
+    :param Sequence[str] excludes: Specify files/directories to ignore when reading the `source_dir`. Supports glob file matching patterns including doublestar/globstar (`**`) patterns.
     :param str output_file_mode: String that specifies the octal file mode for all archived files. For example: `"0666"`. Setting this will ensure that cross platform usage of this module will not vary the modes of archived files (and ultimately checksums) resulting in more deterministic behavior.
     :param str output_path: The output of the archive file.
     :param str source_content: Add only this content to the archive with `source_content_filename` as the filename. One and only one of `source`, `source_content_filename` (with `source_content`), `source_file`, or `source_dir` must be specified.
@@ -328,7 +328,7 @@ def get_file_output(exclude_symlink_directories: Optional[pulumi.Input[Optional[
 
 
     :param bool exclude_symlink_directories: Boolean flag indicating whether symbolically linked directories should be excluded during the creation of the archive. Defaults to `false`.
-    :param Sequence[str] excludes: Specify files to ignore when reading the `source_dir`.
+    :param Sequence[str] excludes: Specify files/directories to ignore when reading the `source_dir`. Supports glob file matching patterns including doublestar/globstar (`**`) patterns.
     :param str output_file_mode: String that specifies the octal file mode for all archived files. For example: `"0666"`. Setting this will ensure that cross platform usage of this module will not vary the modes of archived files (and ultimately checksums) resulting in more deterministic behavior.
     :param str output_path: The output of the archive file.
     :param str source_content: Add only this content to the archive with `source_content_filename` as the filename. One and only one of `source`, `source_content_filename` (with `source_content`), `source_file`, or `source_dir` must be specified.

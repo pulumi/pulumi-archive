@@ -35,14 +35,14 @@ public final class GetFileArgs extends com.pulumi.resources.InvokeArgs {
     }
 
     /**
-     * Specify files to ignore when reading the `source_dir`.
+     * Specify files/directories to ignore when reading the `source_dir`. Supports glob file matching patterns including doublestar/globstar (`**`) patterns.
      * 
      */
     @Import(name="excludes")
     private @Nullable Output<List<String>> excludes;
 
     /**
-     * @return Specify files to ignore when reading the `source_dir`.
+     * @return Specify files/directories to ignore when reading the `source_dir`. Supports glob file matching patterns including doublestar/globstar (`**`) patterns.
      * 
      */
     public Optional<Output<List<String>>> excludes() {
@@ -224,7 +224,7 @@ public final class GetFileArgs extends com.pulumi.resources.InvokeArgs {
         }
 
         /**
-         * @param excludes Specify files to ignore when reading the `source_dir`.
+         * @param excludes Specify files/directories to ignore when reading the `source_dir`. Supports glob file matching patterns including doublestar/globstar (`**`) patterns.
          * 
          * @return builder
          * 
@@ -235,7 +235,7 @@ public final class GetFileArgs extends com.pulumi.resources.InvokeArgs {
         }
 
         /**
-         * @param excludes Specify files to ignore when reading the `source_dir`.
+         * @param excludes Specify files/directories to ignore when reading the `source_dir`. Supports glob file matching patterns including doublestar/globstar (`**`) patterns.
          * 
          * @return builder
          * 
@@ -245,7 +245,7 @@ public final class GetFileArgs extends com.pulumi.resources.InvokeArgs {
         }
 
         /**
-         * @param excludes Specify files to ignore when reading the `source_dir`.
+         * @param excludes Specify files/directories to ignore when reading the `source_dir`. Supports glob file matching patterns including doublestar/globstar (`**`) patterns.
          * 
          * @return builder
          * 

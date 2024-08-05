@@ -42,7 +42,7 @@ export class File extends pulumi.CustomResource {
      */
     public readonly excludeSymlinkDirectories!: pulumi.Output<boolean | undefined>;
     /**
-     * Specify files to ignore when reading the `sourceDir`.
+     * Specify files/directories to ignore when reading the `sourceDir`. Supports glob file matching patterns including doublestar/globstar (`**`) patterns.
      */
     public readonly excludes!: pulumi.Output<string[] | undefined>;
     /**
@@ -176,7 +176,7 @@ export interface FileState {
      */
     excludeSymlinkDirectories?: pulumi.Input<boolean>;
     /**
-     * Specify files to ignore when reading the `sourceDir`.
+     * Specify files/directories to ignore when reading the `sourceDir`. Supports glob file matching patterns including doublestar/globstar (`**`) patterns.
      */
     excludes?: pulumi.Input<pulumi.Input<string>[]>;
     /**
@@ -250,7 +250,7 @@ export interface FileArgs {
      */
     excludeSymlinkDirectories?: pulumi.Input<boolean>;
     /**
-     * Specify files to ignore when reading the `sourceDir`.
+     * Specify files/directories to ignore when reading the `sourceDir`. Supports glob file matching patterns including doublestar/globstar (`**`) patterns.
      */
     excludes?: pulumi.Input<pulumi.Input<string>[]>;
     /**
