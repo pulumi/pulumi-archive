@@ -258,7 +258,7 @@ def get_file(exclude_symlink_directories: Optional[bool] = None,
              source_content_filename: Optional[str] = None,
              source_dir: Optional[str] = None,
              source_file: Optional[str] = None,
-             sources: Optional[Sequence[pulumi.InputType['GetFileSourceArgs']]] = None,
+             sources: Optional[Sequence[Union['GetFileSourceArgs', 'GetFileSourceArgsDict']]] = None,
              type: Optional[str] = None,
              opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetFileResult:
     """
@@ -273,7 +273,7 @@ def get_file(exclude_symlink_directories: Optional[bool] = None,
     :param str source_content_filename: Set this as the filename when using `source_content`. One and only one of `source`, `source_content_filename` (with `source_content`), `source_file`, or `source_dir` must be specified.
     :param str source_dir: Package entire contents of this directory into the archive. One and only one of `source`, `source_content_filename` (with `source_content`), `source_file`, or `source_dir` must be specified.
     :param str source_file: Package this file into the archive. One and only one of `source`, `source_content_filename` (with `source_content`), `source_file`, or `source_dir` must be specified.
-    :param Sequence[pulumi.InputType['GetFileSourceArgs']] sources: Specifies attributes of a single source file to include into the archive. One and only one of `source`, `source_content_filename` (with `source_content`), `source_file`, or `source_dir` must be specified.
+    :param Sequence[Union['GetFileSourceArgs', 'GetFileSourceArgsDict']] sources: Specifies attributes of a single source file to include into the archive. One and only one of `source`, `source_content_filename` (with `source_content`), `source_file`, or `source_dir` must be specified.
     :param str type: The type of archive to generate. NOTE: `zip` is supported.
     """
     __args__ = dict()
@@ -320,7 +320,7 @@ def get_file_output(exclude_symlink_directories: Optional[pulumi.Input[Optional[
                     source_content_filename: Optional[pulumi.Input[Optional[str]]] = None,
                     source_dir: Optional[pulumi.Input[Optional[str]]] = None,
                     source_file: Optional[pulumi.Input[Optional[str]]] = None,
-                    sources: Optional[pulumi.Input[Optional[Sequence[pulumi.InputType['GetFileSourceArgs']]]]] = None,
+                    sources: Optional[pulumi.Input[Optional[Sequence[Union['GetFileSourceArgs', 'GetFileSourceArgsDict']]]]] = None,
                     type: Optional[pulumi.Input[str]] = None,
                     opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetFileResult]:
     """
@@ -335,7 +335,7 @@ def get_file_output(exclude_symlink_directories: Optional[pulumi.Input[Optional[
     :param str source_content_filename: Set this as the filename when using `source_content`. One and only one of `source`, `source_content_filename` (with `source_content`), `source_file`, or `source_dir` must be specified.
     :param str source_dir: Package entire contents of this directory into the archive. One and only one of `source`, `source_content_filename` (with `source_content`), `source_file`, or `source_dir` must be specified.
     :param str source_file: Package this file into the archive. One and only one of `source`, `source_content_filename` (with `source_content`), `source_file`, or `source_dir` must be specified.
-    :param Sequence[pulumi.InputType['GetFileSourceArgs']] sources: Specifies attributes of a single source file to include into the archive. One and only one of `source`, `source_content_filename` (with `source_content`), `source_file`, or `source_dir` must be specified.
+    :param Sequence[Union['GetFileSourceArgs', 'GetFileSourceArgsDict']] sources: Specifies attributes of a single source file to include into the archive. One and only one of `source`, `source_content_filename` (with `source_content`), `source_file`, or `source_dir` must be specified.
     :param str type: The type of archive to generate. NOTE: `zip` is supported.
     """
     ...
