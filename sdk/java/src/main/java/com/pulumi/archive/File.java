@@ -249,14 +249,14 @@ public class File extends com.pulumi.resources.CustomResource {
         return Codegen.optional(this.sources);
     }
     /**
-     * The type of archive to generate. NOTE: `zip` is supported.
+     * The type of archive to generate. NOTE: `zip` and `tar.gz` is supported.
      * 
      */
     @Export(name="type", refs={String.class}, tree="[0]")
     private Output<String> type;
 
     /**
-     * @return The type of archive to generate. NOTE: `zip` is supported.
+     * @return The type of archive to generate. NOTE: `zip` and `tar.gz` is supported.
      * 
      */
     public Output<String> type() {

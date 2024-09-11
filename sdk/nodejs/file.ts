@@ -102,7 +102,7 @@ export class File extends pulumi.CustomResource {
      */
     public readonly sources!: pulumi.Output<outputs.FileSource[] | undefined>;
     /**
-     * The type of archive to generate. NOTE: `zip` is supported.
+     * The type of archive to generate. NOTE: `zip` and `tar.gz` is supported.
      */
     public readonly type!: pulumi.Output<string>;
 
@@ -236,7 +236,7 @@ export interface FileState {
      */
     sources?: pulumi.Input<pulumi.Input<inputs.FileSource>[]>;
     /**
-     * The type of archive to generate. NOTE: `zip` is supported.
+     * The type of archive to generate. NOTE: `zip` and `tar.gz` is supported.
      */
     type?: pulumi.Input<string>;
 }
@@ -282,7 +282,7 @@ export interface FileArgs {
      */
     sources?: pulumi.Input<pulumi.Input<inputs.FileSource>[]>;
     /**
-     * The type of archive to generate. NOTE: `zip` is supported.
+     * The type of archive to generate. NOTE: `zip` and `tar.gz` is supported.
      */
     type: pulumi.Input<string>;
 }

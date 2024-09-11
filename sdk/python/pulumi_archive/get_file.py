@@ -219,7 +219,7 @@ class GetFileResult:
     @pulumi.getter
     def type(self) -> str:
         """
-        The type of archive to generate. NOTE: `zip` is supported.
+        The type of archive to generate. NOTE: `zip` and `tar.gz` is supported.
         """
         return pulumi.get(self, "type")
 
@@ -274,7 +274,7 @@ def get_file(exclude_symlink_directories: Optional[bool] = None,
     :param str source_dir: Package entire contents of this directory into the archive. One and only one of `source`, `source_content_filename` (with `source_content`), `source_file`, or `source_dir` must be specified.
     :param str source_file: Package this file into the archive. One and only one of `source`, `source_content_filename` (with `source_content`), `source_file`, or `source_dir` must be specified.
     :param Sequence[Union['GetFileSourceArgs', 'GetFileSourceArgsDict']] sources: Specifies attributes of a single source file to include into the archive. One and only one of `source`, `source_content_filename` (with `source_content`), `source_file`, or `source_dir` must be specified.
-    :param str type: The type of archive to generate. NOTE: `zip` is supported.
+    :param str type: The type of archive to generate. NOTE: `zip` and `tar.gz` is supported.
     """
     __args__ = dict()
     __args__['excludeSymlinkDirectories'] = exclude_symlink_directories
@@ -336,6 +336,6 @@ def get_file_output(exclude_symlink_directories: Optional[pulumi.Input[Optional[
     :param str source_dir: Package entire contents of this directory into the archive. One and only one of `source`, `source_content_filename` (with `source_content`), `source_file`, or `source_dir` must be specified.
     :param str source_file: Package this file into the archive. One and only one of `source`, `source_content_filename` (with `source_content`), `source_file`, or `source_dir` must be specified.
     :param Sequence[Union['GetFileSourceArgs', 'GetFileSourceArgsDict']] sources: Specifies attributes of a single source file to include into the archive. One and only one of `source`, `source_content_filename` (with `source_content`), `source_file`, or `source_dir` must be specified.
-    :param str type: The type of archive to generate. NOTE: `zip` is supported.
+    :param str type: The type of archive to generate. NOTE: `zip` and `tar.gz` is supported.
     """
     ...

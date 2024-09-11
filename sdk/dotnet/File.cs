@@ -112,7 +112,7 @@ namespace Pulumi.Archive
         public Output<ImmutableArray<Outputs.FileSource>> Sources { get; private set; } = null!;
 
         /// <summary>
-        /// The type of archive to generate. NOTE: `zip` is supported.
+        /// The type of archive to generate. NOTE: `zip` and `tar.gz` is supported.
         /// </summary>
         [Output("type")]
         public Output<string> Type { get; private set; } = null!;
@@ -230,7 +230,7 @@ namespace Pulumi.Archive
         }
 
         /// <summary>
-        /// The type of archive to generate. NOTE: `zip` is supported.
+        /// The type of archive to generate. NOTE: `zip` and `tar.gz` is supported.
         /// </summary>
         [Input("type", required: true)]
         public Input<string> Type { get; set; } = null!;
@@ -352,7 +352,7 @@ namespace Pulumi.Archive
         }
 
         /// <summary>
-        /// The type of archive to generate. NOTE: `zip` is supported.
+        /// The type of archive to generate. NOTE: `zip` and `tar.gz` is supported.
         /// </summary>
         [Input("type")]
         public Input<string>? Type { get; set; }

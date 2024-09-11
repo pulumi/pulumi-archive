@@ -102,7 +102,7 @@ public final class GetFileResult {
      */
     private @Nullable List<GetFileSource> sources;
     /**
-     * @return The type of archive to generate. NOTE: `zip` is supported.
+     * @return The type of archive to generate. NOTE: `zip` and `tar.gz` is supported.
      * 
      */
     private String type;
@@ -228,7 +228,7 @@ public final class GetFileResult {
         return this.sources == null ? List.of() : this.sources;
     }
     /**
-     * @return The type of archive to generate. NOTE: `zip` is supported.
+     * @return The type of archive to generate. NOTE: `zip` and `tar.gz` is supported.
      * 
      */
     public String type() {

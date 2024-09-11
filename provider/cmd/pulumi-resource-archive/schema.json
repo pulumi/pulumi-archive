@@ -169,7 +169,7 @@
                 },
                 "type": {
                     "type": "string",
-                    "description": "The type of archive to generate. NOTE: `zip` is supported.\n"
+                    "description": "The type of archive to generate. NOTE: `zip` and `tar.gz` is supported.\n"
                 }
             },
             "required": [
@@ -228,7 +228,7 @@
                 },
                 "type": {
                     "type": "string",
-                    "description": "The type of archive to generate. NOTE: `zip` is supported.\n"
+                    "description": "The type of archive to generate. NOTE: `zip` and `tar.gz` is supported.\n"
                 }
             },
             "requiredInputs": [
@@ -310,7 +310,7 @@
                     },
                     "type": {
                         "type": "string",
-                        "description": "The type of archive to generate. NOTE: `zip` is supported.\n"
+                        "description": "The type of archive to generate. NOTE: `zip` and `tar.gz` is supported.\n"
                     }
                 },
                 "type": "object"
@@ -367,7 +367,7 @@
                     },
                     "type": {
                         "type": "string",
-                        "description": "The type of archive to generate. NOTE: `zip` is supported.\n"
+                        "description": "The type of archive to generate. NOTE: `zip` and `tar.gz` is supported.\n"
                     }
                 },
                 "type": "object",
@@ -454,7 +454,7 @@
                         "type": "array"
                     },
                     "type": {
-                        "description": "The type of archive to generate. NOTE: `zip` is supported.\n",
+                        "description": "The type of archive to generate. NOTE: `zip` and `tar.gz` is supported.\n",
                         "type": "string"
                     }
                 },
