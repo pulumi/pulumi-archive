@@ -154,14 +154,14 @@ public final class GetFilePlainArgs extends com.pulumi.resources.InvokeArgs {
     }
 
     /**
-     * The type of archive to generate. NOTE: `zip` is supported.
+     * The type of archive to generate. NOTE: `zip` and `tar.gz` is supported.
      * 
      */
     @Import(name="type", required=true)
     private String type;
 
     /**
-     * @return The type of archive to generate. NOTE: `zip` is supported.
+     * @return The type of archive to generate. NOTE: `zip` and `tar.gz` is supported.
      * 
      */
     public String type() {
@@ -321,7 +321,7 @@ public final class GetFilePlainArgs extends com.pulumi.resources.InvokeArgs {
         }
 
         /**
-         * @param type The type of archive to generate. NOTE: `zip` is supported.
+         * @param type The type of archive to generate. NOTE: `zip` and `tar.gz` is supported.
          * 
          * @return builder
          * 

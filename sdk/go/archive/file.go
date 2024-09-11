@@ -48,7 +48,7 @@ type File struct {
 	SourceFile pulumi.StringPtrOutput `pulumi:"sourceFile"`
 	// Specifies attributes of a single source file to include into the archive. One and only one of `source`, `sourceContentFilename` (with `sourceContent`), `sourceFile`, or `sourceDir` must be specified.
 	Sources FileSourceArrayOutput `pulumi:"sources"`
-	// The type of archive to generate. NOTE: `zip` is supported.
+	// The type of archive to generate. NOTE: `zip` and `tar.gz` is supported.
 	Type pulumi.StringOutput `pulumi:"type"`
 }
 
@@ -120,7 +120,7 @@ type fileState struct {
 	SourceFile *string `pulumi:"sourceFile"`
 	// Specifies attributes of a single source file to include into the archive. One and only one of `source`, `sourceContentFilename` (with `sourceContent`), `sourceFile`, or `sourceDir` must be specified.
 	Sources []FileSource `pulumi:"sources"`
-	// The type of archive to generate. NOTE: `zip` is supported.
+	// The type of archive to generate. NOTE: `zip` and `tar.gz` is supported.
 	Type *string `pulumi:"type"`
 }
 
@@ -157,7 +157,7 @@ type FileState struct {
 	SourceFile pulumi.StringPtrInput
 	// Specifies attributes of a single source file to include into the archive. One and only one of `source`, `sourceContentFilename` (with `sourceContent`), `sourceFile`, or `sourceDir` must be specified.
 	Sources FileSourceArrayInput
-	// The type of archive to generate. NOTE: `zip` is supported.
+	// The type of archive to generate. NOTE: `zip` and `tar.gz` is supported.
 	Type pulumi.StringPtrInput
 }
 
@@ -184,7 +184,7 @@ type fileArgs struct {
 	SourceFile *string `pulumi:"sourceFile"`
 	// Specifies attributes of a single source file to include into the archive. One and only one of `source`, `sourceContentFilename` (with `sourceContent`), `sourceFile`, or `sourceDir` must be specified.
 	Sources []FileSource `pulumi:"sources"`
-	// The type of archive to generate. NOTE: `zip` is supported.
+	// The type of archive to generate. NOTE: `zip` and `tar.gz` is supported.
 	Type string `pulumi:"type"`
 }
 
@@ -208,7 +208,7 @@ type FileArgs struct {
 	SourceFile pulumi.StringPtrInput
 	// Specifies attributes of a single source file to include into the archive. One and only one of `source`, `sourceContentFilename` (with `sourceContent`), `sourceFile`, or `sourceDir` must be specified.
 	Sources FileSourceArrayInput
-	// The type of archive to generate. NOTE: `zip` is supported.
+	// The type of archive to generate. NOTE: `zip` and `tar.gz` is supported.
 	Type pulumi.StringInput
 }
 
@@ -379,7 +379,7 @@ func (o FileOutput) Sources() FileSourceArrayOutput {
 	return o.ApplyT(func(v *File) FileSourceArrayOutput { return v.Sources }).(FileSourceArrayOutput)
 }
 
-// The type of archive to generate. NOTE: `zip` is supported.
+// The type of archive to generate. NOTE: `zip` and `tar.gz` is supported.
 func (o FileOutput) Type() pulumi.StringOutput {
 	return o.ApplyT(func(v *File) pulumi.StringOutput { return v.Type }).(pulumi.StringOutput)
 }

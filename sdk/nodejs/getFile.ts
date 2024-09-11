@@ -67,7 +67,7 @@ export interface GetFileArgs {
      */
     sources?: inputs.GetFileSource[];
     /**
-     * The type of archive to generate. NOTE: `zip` is supported.
+     * The type of archive to generate. NOTE: `zip` and `tar.gz` is supported.
      */
     type: string;
 }
@@ -145,7 +145,7 @@ export interface GetFileResult {
      */
     readonly sources?: outputs.GetFileSource[];
     /**
-     * The type of archive to generate. NOTE: `zip` is supported.
+     * The type of archive to generate. NOTE: `zip` and `tar.gz` is supported.
      */
     readonly type: string;
 }
@@ -197,7 +197,7 @@ export interface GetFileOutputArgs {
      */
     sources?: pulumi.Input<pulumi.Input<inputs.GetFileSourceArgs>[]>;
     /**
-     * The type of archive to generate. NOTE: `zip` is supported.
+     * The type of archive to generate. NOTE: `zip` and `tar.gz` is supported.
      */
     type: pulumi.Input<string>;
 }

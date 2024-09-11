@@ -29,7 +29,7 @@ class FileArgs:
         """
         The set of arguments for constructing a File resource.
         :param pulumi.Input[str] output_path: The output of the archive file.
-        :param pulumi.Input[str] type: The type of archive to generate. NOTE: `zip` is supported.
+        :param pulumi.Input[str] type: The type of archive to generate. NOTE: `zip` and `tar.gz` is supported.
         :param pulumi.Input[bool] exclude_symlink_directories: Boolean flag indicating whether symbolically linked directories should be excluded during the creation of the archive. Defaults to `false`.
         :param pulumi.Input[Sequence[pulumi.Input[str]]] excludes: Specify files/directories to ignore when reading the `source_dir`. Supports glob file matching patterns including doublestar/globstar (`**`) patterns.
         :param pulumi.Input[str] output_file_mode: String that specifies the octal file mode for all archived files. For example: `"0666"`. Setting this will ensure that cross platform usage of this module will not vary the modes of archived files (and ultimately checksums) resulting in more deterministic behavior.
@@ -74,7 +74,7 @@ class FileArgs:
     @pulumi.getter
     def type(self) -> pulumi.Input[str]:
         """
-        The type of archive to generate. NOTE: `zip` is supported.
+        The type of archive to generate. NOTE: `zip` and `tar.gz` is supported.
         """
         return pulumi.get(self, "type")
 
@@ -217,7 +217,7 @@ class _FileState:
         :param pulumi.Input[str] source_dir: Package entire contents of this directory into the archive. One and only one of `source`, `source_content_filename` (with `source_content`), `source_file`, or `source_dir` must be specified.
         :param pulumi.Input[str] source_file: Package this file into the archive. One and only one of `source`, `source_content_filename` (with `source_content`), `source_file`, or `source_dir` must be specified.
         :param pulumi.Input[Sequence[pulumi.Input['FileSourceArgs']]] sources: Specifies attributes of a single source file to include into the archive. One and only one of `source`, `source_content_filename` (with `source_content`), `source_file`, or `source_dir` must be specified.
-        :param pulumi.Input[str] type: The type of archive to generate. NOTE: `zip` is supported.
+        :param pulumi.Input[str] type: The type of archive to generate. NOTE: `zip` and `tar.gz` is supported.
         """
         if exclude_symlink_directories is not None:
             pulumi.set(__self__, "exclude_symlink_directories", exclude_symlink_directories)
@@ -450,7 +450,7 @@ class _FileState:
     @pulumi.getter
     def type(self) -> Optional[pulumi.Input[str]]:
         """
-        The type of archive to generate. NOTE: `zip` is supported.
+        The type of archive to generate. NOTE: `zip` and `tar.gz` is supported.
         """
         return pulumi.get(self, "type")
 
@@ -489,7 +489,7 @@ class File(pulumi.CustomResource):
         :param pulumi.Input[str] source_dir: Package entire contents of this directory into the archive. One and only one of `source`, `source_content_filename` (with `source_content`), `source_file`, or `source_dir` must be specified.
         :param pulumi.Input[str] source_file: Package this file into the archive. One and only one of `source`, `source_content_filename` (with `source_content`), `source_file`, or `source_dir` must be specified.
         :param pulumi.Input[Sequence[pulumi.Input[Union['FileSourceArgs', 'FileSourceArgsDict']]]] sources: Specifies attributes of a single source file to include into the archive. One and only one of `source`, `source_content_filename` (with `source_content`), `source_file`, or `source_dir` must be specified.
-        :param pulumi.Input[str] type: The type of archive to generate. NOTE: `zip` is supported.
+        :param pulumi.Input[str] type: The type of archive to generate. NOTE: `zip` and `tar.gz` is supported.
         """
         ...
     @overload
@@ -605,7 +605,7 @@ class File(pulumi.CustomResource):
         :param pulumi.Input[str] source_dir: Package entire contents of this directory into the archive. One and only one of `source`, `source_content_filename` (with `source_content`), `source_file`, or `source_dir` must be specified.
         :param pulumi.Input[str] source_file: Package this file into the archive. One and only one of `source`, `source_content_filename` (with `source_content`), `source_file`, or `source_dir` must be specified.
         :param pulumi.Input[Sequence[pulumi.Input[Union['FileSourceArgs', 'FileSourceArgsDict']]]] sources: Specifies attributes of a single source file to include into the archive. One and only one of `source`, `source_content_filename` (with `source_content`), `source_file`, or `source_dir` must be specified.
-        :param pulumi.Input[str] type: The type of archive to generate. NOTE: `zip` is supported.
+        :param pulumi.Input[str] type: The type of archive to generate. NOTE: `zip` and `tar.gz` is supported.
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 
@@ -762,7 +762,7 @@ class File(pulumi.CustomResource):
     @pulumi.getter
     def type(self) -> pulumi.Output[str]:
         """
-        The type of archive to generate. NOTE: `zip` is supported.
+        The type of archive to generate. NOTE: `zip` and `tar.gz` is supported.
         """
         return pulumi.get(self, "type")
 

@@ -42,7 +42,7 @@ type LookupFileArgs struct {
 	SourceFile *string `pulumi:"sourceFile"`
 	// Specifies attributes of a single source file to include into the archive. One and only one of `source`, `sourceContentFilename` (with `sourceContent`), `sourceFile`, or `sourceDir` must be specified.
 	Sources []GetFileSource `pulumi:"sources"`
-	// The type of archive to generate. NOTE: `zip` is supported.
+	// The type of archive to generate. NOTE: `zip` and `tar.gz` is supported.
 	Type string `pulumi:"type"`
 }
 
@@ -82,7 +82,7 @@ type LookupFileResult struct {
 	SourceFile *string `pulumi:"sourceFile"`
 	// Specifies attributes of a single source file to include into the archive. One and only one of `source`, `sourceContentFilename` (with `sourceContent`), `sourceFile`, or `sourceDir` must be specified.
 	Sources []GetFileSource `pulumi:"sources"`
-	// The type of archive to generate. NOTE: `zip` is supported.
+	// The type of archive to generate. NOTE: `zip` and `tar.gz` is supported.
 	Type string `pulumi:"type"`
 }
 
@@ -119,7 +119,7 @@ type LookupFileOutputArgs struct {
 	SourceFile pulumi.StringPtrInput `pulumi:"sourceFile"`
 	// Specifies attributes of a single source file to include into the archive. One and only one of `source`, `sourceContentFilename` (with `sourceContent`), `sourceFile`, or `sourceDir` must be specified.
 	Sources GetFileSourceArrayInput `pulumi:"sources"`
-	// The type of archive to generate. NOTE: `zip` is supported.
+	// The type of archive to generate. NOTE: `zip` and `tar.gz` is supported.
 	Type pulumi.StringInput `pulumi:"type"`
 }
 
@@ -227,7 +227,7 @@ func (o LookupFileResultOutput) Sources() GetFileSourceArrayOutput {
 	return o.ApplyT(func(v LookupFileResult) []GetFileSource { return v.Sources }).(GetFileSourceArrayOutput)
 }
 
-// The type of archive to generate. NOTE: `zip` is supported.
+// The type of archive to generate. NOTE: `zip` and `tar.gz` is supported.
 func (o LookupFileResultOutput) Type() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupFileResult) string { return v.Type }).(pulumi.StringOutput)
 }
