@@ -10,7 +10,6 @@ import * as utilities from "./utilities";
  * Generates an archive from content, a file, or directory of files.
  */
 export function getFile(args: GetFileArgs, opts?: pulumi.InvokeOptions): Promise<GetFileResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("archive:index/getFile:getFile", {
         "excludeSymlinkDirectories": args.excludeSymlinkDirectories,
@@ -153,7 +152,19 @@ export interface GetFileResult {
  * Generates an archive from content, a file, or directory of files.
  */
 export function getFileOutput(args: GetFileOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetFileResult> {
-    return pulumi.output(args).apply((a: any) => getFile(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("archive:index/getFile:getFile", {
+        "excludeSymlinkDirectories": args.excludeSymlinkDirectories,
+        "excludes": args.excludes,
+        "outputFileMode": args.outputFileMode,
+        "outputPath": args.outputPath,
+        "sourceContent": args.sourceContent,
+        "sourceContentFilename": args.sourceContentFilename,
+        "sourceDir": args.sourceDir,
+        "sourceFile": args.sourceFile,
+        "sources": args.sources,
+        "type": args.type,
+    }, opts);
 }
 
 /**
