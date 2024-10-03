@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from . import _utilities
 from . import outputs
 from ._inputs import *
@@ -309,9 +314,6 @@ def get_file(exclude_symlink_directories: Optional[bool] = None,
         source_file=pulumi.get(__ret__, 'source_file'),
         sources=pulumi.get(__ret__, 'sources'),
         type=pulumi.get(__ret__, 'type'))
-
-
-@_utilities.lift_output_func(get_file)
 def get_file_output(exclude_symlink_directories: Optional[pulumi.Input[Optional[bool]]] = None,
                     excludes: Optional[pulumi.Input[Optional[Sequence[str]]]] = None,
                     output_file_mode: Optional[pulumi.Input[Optional[str]]] = None,
@@ -338,4 +340,35 @@ def get_file_output(exclude_symlink_directories: Optional[pulumi.Input[Optional[
     :param Sequence[Union['GetFileSourceArgs', 'GetFileSourceArgsDict']] sources: Specifies attributes of a single source file to include into the archive. One and only one of `source`, `source_content_filename` (with `source_content`), `source_file`, or `source_dir` must be specified.
     :param str type: The type of archive to generate. NOTE: `zip` and `tar.gz` is supported.
     """
-    ...
+    __args__ = dict()
+    __args__['excludeSymlinkDirectories'] = exclude_symlink_directories
+    __args__['excludes'] = excludes
+    __args__['outputFileMode'] = output_file_mode
+    __args__['outputPath'] = output_path
+    __args__['sourceContent'] = source_content
+    __args__['sourceContentFilename'] = source_content_filename
+    __args__['sourceDir'] = source_dir
+    __args__['sourceFile'] = source_file
+    __args__['sources'] = sources
+    __args__['type'] = type
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('archive:index/getFile:getFile', __args__, opts=opts, typ=GetFileResult)
+    return __ret__.apply(lambda __response__: GetFileResult(
+        exclude_symlink_directories=pulumi.get(__response__, 'exclude_symlink_directories'),
+        excludes=pulumi.get(__response__, 'excludes'),
+        id=pulumi.get(__response__, 'id'),
+        output_base64sha256=pulumi.get(__response__, 'output_base64sha256'),
+        output_base64sha512=pulumi.get(__response__, 'output_base64sha512'),
+        output_file_mode=pulumi.get(__response__, 'output_file_mode'),
+        output_md5=pulumi.get(__response__, 'output_md5'),
+        output_path=pulumi.get(__response__, 'output_path'),
+        output_sha=pulumi.get(__response__, 'output_sha'),
+        output_sha256=pulumi.get(__response__, 'output_sha256'),
+        output_sha512=pulumi.get(__response__, 'output_sha512'),
+        output_size=pulumi.get(__response__, 'output_size'),
+        source_content=pulumi.get(__response__, 'source_content'),
+        source_content_filename=pulumi.get(__response__, 'source_content_filename'),
+        source_dir=pulumi.get(__response__, 'source_dir'),
+        source_file=pulumi.get(__response__, 'source_file'),
+        sources=pulumi.get(__response__, 'sources'),
+        type=pulumi.get(__response__, 'type')))
