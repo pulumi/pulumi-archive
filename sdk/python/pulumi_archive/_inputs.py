@@ -4,15 +4,37 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from . import _utilities
 
 __all__ = [
     'FileSourceArgs',
+    'FileSourceArgsDict',
     'GetFileSourceArgs',
+    'GetFileSourceArgsDict',
 ]
+
+MYPY = False
+
+if not MYPY:
+    class FileSourceArgsDict(TypedDict):
+        content: pulumi.Input[str]
+        """
+        Add this content to the archive with `filename` as the filename.
+        """
+        filename: pulumi.Input[str]
+        """
+        Set this as the filename when declaring a `source`.
+        """
+elif False:
+    FileSourceArgsDict: TypeAlias = Mapping[str, Any]
 
 @pulumi.input_type
 class FileSourceArgs:
@@ -50,6 +72,19 @@ class FileSourceArgs:
     def filename(self, value: pulumi.Input[str]):
         pulumi.set(self, "filename", value)
 
+
+if not MYPY:
+    class GetFileSourceArgsDict(TypedDict):
+        content: str
+        """
+        Add this content to the archive with `filename` as the filename.
+        """
+        filename: str
+        """
+        Set this as the filename when declaring a `source`.
+        """
+elif False:
+    GetFileSourceArgsDict: TypeAlias = Mapping[str, Any]
 
 @pulumi.input_type
 class GetFileSourceArgs:
