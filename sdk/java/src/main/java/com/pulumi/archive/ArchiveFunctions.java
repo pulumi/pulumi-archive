@@ -15,28 +15,28 @@ import java.util.concurrent.CompletableFuture;
 
 public final class ArchiveFunctions {
     /**
-     * Generates an archive from content, a file, or directory of files.
+     * Generates an archive from content, a file, or directory of files. The archive is built during the pulumi preview, so you must persist the archive through to the pulumi up. See the `archive.File` resource for an alternative if you cannot persist the file, such as in a multi-phase CI or build server context.
      * 
      */
     public static Output<GetFileResult> getFile(GetFileArgs args) {
         return getFile(args, InvokeOptions.Empty);
     }
     /**
-     * Generates an archive from content, a file, or directory of files.
+     * Generates an archive from content, a file, or directory of files. The archive is built during the pulumi preview, so you must persist the archive through to the pulumi up. See the `archive.File` resource for an alternative if you cannot persist the file, such as in a multi-phase CI or build server context.
      * 
      */
     public static CompletableFuture<GetFileResult> getFilePlain(GetFilePlainArgs args) {
         return getFilePlain(args, InvokeOptions.Empty);
     }
     /**
-     * Generates an archive from content, a file, or directory of files.
+     * Generates an archive from content, a file, or directory of files. The archive is built during the pulumi preview, so you must persist the archive through to the pulumi up. See the `archive.File` resource for an alternative if you cannot persist the file, such as in a multi-phase CI or build server context.
      * 
      */
     public static Output<GetFileResult> getFile(GetFileArgs args, InvokeOptions options) {
         return Deployment.getInstance().invoke("archive:index/getFile:getFile", TypeShape.of(GetFileResult.class), args, Utilities.withVersion(options));
     }
     /**
-     * Generates an archive from content, a file, or directory of files.
+     * Generates an archive from content, a file, or directory of files. The archive is built during the pulumi preview, so you must persist the archive through to the pulumi up. See the `archive.File` resource for an alternative if you cannot persist the file, such as in a multi-phase CI or build server context.
      * 
      */
     public static CompletableFuture<GetFileResult> getFilePlain(GetFilePlainArgs args, InvokeOptions options) {

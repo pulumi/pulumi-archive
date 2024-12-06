@@ -7,7 +7,7 @@ import * as outputs from "./types/output";
 import * as utilities from "./utilities";
 
 /**
- * **NOTE**: This resource is deprecated, use data source instead.
+ * Generates an archive from content, a file, or directory of files.
  */
 export class File extends pulumi.CustomResource {
     /**

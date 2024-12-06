@@ -19,7 +19,7 @@ import java.util.Optional;
 import javax.annotation.Nullable;
 
 /**
- * **NOTE**: This resource is deprecated, use data source instead.
+ * Generates an archive from content, a file, or directory of files.
  * 
  */
 @ResourceType(type="archive:index/file:File")

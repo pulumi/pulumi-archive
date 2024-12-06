@@ -7,7 +7,7 @@ import * as outputs from "./types/output";
 import * as utilities from "./utilities";
 
 /**
- * Generates an archive from content, a file, or directory of files.
+ * Generates an archive from content, a file, or directory of files. The archive is built during the pulumi preview, so you must persist the archive through to the pulumi up. See the `archive.File` resource for an alternative if you cannot persist the file, such as in a multi-phase CI or build server context.
  */
 export function getFile(args: GetFileArgs, opts?: pulumi.InvokeOptions): Promise<GetFileResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
@@ -149,7 +149,7 @@ export interface GetFileResult {
     readonly type: string;
 }
 /**
- * Generates an archive from content, a file, or directory of files.
+ * Generates an archive from content, a file, or directory of files. The archive is built during the pulumi preview, so you must persist the archive through to the pulumi up. See the `archive.File` resource for an alternative if you cannot persist the file, such as in a multi-phase CI or build server context.
  */
 export function getFileOutput(args: GetFileOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetFileResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});

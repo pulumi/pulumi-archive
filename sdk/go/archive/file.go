@@ -12,7 +12,7 @@ import (
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
-// **NOTE**: This resource is deprecated, use data source instead.
+// Generates an archive from content, a file, or directory of files.
 type File struct {
 	pulumi.CustomResourceState
 
