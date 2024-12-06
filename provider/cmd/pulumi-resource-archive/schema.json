@@ -89,7 +89,7 @@
     },
     "resources": {
         "archive:index/file:File": {
-            "description": "**NOTE**: This resource is deprecated, use data source instead.\n",
+            "description": "Generates an archive from content, a file, or directory of files.\n\n",
             "properties": {
                 "excludeSymlinkDirectories": {
                     "type": "boolean",
@@ -313,7 +313,7 @@
     },
     "functions": {
         "archive:index/getFile:getFile": {
-            "description": "Generates an archive from content, a file, or directory of files.\n\n",
+            "description": "Generates an archive from content, a file, or directory of files. The archive is built during the pulumi preview, so you must persist the archive through to the pulumi up. See the `archive.File` resource for an alternative if you cannot persist the file, such as in a multi-phase CI or build server context.\n\n",
             "inputs": {
                 "description": "A collection of arguments for invoking getFile.\n",
                 "properties": {
