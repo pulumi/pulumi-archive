@@ -151,7 +151,7 @@ export interface GetFileResult {
 /**
  * Generates an archive from content, a file, or directory of files.
  */
-export function getFileOutput(args: GetFileOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetFileResult> {
+export function getFileOutput(args: GetFileOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetFileResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("archive:index/getFile:getFile", {
         "excludeSymlinkDirectories": args.excludeSymlinkDirectories,

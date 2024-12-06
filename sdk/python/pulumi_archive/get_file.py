@@ -324,7 +324,7 @@ def get_file_output(exclude_symlink_directories: Optional[pulumi.Input[Optional[
                     source_file: Optional[pulumi.Input[Optional[str]]] = None,
                     sources: Optional[pulumi.Input[Optional[Sequence[Union['GetFileSourceArgs', 'GetFileSourceArgsDict']]]]] = None,
                     type: Optional[pulumi.Input[str]] = None,
-                    opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetFileResult]:
+                    opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetFileResult]:
     """
     Generates an archive from content, a file, or directory of files.
 
@@ -351,7 +351,7 @@ def get_file_output(exclude_symlink_directories: Optional[pulumi.Input[Optional[
     __args__['sourceFile'] = source_file
     __args__['sources'] = sources
     __args__['type'] = type
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('archive:index/getFile:getFile', __args__, opts=opts, typ=GetFileResult)
     return __ret__.apply(lambda __response__: GetFileResult(
         exclude_symlink_directories=pulumi.get(__response__, 'exclude_symlink_directories'),
