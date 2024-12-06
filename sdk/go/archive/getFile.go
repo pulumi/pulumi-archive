@@ -11,7 +11,7 @@ import (
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
-// Generates an archive from content, a file, or directory of files.
+// Generates an archive from content, a file, or directory of files. The archive is built during the pulumi preview, so you must persist the archive through to the pulumi up. See the `File` resource for an alternative if you cannot persist the file, such as in a multi-phase CI or build server context.
 func LookupFile(ctx *pulumi.Context, args *LookupFileArgs, opts ...pulumi.InvokeOption) (*LookupFileResult, error) {
 	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv LookupFileResult

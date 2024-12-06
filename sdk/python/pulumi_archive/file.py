@@ -481,7 +481,7 @@ class File(pulumi.CustomResource):
                  type: Optional[pulumi.Input[str]] = None,
                  __props__=None):
         """
-        **NOTE**: This resource is deprecated, use data source instead.
+        Generates an archive from content, a file, or directory of files.
 
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
@@ -503,7 +503,7 @@ class File(pulumi.CustomResource):
                  args: FileArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        **NOTE**: This resource is deprecated, use data source instead.
+        Generates an archive from content, a file, or directory of files.
 
         :param str resource_name: The name of the resource.
         :param FileArgs args: The arguments to use to populate this resource's properties.

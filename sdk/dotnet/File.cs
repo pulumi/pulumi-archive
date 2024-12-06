@@ -10,7 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Archive
 {
     /// <summary>
-    /// **NOTE**: This resource is deprecated, use data source instead.
+    /// Generates an archive from content, a file, or directory of files.
     /// </summary>
     [ArchiveResourceType("archive:index/file:File")]
     public partial class File : global::Pulumi.CustomResource

@@ -267,7 +267,7 @@ def get_file(exclude_symlink_directories: Optional[bool] = None,
              type: Optional[str] = None,
              opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetFileResult:
     """
-    Generates an archive from content, a file, or directory of files.
+    Generates an archive from content, a file, or directory of files. The archive is built during the pulumi preview, so you must persist the archive through to the pulumi up. See the `File` resource for an alternative if you cannot persist the file, such as in a multi-phase CI or build server context.
 
 
     :param bool exclude_symlink_directories: Boolean flag indicating whether symbolically linked directories should be excluded during the creation of the archive. Defaults to `false`.
@@ -326,7 +326,7 @@ def get_file_output(exclude_symlink_directories: Optional[pulumi.Input[Optional[
                     type: Optional[pulumi.Input[str]] = None,
                     opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetFileResult]:
     """
-    Generates an archive from content, a file, or directory of files.
+    Generates an archive from content, a file, or directory of files. The archive is built during the pulumi preview, so you must persist the archive through to the pulumi up. See the `File` resource for an alternative if you cannot persist the file, such as in a multi-phase CI or build server context.
 
 
     :param bool exclude_symlink_directories: Boolean flag indicating whether symbolically linked directories should be excluded during the creation of the archive. Defaults to `false`.
