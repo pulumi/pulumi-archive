@@ -151,7 +151,7 @@ export interface GetFileResult {
 /**
  * Generates an archive from content, a file, or directory of files. The archive is built during the pulumi preview, so you must persist the archive through to the pulumi up. See the `archive.File` resource for an alternative if you cannot persist the file, such as in a multi-phase CI or build server context.
  */
-export function getFileOutput(args: GetFileOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetFileResult> {
+export function getFileOutput(args: GetFileOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetFileResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("archive:index/getFile:getFile", {
         "excludeSymlinkDirectories": args.excludeSymlinkDirectories,
