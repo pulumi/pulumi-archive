@@ -11,6 +11,7 @@ import com.pulumi.core.Output;
 import com.pulumi.core.TypeShape;
 import com.pulumi.deployment.Deployment;
 import com.pulumi.deployment.InvokeOptions;
+import com.pulumi.deployment.InvokeOutputOptions;
 import java.util.concurrent.CompletableFuture;
 
 public final class ArchiveFunctions {
@@ -33,6 +34,13 @@ public final class ArchiveFunctions {
      * 
      */
     public static Output<GetFileResult> getFile(GetFileArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("archive:index/getFile:getFile", TypeShape.of(GetFileResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Generates an archive from content, a file, or directory of files. The archive is built during the pulumi preview, so you must persist the archive through to the pulumi up. See the `archive.File` resource for an alternative if you cannot persist the file, such as in a multi-phase CI or build server context.
+     * 
+     */
+    public static Output<GetFileResult> getFile(GetFileArgs args, InvokeOutputOptions options) {
         return Deployment.getInstance().invoke("archive:index/getFile:getFile", TypeShape.of(GetFileResult.class), args, Utilities.withVersion(options));
     }
     /**
