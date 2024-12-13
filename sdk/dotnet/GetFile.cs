@@ -22,6 +22,12 @@ namespace Pulumi.Archive
         /// </summary>
         public static Output<GetFileResult> Invoke(GetFileInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetFileResult>("archive:index/getFile:getFile", args ?? new GetFileInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// Generates an archive from content, a file, or directory of files. The archive is built during the pulumi preview, so you must persist the archive through to the pulumi up. See the `archive.File` resource for an alternative if you cannot persist the file, such as in a multi-phase CI or build server context.
+        /// </summary>
+        public static Output<GetFileResult> Invoke(GetFileInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetFileResult>("archive:index/getFile:getFile", args ?? new GetFileInvokeArgs(), options.WithDefaults());
     }
 
 

@@ -87,21 +87,11 @@ type LookupFileResult struct {
 }
 
 func LookupFileOutput(ctx *pulumi.Context, args LookupFileOutputArgs, opts ...pulumi.InvokeOption) LookupFileResultOutput {
-	return pulumi.ToOutputWithContext(context.Background(), args).
+	return pulumi.ToOutputWithContext(ctx.Context(), args).
 		ApplyT(func(v interface{}) (LookupFileResultOutput, error) {
 			args := v.(LookupFileArgs)
-			opts = internal.PkgInvokeDefaultOpts(opts)
-			var rv LookupFileResult
-			secret, err := ctx.InvokePackageRaw("archive:index/getFile:getFile", args, &rv, "", opts...)
-			if err != nil {
-				return LookupFileResultOutput{}, err
-			}
-
-			output := pulumi.ToOutput(rv).(LookupFileResultOutput)
-			if secret {
-				return pulumi.ToSecret(output).(LookupFileResultOutput), nil
-			}
-			return output, nil
+			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+			return ctx.InvokeOutput("archive:index/getFile:getFile", args, LookupFileResultOutput{}, options).(LookupFileResultOutput), nil
 		}).(LookupFileResultOutput)
 }
 
