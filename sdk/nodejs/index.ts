@@ -15,10 +15,8 @@ export const getFile: typeof import("./getFile").getFile = null as any;
 export const getFileOutput: typeof import("./getFile").getFileOutput = null as any;
 utilities.lazyLoad(exports, ["getFile","getFileOutput"], () => require("./getFile"));
 
-export { ProviderArgs } from "./provider";
-export type Provider = import("./provider").Provider;
-export const Provider: typeof import("./provider").Provider = null as any;
-utilities.lazyLoad(exports, ["Provider"], () => require("./provider"));
+export * from "./provider";
+import { Provider } from "./provider";
 
 
 // Export sub-modules:
