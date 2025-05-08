@@ -465,10 +465,8 @@ class _FileState:
         pulumi.set(self, "type", value)
 
 
+@pulumi.type_token("archive:index/file:File")
 class File(pulumi.CustomResource):
-
-    pulumi_type = "archive:index/file:File"
-
     @overload
     def __init__(__self__,
                  resource_name: str,
