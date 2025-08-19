@@ -476,7 +476,7 @@
                 "properties": {
                     "__self__": {
                         "type": "ref",
-                        "$ref": "#/resources/pulumi:providers:archive"
+                        "$ref": "#/provider"
                     }
                 },
                 "type": "pulumi:providers:archive/terraformConfig",
