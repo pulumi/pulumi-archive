@@ -40,71 +40,71 @@ export class File extends pulumi.CustomResource {
     /**
      * Boolean flag indicating whether symbolically linked directories should be excluded during the creation of the archive. Defaults to `false`.
      */
-    public readonly excludeSymlinkDirectories!: pulumi.Output<boolean | undefined>;
+    declare public readonly excludeSymlinkDirectories: pulumi.Output<boolean | undefined>;
     /**
      * Specify files/directories to ignore when reading the `sourceDir`. Supports glob file matching patterns including doublestar/globstar (`**`) patterns.
      */
-    public readonly excludes!: pulumi.Output<string[] | undefined>;
+    declare public readonly excludes: pulumi.Output<string[] | undefined>;
     /**
      * Base64 Encoded SHA256 checksum of output file
      */
-    public /*out*/ readonly outputBase64sha256!: pulumi.Output<string>;
+    declare public /*out*/ readonly outputBase64sha256: pulumi.Output<string>;
     /**
      * Base64 Encoded SHA512 checksum of output file
      */
-    public /*out*/ readonly outputBase64sha512!: pulumi.Output<string>;
+    declare public /*out*/ readonly outputBase64sha512: pulumi.Output<string>;
     /**
      * String that specifies the octal file mode for all archived files. For example: `"0666"`. Setting this will ensure that cross platform usage of this module will not vary the modes of archived files (and ultimately checksums) resulting in more deterministic behavior.
      */
-    public readonly outputFileMode!: pulumi.Output<string | undefined>;
+    declare public readonly outputFileMode: pulumi.Output<string | undefined>;
     /**
      * MD5 of output file
      */
-    public /*out*/ readonly outputMd5!: pulumi.Output<string>;
+    declare public /*out*/ readonly outputMd5: pulumi.Output<string>;
     /**
      * The output of the archive file.
      */
-    public readonly outputPath!: pulumi.Output<string>;
+    declare public readonly outputPath: pulumi.Output<string>;
     /**
      * SHA1 checksum of output file
      */
-    public /*out*/ readonly outputSha!: pulumi.Output<string>;
+    declare public /*out*/ readonly outputSha: pulumi.Output<string>;
     /**
      * SHA256 checksum of output file
      */
-    public /*out*/ readonly outputSha256!: pulumi.Output<string>;
+    declare public /*out*/ readonly outputSha256: pulumi.Output<string>;
     /**
      * SHA512 checksum of output file
      */
-    public /*out*/ readonly outputSha512!: pulumi.Output<string>;
+    declare public /*out*/ readonly outputSha512: pulumi.Output<string>;
     /**
      * The byte size of the output archive file.
      */
-    public /*out*/ readonly outputSize!: pulumi.Output<number>;
+    declare public /*out*/ readonly outputSize: pulumi.Output<number>;
     /**
      * Add only this content to the archive with `sourceContentFilename` as the filename. One and only one of `source`, `sourceContentFilename` (with `sourceContent`), `sourceFile`, or `sourceDir` must be specified.
      */
-    public readonly sourceContent!: pulumi.Output<string | undefined>;
+    declare public readonly sourceContent: pulumi.Output<string | undefined>;
     /**
      * Set this as the filename when using `sourceContent`. One and only one of `source`, `sourceContentFilename` (with `sourceContent`), `sourceFile`, or `sourceDir` must be specified.
      */
-    public readonly sourceContentFilename!: pulumi.Output<string | undefined>;
+    declare public readonly sourceContentFilename: pulumi.Output<string | undefined>;
     /**
      * Package entire contents of this directory into the archive. One and only one of `source`, `sourceContentFilename` (with `sourceContent`), `sourceFile`, or `sourceDir` must be specified.
      */
-    public readonly sourceDir!: pulumi.Output<string | undefined>;
+    declare public readonly sourceDir: pulumi.Output<string | undefined>;
     /**
      * Package this file into the archive. One and only one of `source`, `sourceContentFilename` (with `sourceContent`), `sourceFile`, or `sourceDir` must be specified.
      */
-    public readonly sourceFile!: pulumi.Output<string | undefined>;
+    declare public readonly sourceFile: pulumi.Output<string | undefined>;
     /**
      * Specifies attributes of a single source file to include into the archive. One and only one of `source`, `sourceContentFilename` (with `sourceContent`), `sourceFile`, or `sourceDir` must be specified.
      */
-    public readonly sources!: pulumi.Output<outputs.FileSource[] | undefined>;
+    declare public readonly sources: pulumi.Output<outputs.FileSource[] | undefined>;
     /**
      * The type of archive to generate. NOTE: `zip` and `tar.gz` is supported.
      */
-    public readonly type!: pulumi.Output<string>;
+    declare public readonly type: pulumi.Output<string>;
 
     /**
      * Create a File resource with the given unique name, arguments, and options.
@@ -119,41 +119,41 @@ export class File extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as FileState | undefined;
-            resourceInputs["excludeSymlinkDirectories"] = state ? state.excludeSymlinkDirectories : undefined;
-            resourceInputs["excludes"] = state ? state.excludes : undefined;
-            resourceInputs["outputBase64sha256"] = state ? state.outputBase64sha256 : undefined;
-            resourceInputs["outputBase64sha512"] = state ? state.outputBase64sha512 : undefined;
-            resourceInputs["outputFileMode"] = state ? state.outputFileMode : undefined;
-            resourceInputs["outputMd5"] = state ? state.outputMd5 : undefined;
-            resourceInputs["outputPath"] = state ? state.outputPath : undefined;
-            resourceInputs["outputSha"] = state ? state.outputSha : undefined;
-            resourceInputs["outputSha256"] = state ? state.outputSha256 : undefined;
-            resourceInputs["outputSha512"] = state ? state.outputSha512 : undefined;
-            resourceInputs["outputSize"] = state ? state.outputSize : undefined;
-            resourceInputs["sourceContent"] = state ? state.sourceContent : undefined;
-            resourceInputs["sourceContentFilename"] = state ? state.sourceContentFilename : undefined;
-            resourceInputs["sourceDir"] = state ? state.sourceDir : undefined;
-            resourceInputs["sourceFile"] = state ? state.sourceFile : undefined;
-            resourceInputs["sources"] = state ? state.sources : undefined;
-            resourceInputs["type"] = state ? state.type : undefined;
+            resourceInputs["excludeSymlinkDirectories"] = state?.excludeSymlinkDirectories;
+            resourceInputs["excludes"] = state?.excludes;
+            resourceInputs["outputBase64sha256"] = state?.outputBase64sha256;
+            resourceInputs["outputBase64sha512"] = state?.outputBase64sha512;
+            resourceInputs["outputFileMode"] = state?.outputFileMode;
+            resourceInputs["outputMd5"] = state?.outputMd5;
+            resourceInputs["outputPath"] = state?.outputPath;
+            resourceInputs["outputSha"] = state?.outputSha;
+            resourceInputs["outputSha256"] = state?.outputSha256;
+            resourceInputs["outputSha512"] = state?.outputSha512;
+            resourceInputs["outputSize"] = state?.outputSize;
+            resourceInputs["sourceContent"] = state?.sourceContent;
+            resourceInputs["sourceContentFilename"] = state?.sourceContentFilename;
+            resourceInputs["sourceDir"] = state?.sourceDir;
+            resourceInputs["sourceFile"] = state?.sourceFile;
+            resourceInputs["sources"] = state?.sources;
+            resourceInputs["type"] = state?.type;
         } else {
             const args = argsOrState as FileArgs | undefined;
-            if ((!args || args.outputPath === undefined) && !opts.urn) {
+            if (args?.outputPath === undefined && !opts.urn) {
                 throw new Error("Missing required property 'outputPath'");
             }
-            if ((!args || args.type === undefined) && !opts.urn) {
+            if (args?.type === undefined && !opts.urn) {
                 throw new Error("Missing required property 'type'");
             }
-            resourceInputs["excludeSymlinkDirectories"] = args ? args.excludeSymlinkDirectories : undefined;
-            resourceInputs["excludes"] = args ? args.excludes : undefined;
-            resourceInputs["outputFileMode"] = args ? args.outputFileMode : undefined;
-            resourceInputs["outputPath"] = args ? args.outputPath : undefined;
-            resourceInputs["sourceContent"] = args ? args.sourceContent : undefined;
-            resourceInputs["sourceContentFilename"] = args ? args.sourceContentFilename : undefined;
-            resourceInputs["sourceDir"] = args ? args.sourceDir : undefined;
-            resourceInputs["sourceFile"] = args ? args.sourceFile : undefined;
-            resourceInputs["sources"] = args ? args.sources : undefined;
-            resourceInputs["type"] = args ? args.type : undefined;
+            resourceInputs["excludeSymlinkDirectories"] = args?.excludeSymlinkDirectories;
+            resourceInputs["excludes"] = args?.excludes;
+            resourceInputs["outputFileMode"] = args?.outputFileMode;
+            resourceInputs["outputPath"] = args?.outputPath;
+            resourceInputs["sourceContent"] = args?.sourceContent;
+            resourceInputs["sourceContentFilename"] = args?.sourceContentFilename;
+            resourceInputs["sourceDir"] = args?.sourceDir;
+            resourceInputs["sourceFile"] = args?.sourceFile;
+            resourceInputs["sources"] = args?.sources;
+            resourceInputs["type"] = args?.type;
             resourceInputs["outputBase64sha256"] = undefined /*out*/;
             resourceInputs["outputBase64sha512"] = undefined /*out*/;
             resourceInputs["outputMd5"] = undefined /*out*/;
