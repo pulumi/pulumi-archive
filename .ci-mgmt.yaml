@@ -4,12 +4,12 @@ providerDefaultBranch: main
 makeTemplate: bridged
 publishRegistry: false
 esc:
-  enabled: true
-  environment: imports/github-secrets # No repo-specific secrets.
+    enabled: true
+    environment: imports/github-secrets # No repo-specific secrets.
 env:
-  ARCHIVE_TOKEN: ${{ secrets.ARCHIVE_TOKEN }}
+    ARCHIVE_TOKEN: ${{ secrets.ARCHIVE_TOKEN }}
 pulumiConvert: 1
 plugins:
-  - name: terraform
-    version: "1.0.16"
-    kind: converter
+    - name: terraform
+      version: "1.0.16"
+      kind: converter
