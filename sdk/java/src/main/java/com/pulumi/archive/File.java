@@ -39,14 +39,14 @@ public class File extends com.pulumi.resources.CustomResource {
         return Codegen.optional(this.excludeSymlinkDirectories);
     }
     /**
-     * Specify files/directories to ignore when reading the `source_dir`. Supports glob file matching patterns including doublestar/globstar (`**`) patterns.
+     * Specify files/directories to ignore when reading the `sourceDir`. Supports glob file matching patterns including doublestar/globstar (`**`) patterns.
      * 
      */
     @Export(name="excludes", refs={List.class,String.class}, tree="[0,1]")
     private Output</* @Nullable */ List<String>> excludes;
 
     /**
-     * @return Specify files/directories to ignore when reading the `source_dir`. Supports glob file matching patterns including doublestar/globstar (`**`) patterns.
+     * @return Specify files/directories to ignore when reading the `sourceDir`. Supports glob file matching patterns including doublestar/globstar (`**`) patterns.
      * 
      */
     public Output<Optional<List<String>>> excludes() {
@@ -179,70 +179,70 @@ public class File extends com.pulumi.resources.CustomResource {
         return this.outputSize;
     }
     /**
-     * Add only this content to the archive with `source_content_filename` as the filename. One and only one of `source`, `source_content_filename` (with `source_content`), `source_file`, or `source_dir` must be specified.
+     * Add only this content to the archive with `sourceContentFilename` as the filename. One and only one of `source`, `sourceContentFilename` (with `sourceContent`), `sourceFile`, or `sourceDir` must be specified.
      * 
      */
     @Export(name="sourceContent", refs={String.class}, tree="[0]")
     private Output</* @Nullable */ String> sourceContent;
 
     /**
-     * @return Add only this content to the archive with `source_content_filename` as the filename. One and only one of `source`, `source_content_filename` (with `source_content`), `source_file`, or `source_dir` must be specified.
+     * @return Add only this content to the archive with `sourceContentFilename` as the filename. One and only one of `source`, `sourceContentFilename` (with `sourceContent`), `sourceFile`, or `sourceDir` must be specified.
      * 
      */
     public Output<Optional<String>> sourceContent() {
         return Codegen.optional(this.sourceContent);
     }
     /**
-     * Set this as the filename when using `source_content`. One and only one of `source`, `source_content_filename` (with `source_content`), `source_file`, or `source_dir` must be specified.
+     * Set this as the filename when using `sourceContent`. One and only one of `source`, `sourceContentFilename` (with `sourceContent`), `sourceFile`, or `sourceDir` must be specified.
      * 
      */
     @Export(name="sourceContentFilename", refs={String.class}, tree="[0]")
     private Output</* @Nullable */ String> sourceContentFilename;
 
     /**
-     * @return Set this as the filename when using `source_content`. One and only one of `source`, `source_content_filename` (with `source_content`), `source_file`, or `source_dir` must be specified.
+     * @return Set this as the filename when using `sourceContent`. One and only one of `source`, `sourceContentFilename` (with `sourceContent`), `sourceFile`, or `sourceDir` must be specified.
      * 
      */
     public Output<Optional<String>> sourceContentFilename() {
         return Codegen.optional(this.sourceContentFilename);
     }
     /**
-     * Package entire contents of this directory into the archive. One and only one of `source`, `source_content_filename` (with `source_content`), `source_file`, or `source_dir` must be specified.
+     * Package entire contents of this directory into the archive. One and only one of `source`, `sourceContentFilename` (with `sourceContent`), `sourceFile`, or `sourceDir` must be specified.
      * 
      */
     @Export(name="sourceDir", refs={String.class}, tree="[0]")
     private Output</* @Nullable */ String> sourceDir;
 
     /**
-     * @return Package entire contents of this directory into the archive. One and only one of `source`, `source_content_filename` (with `source_content`), `source_file`, or `source_dir` must be specified.
+     * @return Package entire contents of this directory into the archive. One and only one of `source`, `sourceContentFilename` (with `sourceContent`), `sourceFile`, or `sourceDir` must be specified.
      * 
      */
     public Output<Optional<String>> sourceDir() {
         return Codegen.optional(this.sourceDir);
     }
     /**
-     * Package this file into the archive. One and only one of `source`, `source_content_filename` (with `source_content`), `source_file`, or `source_dir` must be specified.
+     * Package this file into the archive. One and only one of `source`, `sourceContentFilename` (with `sourceContent`), `sourceFile`, or `sourceDir` must be specified.
      * 
      */
     @Export(name="sourceFile", refs={String.class}, tree="[0]")
     private Output</* @Nullable */ String> sourceFile;
 
     /**
-     * @return Package this file into the archive. One and only one of `source`, `source_content_filename` (with `source_content`), `source_file`, or `source_dir` must be specified.
+     * @return Package this file into the archive. One and only one of `source`, `sourceContentFilename` (with `sourceContent`), `sourceFile`, or `sourceDir` must be specified.
      * 
      */
     public Output<Optional<String>> sourceFile() {
         return Codegen.optional(this.sourceFile);
     }
     /**
-     * Specifies attributes of a single source file to include into the archive. One and only one of `source`, `source_content_filename` (with `source_content`), `source_file`, or `source_dir` must be specified.
+     * Specifies attributes of a single source file to include into the archive. One and only one of `source`, `sourceContentFilename` (with `sourceContent`), `sourceFile`, or `sourceDir` must be specified.
      * 
      */
     @Export(name="sources", refs={List.class,FileSource.class}, tree="[0,1]")
     private Output</* @Nullable */ List<FileSource>> sources;
 
     /**
-     * @return Specifies attributes of a single source file to include into the archive. One and only one of `source`, `source_content_filename` (with `source_content`), `source_file`, or `source_dir` must be specified.
+     * @return Specifies attributes of a single source file to include into the archive. One and only one of `source`, `sourceContentFilename` (with `sourceContent`), `sourceFile`, or `sourceDir` must be specified.
      * 
      */
     public Output<Optional<List<FileSource>>> sources() {

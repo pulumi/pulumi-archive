@@ -35,14 +35,14 @@ public final class FileState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * Specify files/directories to ignore when reading the `source_dir`. Supports glob file matching patterns including doublestar/globstar (`**`) patterns.
+     * Specify files/directories to ignore when reading the `sourceDir`. Supports glob file matching patterns including doublestar/globstar (`**`) patterns.
      * 
      */
     @Import(name="excludes")
     private @Nullable Output<List<String>> excludes;
 
     /**
-     * @return Specify files/directories to ignore when reading the `source_dir`. Supports glob file matching patterns including doublestar/globstar (`**`) patterns.
+     * @return Specify files/directories to ignore when reading the `sourceDir`. Supports glob file matching patterns including doublestar/globstar (`**`) patterns.
      * 
      */
     public Optional<Output<List<String>>> excludes() {
@@ -185,14 +185,14 @@ public final class FileState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * Add only this content to the archive with `source_content_filename` as the filename. One and only one of `source`, `source_content_filename` (with `source_content`), `source_file`, or `source_dir` must be specified.
+     * Add only this content to the archive with `sourceContentFilename` as the filename. One and only one of `source`, `sourceContentFilename` (with `sourceContent`), `sourceFile`, or `sourceDir` must be specified.
      * 
      */
     @Import(name="sourceContent")
     private @Nullable Output<String> sourceContent;
 
     /**
-     * @return Add only this content to the archive with `source_content_filename` as the filename. One and only one of `source`, `source_content_filename` (with `source_content`), `source_file`, or `source_dir` must be specified.
+     * @return Add only this content to the archive with `sourceContentFilename` as the filename. One and only one of `source`, `sourceContentFilename` (with `sourceContent`), `sourceFile`, or `sourceDir` must be specified.
      * 
      */
     public Optional<Output<String>> sourceContent() {
@@ -200,14 +200,14 @@ public final class FileState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * Set this as the filename when using `source_content`. One and only one of `source`, `source_content_filename` (with `source_content`), `source_file`, or `source_dir` must be specified.
+     * Set this as the filename when using `sourceContent`. One and only one of `source`, `sourceContentFilename` (with `sourceContent`), `sourceFile`, or `sourceDir` must be specified.
      * 
      */
     @Import(name="sourceContentFilename")
     private @Nullable Output<String> sourceContentFilename;
 
     /**
-     * @return Set this as the filename when using `source_content`. One and only one of `source`, `source_content_filename` (with `source_content`), `source_file`, or `source_dir` must be specified.
+     * @return Set this as the filename when using `sourceContent`. One and only one of `source`, `sourceContentFilename` (with `sourceContent`), `sourceFile`, or `sourceDir` must be specified.
      * 
      */
     public Optional<Output<String>> sourceContentFilename() {
@@ -215,14 +215,14 @@ public final class FileState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * Package entire contents of this directory into the archive. One and only one of `source`, `source_content_filename` (with `source_content`), `source_file`, or `source_dir` must be specified.
+     * Package entire contents of this directory into the archive. One and only one of `source`, `sourceContentFilename` (with `sourceContent`), `sourceFile`, or `sourceDir` must be specified.
      * 
      */
     @Import(name="sourceDir")
     private @Nullable Output<String> sourceDir;
 
     /**
-     * @return Package entire contents of this directory into the archive. One and only one of `source`, `source_content_filename` (with `source_content`), `source_file`, or `source_dir` must be specified.
+     * @return Package entire contents of this directory into the archive. One and only one of `source`, `sourceContentFilename` (with `sourceContent`), `sourceFile`, or `sourceDir` must be specified.
      * 
      */
     public Optional<Output<String>> sourceDir() {
@@ -230,14 +230,14 @@ public final class FileState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * Package this file into the archive. One and only one of `source`, `source_content_filename` (with `source_content`), `source_file`, or `source_dir` must be specified.
+     * Package this file into the archive. One and only one of `source`, `sourceContentFilename` (with `sourceContent`), `sourceFile`, or `sourceDir` must be specified.
      * 
      */
     @Import(name="sourceFile")
     private @Nullable Output<String> sourceFile;
 
     /**
-     * @return Package this file into the archive. One and only one of `source`, `source_content_filename` (with `source_content`), `source_file`, or `source_dir` must be specified.
+     * @return Package this file into the archive. One and only one of `source`, `sourceContentFilename` (with `sourceContent`), `sourceFile`, or `sourceDir` must be specified.
      * 
      */
     public Optional<Output<String>> sourceFile() {
@@ -245,14 +245,14 @@ public final class FileState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * Specifies attributes of a single source file to include into the archive. One and only one of `source`, `source_content_filename` (with `source_content`), `source_file`, or `source_dir` must be specified.
+     * Specifies attributes of a single source file to include into the archive. One and only one of `source`, `sourceContentFilename` (with `sourceContent`), `sourceFile`, or `sourceDir` must be specified.
      * 
      */
     @Import(name="sources")
     private @Nullable Output<List<FileSourceArgs>> sources;
 
     /**
-     * @return Specifies attributes of a single source file to include into the archive. One and only one of `source`, `source_content_filename` (with `source_content`), `source_file`, or `source_dir` must be specified.
+     * @return Specifies attributes of a single source file to include into the archive. One and only one of `source`, `sourceContentFilename` (with `sourceContent`), `sourceFile`, or `sourceDir` must be specified.
      * 
      */
     public Optional<Output<List<FileSourceArgs>>> sources() {
@@ -336,7 +336,7 @@ public final class FileState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param excludes Specify files/directories to ignore when reading the `source_dir`. Supports glob file matching patterns including doublestar/globstar (`**`) patterns.
+         * @param excludes Specify files/directories to ignore when reading the `sourceDir`. Supports glob file matching patterns including doublestar/globstar (`**`) patterns.
          * 
          * @return builder
          * 
@@ -347,7 +347,7 @@ public final class FileState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param excludes Specify files/directories to ignore when reading the `source_dir`. Supports glob file matching patterns including doublestar/globstar (`**`) patterns.
+         * @param excludes Specify files/directories to ignore when reading the `sourceDir`. Supports glob file matching patterns including doublestar/globstar (`**`) patterns.
          * 
          * @return builder
          * 
@@ -357,7 +357,7 @@ public final class FileState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param excludes Specify files/directories to ignore when reading the `source_dir`. Supports glob file matching patterns including doublestar/globstar (`**`) patterns.
+         * @param excludes Specify files/directories to ignore when reading the `sourceDir`. Supports glob file matching patterns including doublestar/globstar (`**`) patterns.
          * 
          * @return builder
          * 
@@ -556,7 +556,7 @@ public final class FileState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param sourceContent Add only this content to the archive with `source_content_filename` as the filename. One and only one of `source`, `source_content_filename` (with `source_content`), `source_file`, or `source_dir` must be specified.
+         * @param sourceContent Add only this content to the archive with `sourceContentFilename` as the filename. One and only one of `source`, `sourceContentFilename` (with `sourceContent`), `sourceFile`, or `sourceDir` must be specified.
          * 
          * @return builder
          * 
@@ -567,7 +567,7 @@ public final class FileState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param sourceContent Add only this content to the archive with `source_content_filename` as the filename. One and only one of `source`, `source_content_filename` (with `source_content`), `source_file`, or `source_dir` must be specified.
+         * @param sourceContent Add only this content to the archive with `sourceContentFilename` as the filename. One and only one of `source`, `sourceContentFilename` (with `sourceContent`), `sourceFile`, or `sourceDir` must be specified.
          * 
          * @return builder
          * 
@@ -577,7 +577,7 @@ public final class FileState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param sourceContentFilename Set this as the filename when using `source_content`. One and only one of `source`, `source_content_filename` (with `source_content`), `source_file`, or `source_dir` must be specified.
+         * @param sourceContentFilename Set this as the filename when using `sourceContent`. One and only one of `source`, `sourceContentFilename` (with `sourceContent`), `sourceFile`, or `sourceDir` must be specified.
          * 
          * @return builder
          * 
@@ -588,7 +588,7 @@ public final class FileState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param sourceContentFilename Set this as the filename when using `source_content`. One and only one of `source`, `source_content_filename` (with `source_content`), `source_file`, or `source_dir` must be specified.
+         * @param sourceContentFilename Set this as the filename when using `sourceContent`. One and only one of `source`, `sourceContentFilename` (with `sourceContent`), `sourceFile`, or `sourceDir` must be specified.
          * 
          * @return builder
          * 
@@ -598,7 +598,7 @@ public final class FileState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param sourceDir Package entire contents of this directory into the archive. One and only one of `source`, `source_content_filename` (with `source_content`), `source_file`, or `source_dir` must be specified.
+         * @param sourceDir Package entire contents of this directory into the archive. One and only one of `source`, `sourceContentFilename` (with `sourceContent`), `sourceFile`, or `sourceDir` must be specified.
          * 
          * @return builder
          * 
@@ -609,7 +609,7 @@ public final class FileState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param sourceDir Package entire contents of this directory into the archive. One and only one of `source`, `source_content_filename` (with `source_content`), `source_file`, or `source_dir` must be specified.
+         * @param sourceDir Package entire contents of this directory into the archive. One and only one of `source`, `sourceContentFilename` (with `sourceContent`), `sourceFile`, or `sourceDir` must be specified.
          * 
          * @return builder
          * 
@@ -619,7 +619,7 @@ public final class FileState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param sourceFile Package this file into the archive. One and only one of `source`, `source_content_filename` (with `source_content`), `source_file`, or `source_dir` must be specified.
+         * @param sourceFile Package this file into the archive. One and only one of `source`, `sourceContentFilename` (with `sourceContent`), `sourceFile`, or `sourceDir` must be specified.
          * 
          * @return builder
          * 
@@ -630,7 +630,7 @@ public final class FileState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param sourceFile Package this file into the archive. One and only one of `source`, `source_content_filename` (with `source_content`), `source_file`, or `source_dir` must be specified.
+         * @param sourceFile Package this file into the archive. One and only one of `source`, `sourceContentFilename` (with `sourceContent`), `sourceFile`, or `sourceDir` must be specified.
          * 
          * @return builder
          * 
@@ -640,7 +640,7 @@ public final class FileState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param sources Specifies attributes of a single source file to include into the archive. One and only one of `source`, `source_content_filename` (with `source_content`), `source_file`, or `source_dir` must be specified.
+         * @param sources Specifies attributes of a single source file to include into the archive. One and only one of `source`, `sourceContentFilename` (with `sourceContent`), `sourceFile`, or `sourceDir` must be specified.
          * 
          * @return builder
          * 
@@ -651,7 +651,7 @@ public final class FileState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param sources Specifies attributes of a single source file to include into the archive. One and only one of `source`, `source_content_filename` (with `source_content`), `source_file`, or `source_dir` must be specified.
+         * @param sources Specifies attributes of a single source file to include into the archive. One and only one of `source`, `sourceContentFilename` (with `sourceContent`), `sourceFile`, or `sourceDir` must be specified.
          * 
          * @return builder
          * 
@@ -661,7 +661,7 @@ public final class FileState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param sources Specifies attributes of a single source file to include into the archive. One and only one of `source`, `source_content_filename` (with `source_content`), `source_file`, or `source_dir` must be specified.
+         * @param sources Specifies attributes of a single source file to include into the archive. One and only one of `source`, `sourceContentFilename` (with `sourceContent`), `sourceFile`, or `sourceDir` must be specified.
          * 
          * @return builder
          * 
