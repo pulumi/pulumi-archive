@@ -14,11 +14,11 @@ namespace Pulumi.Archive.Outputs
     public sealed class FileSource
     {
         /// <summary>
-        /// Add this content to the archive with `filename` as the filename.
+        /// Add this content to the archive with `Filename` as the filename.
         /// </summary>
         public readonly string Content;
         /// <summary>
-        /// Set this as the filename when declaring a `source`.
+        /// Set this as the filename when declaring a `Source`.
         /// </summary>
         public readonly string Filename;
 

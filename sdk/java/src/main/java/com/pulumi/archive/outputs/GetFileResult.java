@@ -22,7 +22,7 @@ public final class GetFileResult {
      */
     private @Nullable Boolean excludeSymlinkDirectories;
     /**
-     * @return Specify files/directories to ignore when reading the `source_dir`. Supports glob file matching patterns including doublestar/globstar (`**`) patterns.
+     * @return Specify files/directories to ignore when reading the `sourceDir`. Supports glob file matching patterns including doublestar/globstar (`**`) patterns.
      * 
      */
     private @Nullable List<String> excludes;
@@ -77,27 +77,27 @@ public final class GetFileResult {
      */
     private Integer outputSize;
     /**
-     * @return Add only this content to the archive with `source_content_filename` as the filename. One and only one of `source`, `source_content_filename` (with `source_content`), `source_file`, or `source_dir` must be specified.
+     * @return Add only this content to the archive with `sourceContentFilename` as the filename. One and only one of `source`, `sourceContentFilename` (with `sourceContent`), `sourceFile`, or `sourceDir` must be specified.
      * 
      */
     private @Nullable String sourceContent;
     /**
-     * @return Set this as the filename when using `source_content`. One and only one of `source`, `source_content_filename` (with `source_content`), `source_file`, or `source_dir` must be specified.
+     * @return Set this as the filename when using `sourceContent`. One and only one of `source`, `sourceContentFilename` (with `sourceContent`), `sourceFile`, or `sourceDir` must be specified.
      * 
      */
     private @Nullable String sourceContentFilename;
     /**
-     * @return Package entire contents of this directory into the archive. One and only one of `source`, `source_content_filename` (with `source_content`), `source_file`, or `source_dir` must be specified.
+     * @return Package entire contents of this directory into the archive. One and only one of `source`, `sourceContentFilename` (with `sourceContent`), `sourceFile`, or `sourceDir` must be specified.
      * 
      */
     private @Nullable String sourceDir;
     /**
-     * @return Package this file into the archive. One and only one of `source`, `source_content_filename` (with `source_content`), `source_file`, or `source_dir` must be specified.
+     * @return Package this file into the archive. One and only one of `source`, `sourceContentFilename` (with `sourceContent`), `sourceFile`, or `sourceDir` must be specified.
      * 
      */
     private @Nullable String sourceFile;
     /**
-     * @return Specifies attributes of a single source file to include into the archive. One and only one of `source`, `source_content_filename` (with `source_content`), `source_file`, or `source_dir` must be specified.
+     * @return Specifies attributes of a single source file to include into the archive. One and only one of `source`, `sourceContentFilename` (with `sourceContent`), `sourceFile`, or `sourceDir` must be specified.
      * 
      */
     private @Nullable List<GetFileSource> sources;
@@ -116,7 +116,7 @@ public final class GetFileResult {
         return Optional.ofNullable(this.excludeSymlinkDirectories);
     }
     /**
-     * @return Specify files/directories to ignore when reading the `source_dir`. Supports glob file matching patterns including doublestar/globstar (`**`) patterns.
+     * @return Specify files/directories to ignore when reading the `sourceDir`. Supports glob file matching patterns including doublestar/globstar (`**`) patterns.
      * 
      */
     public List<String> excludes() {
@@ -193,35 +193,35 @@ public final class GetFileResult {
         return this.outputSize;
     }
     /**
-     * @return Add only this content to the archive with `source_content_filename` as the filename. One and only one of `source`, `source_content_filename` (with `source_content`), `source_file`, or `source_dir` must be specified.
+     * @return Add only this content to the archive with `sourceContentFilename` as the filename. One and only one of `source`, `sourceContentFilename` (with `sourceContent`), `sourceFile`, or `sourceDir` must be specified.
      * 
      */
     public Optional<String> sourceContent() {
         return Optional.ofNullable(this.sourceContent);
     }
     /**
-     * @return Set this as the filename when using `source_content`. One and only one of `source`, `source_content_filename` (with `source_content`), `source_file`, or `source_dir` must be specified.
+     * @return Set this as the filename when using `sourceContent`. One and only one of `source`, `sourceContentFilename` (with `sourceContent`), `sourceFile`, or `sourceDir` must be specified.
      * 
      */
     public Optional<String> sourceContentFilename() {
         return Optional.ofNullable(this.sourceContentFilename);
     }
     /**
-     * @return Package entire contents of this directory into the archive. One and only one of `source`, `source_content_filename` (with `source_content`), `source_file`, or `source_dir` must be specified.
+     * @return Package entire contents of this directory into the archive. One and only one of `source`, `sourceContentFilename` (with `sourceContent`), `sourceFile`, or `sourceDir` must be specified.
      * 
      */
     public Optional<String> sourceDir() {
         return Optional.ofNullable(this.sourceDir);
     }
     /**
-     * @return Package this file into the archive. One and only one of `source`, `source_content_filename` (with `source_content`), `source_file`, or `source_dir` must be specified.
+     * @return Package this file into the archive. One and only one of `source`, `sourceContentFilename` (with `sourceContent`), `sourceFile`, or `sourceDir` must be specified.
      * 
      */
     public Optional<String> sourceFile() {
         return Optional.ofNullable(this.sourceFile);
     }
     /**
-     * @return Specifies attributes of a single source file to include into the archive. One and only one of `source`, `source_content_filename` (with `source_content`), `source_file`, or `source_dir` must be specified.
+     * @return Specifies attributes of a single source file to include into the archive. One and only one of `source`, `sourceContentFilename` (with `sourceContent`), `sourceFile`, or `sourceDir` must be specified.
      * 
      */
     public List<GetFileSource> sources() {

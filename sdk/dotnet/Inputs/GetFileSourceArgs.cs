@@ -13,13 +13,13 @@ namespace Pulumi.Archive.Inputs
     public sealed class GetFileSourceInputArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// Add this content to the archive with `filename` as the filename.
+        /// Add this content to the archive with `Filename` as the filename.
         /// </summary>
         [Input("content", required: true)]
         public Input<string> Content { get; set; } = null!;
 
         /// <summary>
-        /// Set this as the filename when declaring a `source`.
+        /// Set this as the filename when declaring a `Source`.
         /// </summary>
         [Input("filename", required: true)]
         public Input<string> Filename { get; set; } = null!;

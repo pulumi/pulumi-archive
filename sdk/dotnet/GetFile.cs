@@ -34,7 +34,7 @@ namespace Pulumi.Archive
     public sealed class GetFileArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
-        /// Boolean flag indicating whether symbolically linked directories should be excluded during the creation of the archive. Defaults to `false`.
+        /// Boolean flag indicating whether symbolically linked directories should be excluded during the creation of the archive. Defaults to `False`.
         /// </summary>
         [Input("excludeSymlinkDirectories")]
         public bool? ExcludeSymlinkDirectories { get; set; }
@@ -43,7 +43,7 @@ namespace Pulumi.Archive
         private List<string>? _excludes;
 
         /// <summary>
-        /// Specify files/directories to ignore when reading the `source_dir`. Supports glob file matching patterns including doublestar/globstar (`**`) patterns.
+        /// Specify files/directories to ignore when reading the `SourceDir`. Supports glob file matching patterns including doublestar/globstar (`**`) patterns.
         /// </summary>
         public List<string> Excludes
         {
@@ -64,25 +64,25 @@ namespace Pulumi.Archive
         public string OutputPath { get; set; } = null!;
 
         /// <summary>
-        /// Add only this content to the archive with `source_content_filename` as the filename. One and only one of `source`, `source_content_filename` (with `source_content`), `source_file`, or `source_dir` must be specified.
+        /// Add only this content to the archive with `SourceContentFilename` as the filename. One and only one of `Source`, `SourceContentFilename` (with `SourceContent`), `SourceFile`, or `SourceDir` must be specified.
         /// </summary>
         [Input("sourceContent")]
         public string? SourceContent { get; set; }
 
         /// <summary>
-        /// Set this as the filename when using `source_content`. One and only one of `source`, `source_content_filename` (with `source_content`), `source_file`, or `source_dir` must be specified.
+        /// Set this as the filename when using `SourceContent`. One and only one of `Source`, `SourceContentFilename` (with `SourceContent`), `SourceFile`, or `SourceDir` must be specified.
         /// </summary>
         [Input("sourceContentFilename")]
         public string? SourceContentFilename { get; set; }
 
         /// <summary>
-        /// Package entire contents of this directory into the archive. One and only one of `source`, `source_content_filename` (with `source_content`), `source_file`, or `source_dir` must be specified.
+        /// Package entire contents of this directory into the archive. One and only one of `Source`, `SourceContentFilename` (with `SourceContent`), `SourceFile`, or `SourceDir` must be specified.
         /// </summary>
         [Input("sourceDir")]
         public string? SourceDir { get; set; }
 
         /// <summary>
-        /// Package this file into the archive. One and only one of `source`, `source_content_filename` (with `source_content`), `source_file`, or `source_dir` must be specified.
+        /// Package this file into the archive. One and only one of `Source`, `SourceContentFilename` (with `SourceContent`), `SourceFile`, or `SourceDir` must be specified.
         /// </summary>
         [Input("sourceFile")]
         public string? SourceFile { get; set; }
@@ -91,7 +91,7 @@ namespace Pulumi.Archive
         private List<Inputs.GetFileSourceArgs>? _sources;
 
         /// <summary>
-        /// Specifies attributes of a single source file to include into the archive. One and only one of `source`, `source_content_filename` (with `source_content`), `source_file`, or `source_dir` must be specified.
+        /// Specifies attributes of a single source file to include into the archive. One and only one of `Source`, `SourceContentFilename` (with `SourceContent`), `SourceFile`, or `SourceDir` must be specified.
         /// </summary>
         public List<Inputs.GetFileSourceArgs> Sources
         {
@@ -100,7 +100,7 @@ namespace Pulumi.Archive
         }
 
         /// <summary>
-        /// The type of archive to generate. NOTE: `zip` and `tar.gz` is supported.
+        /// The type of archive to generate. NOTE: `Zip` and `tar.gz` is supported.
         /// </summary>
         [Input("type", required: true)]
         public string Type { get; set; } = null!;
@@ -114,7 +114,7 @@ namespace Pulumi.Archive
     public sealed class GetFileInvokeArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
-        /// Boolean flag indicating whether symbolically linked directories should be excluded during the creation of the archive. Defaults to `false`.
+        /// Boolean flag indicating whether symbolically linked directories should be excluded during the creation of the archive. Defaults to `False`.
         /// </summary>
         [Input("excludeSymlinkDirectories")]
         public Input<bool>? ExcludeSymlinkDirectories { get; set; }
@@ -123,7 +123,7 @@ namespace Pulumi.Archive
         private InputList<string>? _excludes;
 
         /// <summary>
-        /// Specify files/directories to ignore when reading the `source_dir`. Supports glob file matching patterns including doublestar/globstar (`**`) patterns.
+        /// Specify files/directories to ignore when reading the `SourceDir`. Supports glob file matching patterns including doublestar/globstar (`**`) patterns.
         /// </summary>
         public InputList<string> Excludes
         {
@@ -144,25 +144,25 @@ namespace Pulumi.Archive
         public Input<string> OutputPath { get; set; } = null!;
 
         /// <summary>
-        /// Add only this content to the archive with `source_content_filename` as the filename. One and only one of `source`, `source_content_filename` (with `source_content`), `source_file`, or `source_dir` must be specified.
+        /// Add only this content to the archive with `SourceContentFilename` as the filename. One and only one of `Source`, `SourceContentFilename` (with `SourceContent`), `SourceFile`, or `SourceDir` must be specified.
         /// </summary>
         [Input("sourceContent")]
         public Input<string>? SourceContent { get; set; }
 
         /// <summary>
-        /// Set this as the filename when using `source_content`. One and only one of `source`, `source_content_filename` (with `source_content`), `source_file`, or `source_dir` must be specified.
+        /// Set this as the filename when using `SourceContent`. One and only one of `Source`, `SourceContentFilename` (with `SourceContent`), `SourceFile`, or `SourceDir` must be specified.
         /// </summary>
         [Input("sourceContentFilename")]
         public Input<string>? SourceContentFilename { get; set; }
 
         /// <summary>
-        /// Package entire contents of this directory into the archive. One and only one of `source`, `source_content_filename` (with `source_content`), `source_file`, or `source_dir` must be specified.
+        /// Package entire contents of this directory into the archive. One and only one of `Source`, `SourceContentFilename` (with `SourceContent`), `SourceFile`, or `SourceDir` must be specified.
         /// </summary>
         [Input("sourceDir")]
         public Input<string>? SourceDir { get; set; }
 
         /// <summary>
-        /// Package this file into the archive. One and only one of `source`, `source_content_filename` (with `source_content`), `source_file`, or `source_dir` must be specified.
+        /// Package this file into the archive. One and only one of `Source`, `SourceContentFilename` (with `SourceContent`), `SourceFile`, or `SourceDir` must be specified.
         /// </summary>
         [Input("sourceFile")]
         public Input<string>? SourceFile { get; set; }
@@ -171,7 +171,7 @@ namespace Pulumi.Archive
         private InputList<Inputs.GetFileSourceInputArgs>? _sources;
 
         /// <summary>
-        /// Specifies attributes of a single source file to include into the archive. One and only one of `source`, `source_content_filename` (with `source_content`), `source_file`, or `source_dir` must be specified.
+        /// Specifies attributes of a single source file to include into the archive. One and only one of `Source`, `SourceContentFilename` (with `SourceContent`), `SourceFile`, or `SourceDir` must be specified.
         /// </summary>
         public InputList<Inputs.GetFileSourceInputArgs> Sources
         {
@@ -180,7 +180,7 @@ namespace Pulumi.Archive
         }
 
         /// <summary>
-        /// The type of archive to generate. NOTE: `zip` and `tar.gz` is supported.
+        /// The type of archive to generate. NOTE: `Zip` and `tar.gz` is supported.
         /// </summary>
         [Input("type", required: true)]
         public Input<string> Type { get; set; } = null!;
@@ -196,11 +196,11 @@ namespace Pulumi.Archive
     public sealed class GetFileResult
     {
         /// <summary>
-        /// Boolean flag indicating whether symbolically linked directories should be excluded during the creation of the archive. Defaults to `false`.
+        /// Boolean flag indicating whether symbolically linked directories should be excluded during the creation of the archive. Defaults to `False`.
         /// </summary>
         public readonly bool? ExcludeSymlinkDirectories;
         /// <summary>
-        /// Specify files/directories to ignore when reading the `source_dir`. Supports glob file matching patterns including doublestar/globstar (`**`) patterns.
+        /// Specify files/directories to ignore when reading the `SourceDir`. Supports glob file matching patterns including doublestar/globstar (`**`) patterns.
         /// </summary>
         public readonly ImmutableArray<string> Excludes;
         /// <summary>
@@ -244,27 +244,27 @@ namespace Pulumi.Archive
         /// </summary>
         public readonly int OutputSize;
         /// <summary>
-        /// Add only this content to the archive with `source_content_filename` as the filename. One and only one of `source`, `source_content_filename` (with `source_content`), `source_file`, or `source_dir` must be specified.
+        /// Add only this content to the archive with `SourceContentFilename` as the filename. One and only one of `Source`, `SourceContentFilename` (with `SourceContent`), `SourceFile`, or `SourceDir` must be specified.
         /// </summary>
         public readonly string? SourceContent;
         /// <summary>
-        /// Set this as the filename when using `source_content`. One and only one of `source`, `source_content_filename` (with `source_content`), `source_file`, or `source_dir` must be specified.
+        /// Set this as the filename when using `SourceContent`. One and only one of `Source`, `SourceContentFilename` (with `SourceContent`), `SourceFile`, or `SourceDir` must be specified.
         /// </summary>
         public readonly string? SourceContentFilename;
         /// <summary>
-        /// Package entire contents of this directory into the archive. One and only one of `source`, `source_content_filename` (with `source_content`), `source_file`, or `source_dir` must be specified.
+        /// Package entire contents of this directory into the archive. One and only one of `Source`, `SourceContentFilename` (with `SourceContent`), `SourceFile`, or `SourceDir` must be specified.
         /// </summary>
         public readonly string? SourceDir;
         /// <summary>
-        /// Package this file into the archive. One and only one of `source`, `source_content_filename` (with `source_content`), `source_file`, or `source_dir` must be specified.
+        /// Package this file into the archive. One and only one of `Source`, `SourceContentFilename` (with `SourceContent`), `SourceFile`, or `SourceDir` must be specified.
         /// </summary>
         public readonly string? SourceFile;
         /// <summary>
-        /// Specifies attributes of a single source file to include into the archive. One and only one of `source`, `source_content_filename` (with `source_content`), `source_file`, or `source_dir` must be specified.
+        /// Specifies attributes of a single source file to include into the archive. One and only one of `Source`, `SourceContentFilename` (with `SourceContent`), `SourceFile`, or `SourceDir` must be specified.
         /// </summary>
         public readonly ImmutableArray<Outputs.GetFileSourceResult> Sources;
         /// <summary>
-        /// The type of archive to generate. NOTE: `zip` and `tar.gz` is supported.
+        /// The type of archive to generate. NOTE: `Zip` and `tar.gz` is supported.
         /// </summary>
         public readonly string Type;
 
