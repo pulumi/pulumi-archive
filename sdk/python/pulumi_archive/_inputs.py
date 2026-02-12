@@ -21,20 +21,15 @@ __all__ = [
     'GetFileSourceArgsDict',
 ]
 
-MYPY = False
-
-if not MYPY:
-    class FileSourceArgsDict(TypedDict):
-        content: pulumi.Input[_builtins.str]
-        """
-        Add this content to the archive with `filename` as the filename.
-        """
-        filename: pulumi.Input[_builtins.str]
-        """
-        Set this as the filename when declaring a `source`.
-        """
-elif False:
-    FileSourceArgsDict: TypeAlias = Mapping[str, Any]
+class FileSourceArgsDict(TypedDict):
+    content: pulumi.Input[_builtins.str]
+    """
+    Add this content to the archive with `filename` as the filename.
+    """
+    filename: pulumi.Input[_builtins.str]
+    """
+    Set this as the filename when declaring a `source`.
+    """
 
 @pulumi.input_type
 class FileSourceArgs:
@@ -73,18 +68,15 @@ class FileSourceArgs:
         pulumi.set(self, "filename", value)
 
 
-if not MYPY:
-    class GetFileSourceArgsDict(TypedDict):
-        content: _builtins.str
-        """
-        Add this content to the archive with `filename` as the filename.
-        """
-        filename: _builtins.str
-        """
-        Set this as the filename when declaring a `source`.
-        """
-elif False:
-    GetFileSourceArgsDict: TypeAlias = Mapping[str, Any]
+class GetFileSourceArgsDict(TypedDict):
+    content: _builtins.str
+    """
+    Add this content to the archive with `filename` as the filename.
+    """
+    filename: _builtins.str
+    """
+    Set this as the filename when declaring a `source`.
+    """
 
 @pulumi.input_type
 class GetFileSourceArgs:
