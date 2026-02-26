@@ -33,6 +33,7 @@ class FileArgs:
                  sources: Optional[pulumi.Input[Sequence[pulumi.Input['FileSourceArgs']]]] = None):
         """
         The set of arguments for constructing a File resource.
+
         :param pulumi.Input[_builtins.str] output_path: The output of the archive file.
         :param pulumi.Input[_builtins.str] type: The type of archive to generate. NOTE: `zip` and `tar.gz` is supported.
         :param pulumi.Input[_builtins.bool] exclude_symlink_directories: Boolean flag indicating whether symbolically linked directories should be excluded during the creation of the archive. Defaults to `false`.
@@ -206,6 +207,7 @@ class _FileState:
                  type: Optional[pulumi.Input[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering File resources.
+
         :param pulumi.Input[_builtins.bool] exclude_symlink_directories: Boolean flag indicating whether symbolically linked directories should be excluded during the creation of the archive. Defaults to `false`.
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] excludes: Specify files/directories to ignore when reading the `source_dir`. Supports glob file matching patterns including doublestar/globstar (`**`) patterns.
         :param pulumi.Input[_builtins.str] output_base64sha256: Base64 Encoded SHA256 checksum of output file
@@ -484,6 +486,7 @@ class File(pulumi.CustomResource):
         """
         Generates an archive from content, a file, or directory of files.
 
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.bool] exclude_symlink_directories: Boolean flag indicating whether symbolically linked directories should be excluded during the creation of the archive. Defaults to `false`.
@@ -505,6 +508,7 @@ class File(pulumi.CustomResource):
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
         Generates an archive from content, a file, or directory of files.
+
 
         :param str resource_name: The name of the resource.
         :param FileArgs args: The arguments to use to populate this resource's properties.
