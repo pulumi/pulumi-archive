@@ -23,14 +23,14 @@ class FileArgs:
     def __init__(__self__, *,
                  output_path: pulumi.Input[_builtins.str],
                  type: pulumi.Input[_builtins.str],
-                 exclude_symlink_directories: Optional[pulumi.Input[_builtins.bool]] = None,
-                 excludes: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 output_file_mode: Optional[pulumi.Input[_builtins.str]] = None,
-                 source_content: Optional[pulumi.Input[_builtins.str]] = None,
-                 source_content_filename: Optional[pulumi.Input[_builtins.str]] = None,
-                 source_dir: Optional[pulumi.Input[_builtins.str]] = None,
-                 source_file: Optional[pulumi.Input[_builtins.str]] = None,
-                 sources: Optional[pulumi.Input[Sequence[pulumi.Input['FileSourceArgs']]]] = None):
+                 exclude_symlink_directories: pulumi.Input[Optional[_builtins.bool]] = None,
+                 excludes: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 output_file_mode: pulumi.Input[Optional[_builtins.str]] = None,
+                 source_content: pulumi.Input[Optional[_builtins.str]] = None,
+                 source_content_filename: pulumi.Input[Optional[_builtins.str]] = None,
+                 source_dir: pulumi.Input[Optional[_builtins.str]] = None,
+                 source_file: pulumi.Input[Optional[_builtins.str]] = None,
+                 sources: pulumi.Input[Optional[Sequence[pulumi.Input['FileSourceArgs']]]] = None):
         """
         The set of arguments for constructing a File resource.
 
@@ -90,121 +90,121 @@ class FileArgs:
 
     @_builtins.property
     @pulumi.getter(name="excludeSymlinkDirectories")
-    def exclude_symlink_directories(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def exclude_symlink_directories(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         Boolean flag indicating whether symbolically linked directories should be excluded during the creation of the archive. Defaults to `false`.
         """
         return pulumi.get(self, "exclude_symlink_directories")
 
     @exclude_symlink_directories.setter
-    def exclude_symlink_directories(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def exclude_symlink_directories(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "exclude_symlink_directories", value)
 
     @_builtins.property
     @pulumi.getter
-    def excludes(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def excludes(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         Specify files/directories to ignore when reading the `source_dir`. Supports glob file matching patterns including doublestar/globstar (`**`) patterns.
         """
         return pulumi.get(self, "excludes")
 
     @excludes.setter
-    def excludes(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def excludes(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "excludes", value)
 
     @_builtins.property
     @pulumi.getter(name="outputFileMode")
-    def output_file_mode(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def output_file_mode(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         String that specifies the octal file mode for all archived files. For example: `"0666"`. Setting this will ensure that cross platform usage of this module will not vary the modes of archived files (and ultimately checksums) resulting in more deterministic behavior.
         """
         return pulumi.get(self, "output_file_mode")
 
     @output_file_mode.setter
-    def output_file_mode(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def output_file_mode(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "output_file_mode", value)
 
     @_builtins.property
     @pulumi.getter(name="sourceContent")
-    def source_content(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def source_content(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Add only this content to the archive with `source_content_filename` as the filename. One and only one of `source`, `source_content_filename` (with `source_content`), `source_file`, or `source_dir` must be specified.
         """
         return pulumi.get(self, "source_content")
 
     @source_content.setter
-    def source_content(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def source_content(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "source_content", value)
 
     @_builtins.property
     @pulumi.getter(name="sourceContentFilename")
-    def source_content_filename(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def source_content_filename(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Set this as the filename when using `source_content`. One and only one of `source`, `source_content_filename` (with `source_content`), `source_file`, or `source_dir` must be specified.
         """
         return pulumi.get(self, "source_content_filename")
 
     @source_content_filename.setter
-    def source_content_filename(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def source_content_filename(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "source_content_filename", value)
 
     @_builtins.property
     @pulumi.getter(name="sourceDir")
-    def source_dir(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def source_dir(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Package entire contents of this directory into the archive. One and only one of `source`, `source_content_filename` (with `source_content`), `source_file`, or `source_dir` must be specified.
         """
         return pulumi.get(self, "source_dir")
 
     @source_dir.setter
-    def source_dir(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def source_dir(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "source_dir", value)
 
     @_builtins.property
     @pulumi.getter(name="sourceFile")
-    def source_file(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def source_file(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Package this file into the archive. One and only one of `source`, `source_content_filename` (with `source_content`), `source_file`, or `source_dir` must be specified.
         """
         return pulumi.get(self, "source_file")
 
     @source_file.setter
-    def source_file(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def source_file(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "source_file", value)
 
     @_builtins.property
     @pulumi.getter
-    def sources(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['FileSourceArgs']]]]:
+    def sources(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['FileSourceArgs']]]]:
         """
         Specifies attributes of a single source file to include into the archive. One and only one of `source`, `source_content_filename` (with `source_content`), `source_file`, or `source_dir` must be specified.
         """
         return pulumi.get(self, "sources")
 
     @sources.setter
-    def sources(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['FileSourceArgs']]]]):
+    def sources(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['FileSourceArgs']]]]):
         pulumi.set(self, "sources", value)
 
 
 @pulumi.input_type
 class _FileState:
     def __init__(__self__, *,
-                 exclude_symlink_directories: Optional[pulumi.Input[_builtins.bool]] = None,
-                 excludes: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 output_base64sha256: Optional[pulumi.Input[_builtins.str]] = None,
-                 output_base64sha512: Optional[pulumi.Input[_builtins.str]] = None,
-                 output_file_mode: Optional[pulumi.Input[_builtins.str]] = None,
-                 output_md5: Optional[pulumi.Input[_builtins.str]] = None,
-                 output_path: Optional[pulumi.Input[_builtins.str]] = None,
-                 output_sha: Optional[pulumi.Input[_builtins.str]] = None,
-                 output_sha256: Optional[pulumi.Input[_builtins.str]] = None,
-                 output_sha512: Optional[pulumi.Input[_builtins.str]] = None,
-                 output_size: Optional[pulumi.Input[_builtins.int]] = None,
-                 source_content: Optional[pulumi.Input[_builtins.str]] = None,
-                 source_content_filename: Optional[pulumi.Input[_builtins.str]] = None,
-                 source_dir: Optional[pulumi.Input[_builtins.str]] = None,
-                 source_file: Optional[pulumi.Input[_builtins.str]] = None,
-                 sources: Optional[pulumi.Input[Sequence[pulumi.Input['FileSourceArgs']]]] = None,
-                 type: Optional[pulumi.Input[_builtins.str]] = None):
+                 exclude_symlink_directories: pulumi.Input[Optional[_builtins.bool]] = None,
+                 excludes: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 output_base64sha256: pulumi.Input[Optional[_builtins.str]] = None,
+                 output_base64sha512: pulumi.Input[Optional[_builtins.str]] = None,
+                 output_file_mode: pulumi.Input[Optional[_builtins.str]] = None,
+                 output_md5: pulumi.Input[Optional[_builtins.str]] = None,
+                 output_path: pulumi.Input[Optional[_builtins.str]] = None,
+                 output_sha: pulumi.Input[Optional[_builtins.str]] = None,
+                 output_sha256: pulumi.Input[Optional[_builtins.str]] = None,
+                 output_sha512: pulumi.Input[Optional[_builtins.str]] = None,
+                 output_size: pulumi.Input[Optional[_builtins.int]] = None,
+                 source_content: pulumi.Input[Optional[_builtins.str]] = None,
+                 source_content_filename: pulumi.Input[Optional[_builtins.str]] = None,
+                 source_dir: pulumi.Input[Optional[_builtins.str]] = None,
+                 source_file: pulumi.Input[Optional[_builtins.str]] = None,
+                 sources: pulumi.Input[Optional[Sequence[pulumi.Input['FileSourceArgs']]]] = None,
+                 type: pulumi.Input[Optional[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering File resources.
 
@@ -263,206 +263,206 @@ class _FileState:
 
     @_builtins.property
     @pulumi.getter(name="excludeSymlinkDirectories")
-    def exclude_symlink_directories(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def exclude_symlink_directories(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         Boolean flag indicating whether symbolically linked directories should be excluded during the creation of the archive. Defaults to `false`.
         """
         return pulumi.get(self, "exclude_symlink_directories")
 
     @exclude_symlink_directories.setter
-    def exclude_symlink_directories(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def exclude_symlink_directories(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "exclude_symlink_directories", value)
 
     @_builtins.property
     @pulumi.getter
-    def excludes(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def excludes(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         Specify files/directories to ignore when reading the `source_dir`. Supports glob file matching patterns including doublestar/globstar (`**`) patterns.
         """
         return pulumi.get(self, "excludes")
 
     @excludes.setter
-    def excludes(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def excludes(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "excludes", value)
 
     @_builtins.property
     @pulumi.getter(name="outputBase64sha256")
-    def output_base64sha256(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def output_base64sha256(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Base64 Encoded SHA256 checksum of output file
         """
         return pulumi.get(self, "output_base64sha256")
 
     @output_base64sha256.setter
-    def output_base64sha256(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def output_base64sha256(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "output_base64sha256", value)
 
     @_builtins.property
     @pulumi.getter(name="outputBase64sha512")
-    def output_base64sha512(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def output_base64sha512(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Base64 Encoded SHA512 checksum of output file
         """
         return pulumi.get(self, "output_base64sha512")
 
     @output_base64sha512.setter
-    def output_base64sha512(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def output_base64sha512(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "output_base64sha512", value)
 
     @_builtins.property
     @pulumi.getter(name="outputFileMode")
-    def output_file_mode(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def output_file_mode(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         String that specifies the octal file mode for all archived files. For example: `"0666"`. Setting this will ensure that cross platform usage of this module will not vary the modes of archived files (and ultimately checksums) resulting in more deterministic behavior.
         """
         return pulumi.get(self, "output_file_mode")
 
     @output_file_mode.setter
-    def output_file_mode(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def output_file_mode(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "output_file_mode", value)
 
     @_builtins.property
     @pulumi.getter(name="outputMd5")
-    def output_md5(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def output_md5(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         MD5 of output file
         """
         return pulumi.get(self, "output_md5")
 
     @output_md5.setter
-    def output_md5(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def output_md5(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "output_md5", value)
 
     @_builtins.property
     @pulumi.getter(name="outputPath")
-    def output_path(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def output_path(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The output of the archive file.
         """
         return pulumi.get(self, "output_path")
 
     @output_path.setter
-    def output_path(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def output_path(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "output_path", value)
 
     @_builtins.property
     @pulumi.getter(name="outputSha")
-    def output_sha(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def output_sha(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         SHA1 checksum of output file
         """
         return pulumi.get(self, "output_sha")
 
     @output_sha.setter
-    def output_sha(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def output_sha(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "output_sha", value)
 
     @_builtins.property
     @pulumi.getter(name="outputSha256")
-    def output_sha256(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def output_sha256(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         SHA256 checksum of output file
         """
         return pulumi.get(self, "output_sha256")
 
     @output_sha256.setter
-    def output_sha256(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def output_sha256(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "output_sha256", value)
 
     @_builtins.property
     @pulumi.getter(name="outputSha512")
-    def output_sha512(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def output_sha512(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         SHA512 checksum of output file
         """
         return pulumi.get(self, "output_sha512")
 
     @output_sha512.setter
-    def output_sha512(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def output_sha512(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "output_sha512", value)
 
     @_builtins.property
     @pulumi.getter(name="outputSize")
-    def output_size(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def output_size(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         The byte size of the output archive file.
         """
         return pulumi.get(self, "output_size")
 
     @output_size.setter
-    def output_size(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def output_size(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "output_size", value)
 
     @_builtins.property
     @pulumi.getter(name="sourceContent")
-    def source_content(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def source_content(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Add only this content to the archive with `source_content_filename` as the filename. One and only one of `source`, `source_content_filename` (with `source_content`), `source_file`, or `source_dir` must be specified.
         """
         return pulumi.get(self, "source_content")
 
     @source_content.setter
-    def source_content(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def source_content(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "source_content", value)
 
     @_builtins.property
     @pulumi.getter(name="sourceContentFilename")
-    def source_content_filename(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def source_content_filename(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Set this as the filename when using `source_content`. One and only one of `source`, `source_content_filename` (with `source_content`), `source_file`, or `source_dir` must be specified.
         """
         return pulumi.get(self, "source_content_filename")
 
     @source_content_filename.setter
-    def source_content_filename(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def source_content_filename(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "source_content_filename", value)
 
     @_builtins.property
     @pulumi.getter(name="sourceDir")
-    def source_dir(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def source_dir(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Package entire contents of this directory into the archive. One and only one of `source`, `source_content_filename` (with `source_content`), `source_file`, or `source_dir` must be specified.
         """
         return pulumi.get(self, "source_dir")
 
     @source_dir.setter
-    def source_dir(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def source_dir(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "source_dir", value)
 
     @_builtins.property
     @pulumi.getter(name="sourceFile")
-    def source_file(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def source_file(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Package this file into the archive. One and only one of `source`, `source_content_filename` (with `source_content`), `source_file`, or `source_dir` must be specified.
         """
         return pulumi.get(self, "source_file")
 
     @source_file.setter
-    def source_file(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def source_file(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "source_file", value)
 
     @_builtins.property
     @pulumi.getter
-    def sources(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['FileSourceArgs']]]]:
+    def sources(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['FileSourceArgs']]]]:
         """
         Specifies attributes of a single source file to include into the archive. One and only one of `source`, `source_content_filename` (with `source_content`), `source_file`, or `source_dir` must be specified.
         """
         return pulumi.get(self, "sources")
 
     @sources.setter
-    def sources(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['FileSourceArgs']]]]):
+    def sources(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['FileSourceArgs']]]]):
         pulumi.set(self, "sources", value)
 
     @_builtins.property
     @pulumi.getter
-    def type(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def type(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The type of archive to generate. NOTE: `zip` and `tar.gz` is supported.
         """
         return pulumi.get(self, "type")
 
     @type.setter
-    def type(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def type(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "type", value)
 
 
@@ -472,16 +472,16 @@ class File(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 exclude_symlink_directories: Optional[pulumi.Input[_builtins.bool]] = None,
-                 excludes: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 output_file_mode: Optional[pulumi.Input[_builtins.str]] = None,
-                 output_path: Optional[pulumi.Input[_builtins.str]] = None,
-                 source_content: Optional[pulumi.Input[_builtins.str]] = None,
-                 source_content_filename: Optional[pulumi.Input[_builtins.str]] = None,
-                 source_dir: Optional[pulumi.Input[_builtins.str]] = None,
-                 source_file: Optional[pulumi.Input[_builtins.str]] = None,
-                 sources: Optional[pulumi.Input[Sequence[pulumi.Input[Union['FileSourceArgs', 'FileSourceArgsDict']]]]] = None,
-                 type: Optional[pulumi.Input[_builtins.str]] = None,
+                 exclude_symlink_directories: pulumi.Input[Optional[_builtins.bool]] = None,
+                 excludes: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 output_file_mode: pulumi.Input[Optional[_builtins.str]] = None,
+                 output_path: pulumi.Input[Optional[_builtins.str]] = None,
+                 source_content: pulumi.Input[Optional[_builtins.str]] = None,
+                 source_content_filename: pulumi.Input[Optional[_builtins.str]] = None,
+                 source_dir: pulumi.Input[Optional[_builtins.str]] = None,
+                 source_file: pulumi.Input[Optional[_builtins.str]] = None,
+                 sources: pulumi.Input[Optional[Sequence[pulumi.Input[Union['FileSourceArgs', 'FileSourceArgsDict']]]]] = None,
+                 type: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         """
         Generates an archive from content, a file, or directory of files.
@@ -525,16 +525,16 @@ class File(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 exclude_symlink_directories: Optional[pulumi.Input[_builtins.bool]] = None,
-                 excludes: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 output_file_mode: Optional[pulumi.Input[_builtins.str]] = None,
-                 output_path: Optional[pulumi.Input[_builtins.str]] = None,
-                 source_content: Optional[pulumi.Input[_builtins.str]] = None,
-                 source_content_filename: Optional[pulumi.Input[_builtins.str]] = None,
-                 source_dir: Optional[pulumi.Input[_builtins.str]] = None,
-                 source_file: Optional[pulumi.Input[_builtins.str]] = None,
-                 sources: Optional[pulumi.Input[Sequence[pulumi.Input[Union['FileSourceArgs', 'FileSourceArgsDict']]]]] = None,
-                 type: Optional[pulumi.Input[_builtins.str]] = None,
+                 exclude_symlink_directories: pulumi.Input[Optional[_builtins.bool]] = None,
+                 excludes: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 output_file_mode: pulumi.Input[Optional[_builtins.str]] = None,
+                 output_path: pulumi.Input[Optional[_builtins.str]] = None,
+                 source_content: pulumi.Input[Optional[_builtins.str]] = None,
+                 source_content_filename: pulumi.Input[Optional[_builtins.str]] = None,
+                 source_dir: pulumi.Input[Optional[_builtins.str]] = None,
+                 source_file: pulumi.Input[Optional[_builtins.str]] = None,
+                 sources: pulumi.Input[Optional[Sequence[pulumi.Input[Union['FileSourceArgs', 'FileSourceArgsDict']]]]] = None,
+                 type: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -575,23 +575,23 @@ class File(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            exclude_symlink_directories: Optional[pulumi.Input[_builtins.bool]] = None,
-            excludes: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-            output_base64sha256: Optional[pulumi.Input[_builtins.str]] = None,
-            output_base64sha512: Optional[pulumi.Input[_builtins.str]] = None,
-            output_file_mode: Optional[pulumi.Input[_builtins.str]] = None,
-            output_md5: Optional[pulumi.Input[_builtins.str]] = None,
-            output_path: Optional[pulumi.Input[_builtins.str]] = None,
-            output_sha: Optional[pulumi.Input[_builtins.str]] = None,
-            output_sha256: Optional[pulumi.Input[_builtins.str]] = None,
-            output_sha512: Optional[pulumi.Input[_builtins.str]] = None,
-            output_size: Optional[pulumi.Input[_builtins.int]] = None,
-            source_content: Optional[pulumi.Input[_builtins.str]] = None,
-            source_content_filename: Optional[pulumi.Input[_builtins.str]] = None,
-            source_dir: Optional[pulumi.Input[_builtins.str]] = None,
-            source_file: Optional[pulumi.Input[_builtins.str]] = None,
-            sources: Optional[pulumi.Input[Sequence[pulumi.Input[Union['FileSourceArgs', 'FileSourceArgsDict']]]]] = None,
-            type: Optional[pulumi.Input[_builtins.str]] = None) -> 'File':
+            exclude_symlink_directories: pulumi.Input[Optional[_builtins.bool]] = None,
+            excludes: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            output_base64sha256: pulumi.Input[Optional[_builtins.str]] = None,
+            output_base64sha512: pulumi.Input[Optional[_builtins.str]] = None,
+            output_file_mode: pulumi.Input[Optional[_builtins.str]] = None,
+            output_md5: pulumi.Input[Optional[_builtins.str]] = None,
+            output_path: pulumi.Input[Optional[_builtins.str]] = None,
+            output_sha: pulumi.Input[Optional[_builtins.str]] = None,
+            output_sha256: pulumi.Input[Optional[_builtins.str]] = None,
+            output_sha512: pulumi.Input[Optional[_builtins.str]] = None,
+            output_size: pulumi.Input[Optional[_builtins.int]] = None,
+            source_content: pulumi.Input[Optional[_builtins.str]] = None,
+            source_content_filename: pulumi.Input[Optional[_builtins.str]] = None,
+            source_dir: pulumi.Input[Optional[_builtins.str]] = None,
+            source_file: pulumi.Input[Optional[_builtins.str]] = None,
+            sources: pulumi.Input[Optional[Sequence[pulumi.Input[Union['FileSourceArgs', 'FileSourceArgsDict']]]]] = None,
+            type: pulumi.Input[Optional[_builtins.str]] = None) -> 'File':
         """
         Get an existing File resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.
