@@ -174,15 +174,15 @@ export interface GetFileOutputArgs {
     /**
      * Boolean flag indicating whether symbolically linked directories should be excluded during the creation of the archive. Defaults to `false`.
      */
-    excludeSymlinkDirectories?: pulumi.Input<boolean>;
+    excludeSymlinkDirectories?: pulumi.Input<boolean | undefined>;
     /**
      * Specify files/directories to ignore when reading the `sourceDir`. Supports glob file matching patterns including doublestar/globstar (`**`) patterns.
      */
-    excludes?: pulumi.Input<pulumi.Input<string>[]>;
+    excludes?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * String that specifies the octal file mode for all archived files. For example: `"0666"`. Setting this will ensure that cross platform usage of this module will not vary the modes of archived files (and ultimately checksums) resulting in more deterministic behavior.
      */
-    outputFileMode?: pulumi.Input<string>;
+    outputFileMode?: pulumi.Input<string | undefined>;
     /**
      * The output of the archive file.
      */
@@ -190,23 +190,23 @@ export interface GetFileOutputArgs {
     /**
      * Add only this content to the archive with `sourceContentFilename` as the filename. One and only one of `source`, `sourceContentFilename` (with `sourceContent`), `sourceFile`, or `sourceDir` must be specified.
      */
-    sourceContent?: pulumi.Input<string>;
+    sourceContent?: pulumi.Input<string | undefined>;
     /**
      * Set this as the filename when using `sourceContent`. One and only one of `source`, `sourceContentFilename` (with `sourceContent`), `sourceFile`, or `sourceDir` must be specified.
      */
-    sourceContentFilename?: pulumi.Input<string>;
+    sourceContentFilename?: pulumi.Input<string | undefined>;
     /**
      * Package entire contents of this directory into the archive. One and only one of `source`, `sourceContentFilename` (with `sourceContent`), `sourceFile`, or `sourceDir` must be specified.
      */
-    sourceDir?: pulumi.Input<string>;
+    sourceDir?: pulumi.Input<string | undefined>;
     /**
      * Package this file into the archive. One and only one of `source`, `sourceContentFilename` (with `sourceContent`), `sourceFile`, or `sourceDir` must be specified.
      */
-    sourceFile?: pulumi.Input<string>;
+    sourceFile?: pulumi.Input<string | undefined>;
     /**
      * Specifies attributes of a single source file to include into the archive. One and only one of `source`, `sourceContentFilename` (with `sourceContent`), `sourceFile`, or `sourceDir` must be specified.
      */
-    sources?: pulumi.Input<pulumi.Input<inputs.GetFileSourceArgs>[]>;
+    sources?: pulumi.Input<pulumi.Input<inputs.GetFileSourceArgs>[] | undefined>;
     /**
      * The type of archive to generate. NOTE: `zip` and `tar.gz` is supported.
      */
