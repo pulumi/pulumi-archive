@@ -28,6 +28,11 @@
         }
     },
     "auto-settings": {},
+    "default-resource-schema-fixups": {
+        "resources": {
+            "archive_file": {}
+        }
+    },
     "renames": {
         "resources": {
             "archive:index/file:File": "archive_file"
