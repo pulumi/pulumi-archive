@@ -480,7 +480,7 @@ class File(pulumi.CustomResource):
                  source_content_filename: pulumi.Input[Optional[_builtins.str]] = None,
                  source_dir: pulumi.Input[Optional[_builtins.str]] = None,
                  source_file: pulumi.Input[Optional[_builtins.str]] = None,
-                 sources: pulumi.Input[Optional[Sequence[pulumi.Input[Union['FileSourceArgs', 'FileSourceArgsDict']]]]] = None,
+                 sources: pulumi.Input[Optional[Sequence[pulumi.Input[Union['FileSourceArgs', 'FileSourceArgsDict', 'outputs.FileSource']]]]] = None,
                  type: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         """
@@ -497,7 +497,7 @@ class File(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] source_content_filename: Set this as the filename when using `source_content`. One and only one of `source`, `source_content_filename` (with `source_content`), `source_file`, or `source_dir` must be specified.
         :param pulumi.Input[_builtins.str] source_dir: Package entire contents of this directory into the archive. One and only one of `source`, `source_content_filename` (with `source_content`), `source_file`, or `source_dir` must be specified.
         :param pulumi.Input[_builtins.str] source_file: Package this file into the archive. One and only one of `source`, `source_content_filename` (with `source_content`), `source_file`, or `source_dir` must be specified.
-        :param pulumi.Input[Sequence[pulumi.Input[Union['FileSourceArgs', 'FileSourceArgsDict']]]] sources: Specifies attributes of a single source file to include into the archive. One and only one of `source`, `source_content_filename` (with `source_content`), `source_file`, or `source_dir` must be specified.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['FileSourceArgs', 'FileSourceArgsDict', 'outputs.FileSource']]]] sources: Specifies attributes of a single source file to include into the archive. One and only one of `source`, `source_content_filename` (with `source_content`), `source_file`, or `source_dir` must be specified.
         :param pulumi.Input[_builtins.str] type: The type of archive to generate. NOTE: `zip` and `tar.gz` is supported.
         """
         ...
@@ -533,7 +533,7 @@ class File(pulumi.CustomResource):
                  source_content_filename: pulumi.Input[Optional[_builtins.str]] = None,
                  source_dir: pulumi.Input[Optional[_builtins.str]] = None,
                  source_file: pulumi.Input[Optional[_builtins.str]] = None,
-                 sources: pulumi.Input[Optional[Sequence[pulumi.Input[Union['FileSourceArgs', 'FileSourceArgsDict']]]]] = None,
+                 sources: pulumi.Input[Optional[Sequence[pulumi.Input[Union['FileSourceArgs', 'FileSourceArgsDict', 'outputs.FileSource']]]]] = None,
                  type: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
@@ -590,7 +590,7 @@ class File(pulumi.CustomResource):
             source_content_filename: pulumi.Input[Optional[_builtins.str]] = None,
             source_dir: pulumi.Input[Optional[_builtins.str]] = None,
             source_file: pulumi.Input[Optional[_builtins.str]] = None,
-            sources: pulumi.Input[Optional[Sequence[pulumi.Input[Union['FileSourceArgs', 'FileSourceArgsDict']]]]] = None,
+            sources: pulumi.Input[Optional[Sequence[pulumi.Input[Union['FileSourceArgs', 'FileSourceArgsDict', 'outputs.FileSource']]]]] = None,
             type: pulumi.Input[Optional[_builtins.str]] = None) -> 'File':
         """
         Get an existing File resource's state with the given name, id, and optional extra
@@ -614,7 +614,7 @@ class File(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] source_content_filename: Set this as the filename when using `source_content`. One and only one of `source`, `source_content_filename` (with `source_content`), `source_file`, or `source_dir` must be specified.
         :param pulumi.Input[_builtins.str] source_dir: Package entire contents of this directory into the archive. One and only one of `source`, `source_content_filename` (with `source_content`), `source_file`, or `source_dir` must be specified.
         :param pulumi.Input[_builtins.str] source_file: Package this file into the archive. One and only one of `source`, `source_content_filename` (with `source_content`), `source_file`, or `source_dir` must be specified.
-        :param pulumi.Input[Sequence[pulumi.Input[Union['FileSourceArgs', 'FileSourceArgsDict']]]] sources: Specifies attributes of a single source file to include into the archive. One and only one of `source`, `source_content_filename` (with `source_content`), `source_file`, or `source_dir` must be specified.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['FileSourceArgs', 'FileSourceArgsDict', 'outputs.FileSource']]]] sources: Specifies attributes of a single source file to include into the archive. One and only one of `source`, `source_content_filename` (with `source_content`), `source_file`, or `source_dir` must be specified.
         :param pulumi.Input[_builtins.str] type: The type of archive to generate. NOTE: `zip` and `tar.gz` is supported.
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))

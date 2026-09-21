@@ -263,7 +263,7 @@ def get_file(exclude_symlink_directories: Optional[_builtins.bool] = None,
              source_content_filename: Optional[_builtins.str] = None,
              source_dir: Optional[_builtins.str] = None,
              source_file: Optional[_builtins.str] = None,
-             sources: Optional[Sequence[Union['GetFileSourceArgs', 'GetFileSourceArgsDict']]] = None,
+             sources: Optional[Sequence[Union['GetFileSourceArgs', 'GetFileSourceArgsDict', 'outputs.GetFileSourceResult']]] = None,
              type: Optional[_builtins.str] = None,
              opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetFileResult:
     """
@@ -278,7 +278,7 @@ def get_file(exclude_symlink_directories: Optional[_builtins.bool] = None,
     :param _builtins.str source_content_filename: Set this as the filename when using `source_content`. One and only one of `source`, `source_content_filename` (with `source_content`), `source_file`, or `source_dir` must be specified.
     :param _builtins.str source_dir: Package entire contents of this directory into the archive. One and only one of `source`, `source_content_filename` (with `source_content`), `source_file`, or `source_dir` must be specified.
     :param _builtins.str source_file: Package this file into the archive. One and only one of `source`, `source_content_filename` (with `source_content`), `source_file`, or `source_dir` must be specified.
-    :param Sequence[Union['GetFileSourceArgs', 'GetFileSourceArgsDict']] sources: Specifies attributes of a single source file to include into the archive. One and only one of `source`, `source_content_filename` (with `source_content`), `source_file`, or `source_dir` must be specified.
+    :param Sequence[Union['GetFileSourceArgs', 'GetFileSourceArgsDict', 'outputs.GetFileSourceResult']] sources: Specifies attributes of a single source file to include into the archive. One and only one of `source`, `source_content_filename` (with `source_content`), `source_file`, or `source_dir` must be specified.
     :param _builtins.str type: The type of archive to generate. NOTE: `zip` and `tar.gz` is supported.
     """
     __args__ = dict()
@@ -322,7 +322,7 @@ def get_file_output(exclude_symlink_directories: pulumi.Input[Optional[Optional[
                     source_content_filename: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                     source_dir: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                     source_file: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
-                    sources: pulumi.Input[Optional[Optional[Sequence[Union['GetFileSourceArgs', 'GetFileSourceArgsDict']]]]] = None,
+                    sources: pulumi.Input[Optional[Optional[Sequence[Union['GetFileSourceArgs', 'GetFileSourceArgsDict', 'outputs.GetFileSourceResult']]]]] = None,
                     type: pulumi.Input[Optional[_builtins.str]] = None,
                     opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetFileResult]:
     """
@@ -337,7 +337,7 @@ def get_file_output(exclude_symlink_directories: pulumi.Input[Optional[Optional[
     :param _builtins.str source_content_filename: Set this as the filename when using `source_content`. One and only one of `source`, `source_content_filename` (with `source_content`), `source_file`, or `source_dir` must be specified.
     :param _builtins.str source_dir: Package entire contents of this directory into the archive. One and only one of `source`, `source_content_filename` (with `source_content`), `source_file`, or `source_dir` must be specified.
     :param _builtins.str source_file: Package this file into the archive. One and only one of `source`, `source_content_filename` (with `source_content`), `source_file`, or `source_dir` must be specified.
-    :param Sequence[Union['GetFileSourceArgs', 'GetFileSourceArgsDict']] sources: Specifies attributes of a single source file to include into the archive. One and only one of `source`, `source_content_filename` (with `source_content`), `source_file`, or `source_dir` must be specified.
+    :param Sequence[Union['GetFileSourceArgs', 'GetFileSourceArgsDict', 'outputs.GetFileSourceResult']] sources: Specifies attributes of a single source file to include into the archive. One and only one of `source`, `source_content_filename` (with `source_content`), `source_file`, or `source_dir` must be specified.
     :param _builtins.str type: The type of archive to generate. NOTE: `zip` and `tar.gz` is supported.
     """
     __args__ = dict()
