@@ -640,6 +640,46 @@ class File(pulumi.CustomResource):
         __props__.__dict__["type"] = type
         return File(resource_name, opts=opts, __props__=__props__)
 
+    @staticmethod
+    def exists(id: pulumi.Input[str],
+            opts: Optional[pulumi.ResourceOptions] = None,
+            exclude_symlink_directories: pulumi.Input[Optional[_builtins.bool]] = None,
+            excludes: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            output_base64sha256: pulumi.Input[Optional[_builtins.str]] = None,
+            output_base64sha512: pulumi.Input[Optional[_builtins.str]] = None,
+            output_file_mode: pulumi.Input[Optional[_builtins.str]] = None,
+            output_md5: pulumi.Input[Optional[_builtins.str]] = None,
+            output_path: pulumi.Input[Optional[_builtins.str]] = None,
+            output_sha: pulumi.Input[Optional[_builtins.str]] = None,
+            output_sha256: pulumi.Input[Optional[_builtins.str]] = None,
+            output_sha512: pulumi.Input[Optional[_builtins.str]] = None,
+            output_size: pulumi.Input[Optional[_builtins.int]] = None,
+            source_content: pulumi.Input[Optional[_builtins.str]] = None,
+            source_content_filename: pulumi.Input[Optional[_builtins.str]] = None,
+            source_dir: pulumi.Input[Optional[_builtins.str]] = None,
+            source_file: pulumi.Input[Optional[_builtins.str]] = None,
+            sources: pulumi.Input[Optional[Sequence[pulumi.Input[Union['FileSourceArgs', 'FileSourceArgsDict', 'outputs.FileSource']]]]] = None,
+            type: pulumi.Input[Optional[_builtins.str]] = None) -> pulumi.Output[bool]:
+        __props__: dict = {}
+        __props__["excludeSymlinkDirectories"] = exclude_symlink_directories
+        __props__["excludes"] = excludes
+        __props__["outputBase64sha256"] = output_base64sha256
+        __props__["outputBase64sha512"] = output_base64sha512
+        __props__["outputFileMode"] = output_file_mode
+        __props__["outputMd5"] = output_md5
+        __props__["outputPath"] = output_path
+        __props__["outputSha"] = output_sha
+        __props__["outputSha256"] = output_sha256
+        __props__["outputSha512"] = output_sha512
+        __props__["outputSize"] = output_size
+        __props__["sourceContent"] = source_content
+        __props__["sourceContentFilename"] = source_content_filename
+        __props__["sourceDir"] = source_dir
+        __props__["sourceFile"] = source_file
+        __props__["sources"] = sources
+        __props__["type"] = type
+        return pulumi.runtime.exists_resource(None, 'archive:index/file:File', id, __props__, opts or pulumi.ResourceOptions())
+
     @_builtins.property
     @pulumi.getter(name="excludeSymlinkDirectories")
     def exclude_symlink_directories(self) -> pulumi.Output[Optional[_builtins.bool]]:

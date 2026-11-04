@@ -165,6 +165,12 @@ func (FileState) ElementType() reflect.Type {
 	return reflect.TypeOf((*fileState)(nil)).Elem()
 }
 
+// FileExists checks whether an existing File resource with the given ID exists.
+func FileExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *FileState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("archive:index/file:File", id, state, "", opts...)
+}
+
 type fileArgs struct {
 	// Boolean flag indicating whether symbolically linked directories should be excluded during the creation of the archive. Defaults to `false`.
 	ExcludeSymlinkDirectories *bool `pulumi:"excludeSymlinkDirectories"`
